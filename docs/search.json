@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "自己紹介\n（自称）（ 日本内科学会 認定）ブラッド・ピット兼ポケモンGoトレーナー・医畜（総合内科・周術期内科・ER・ICU・CCU・HCU・ICD・PCT）兼セレブ（自治体認定済）、FJSIM、ICD。最近は大学生の卒論指導。主な訳書に「データ匿名化手法」、「実践バイオインフォマティクス」、「バイオインフォマティクスのためのPerl入門」など。 監訳協力に「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」。"
+  },
+  {
+    "objectID": "posts/2024/09/1st-winget.html",
+    "href": "posts/2024/09/1st-winget.html",
+    "title": "Windows パッケージング・システム HOWTO",
+    "section": "",
+    "text": "必要に迫られて普段使っていなかったアプリケーションを起動させると 最新版がリリースされていて、そのアップデートで時間が消費されるのは無駄と思う。\nLinuxでは20年以上前から、MacOSでも10年前から当たり前だった パッケージング・システムがWindowsでも普及してきた。\nパッケージングシステムを使いこなすことで、Windows環境を常に最新にしよう。\nschtasksコマンドやlogon scriptで パッケージングシステムを起動させれば、定期的に最新の環境を整えることができる。"
+  },
+  {
+    "objectID": "posts/2024/09/1st-winget.html#各種パッケージングシステムを使いこなせ",
+    "href": "posts/2024/09/1st-winget.html#各種パッケージングシステムを使いこなせ",
+    "title": "Windows パッケージング・システム HOWTO",
+    "section": "",
+    "text": "必要に迫られて普段使っていなかったアプリケーションを起動させると 最新版がリリースされていて、そのアップデートで時間が消費されるのは無駄と思う。\nLinuxでは20年以上前から、MacOSでも10年前から当たり前だった パッケージング・システムがWindowsでも普及してきた。\nパッケージングシステムを使いこなすことで、Windows環境を常に最新にしよう。\nschtasksコマンドやlogon scriptで パッケージングシステムを起動させれば、定期的に最新の環境を整えることができる。"
+  },
+  {
+    "objectID": "posts/2024/09/1st-winget.html#まずはscoop",
+    "href": "posts/2024/09/1st-winget.html#まずはscoop",
+    "title": "Windows パッケージング・システム HOWTO",
+    "section": "まずはscoop",
+    "text": "まずはscoop\nhttp://scoop.sh/\nwebの通りにインストールする。\n一般ユーザ権限で動作し、インストールしたアプリは ホームディレクトリのscoop 以下に収納される。\nasciidoc環境を整えてみよう。\nscoop search asciidoc\n'extras' bucket:\n    asciidocfx (1.7.4)\n\n'main' bucket:\n    asciidoctorj (2.5.4)\nJavaで実装されている asciidoctorj をインストールしてみよう。\nasciidoctorjの情報を見る。\nscoop info asciidoctorj\nasciidoctorjをインストールする。\nscoop install asciidoctorj\nscoopでどんなアプリケーションをインストールしたか確認する。\nscoop list\nInstalled apps:\n\nName               Version          Source   Updated             Info\n----               -------          ------   -------             ----\n7zip               22.00            main     2022-06-20 09:41:18\naria2              1.36.0-1         main     2022-05-19 10:19:22\nasciidoctorj       2.5.4            main     2022-07-05 19:01:24\natom               1.60.0           extras   2022-05-19 10:20:56\nbusybox            4716-g31467ddfc  main     2022-06-11 09:46:46\ncacert             2022-04-26       main     2022-05-19 10:21:05\nclink              1.3.33           main     2022-07-01 15:12:58\ndark               3.11.2           main     2022-05-19 10:21:12\nexiftool           12.42            main     2022-06-02 08:41:16\nfile               5.38             main     2022-05-19 10:21:19\nghostscript        9.56.1           main     2022-05-19 10:21:55\ngit                2.37.0.windows.1 main     2022-07-01 15:13:24\ngooglechrome       103.0.5060.66    extras   2022-07-01 15:13:44\nhaskell-cabal      3.6.2.0          main     2022-05-19 10:22:19\niconv              1.14-3           main     2022-05-19 10:22:34\nimagemagick-ffmpeg 7.1.0-37         versions 2022-06-08 09:00:24\ninnounp            0.50             main     2022-05-19 10:22:41\nlessmsi            1.10.0           main     2022-05-19 10:23:19\nmysql-workbench    8.0.29           main     2022-04-30 17:10:02\nnkf                2.1.5.1          jp       2022-04-11 11:25:37\npandoc             2.18             main     2022-04-05 08:58:47\npdftk              2.02             main     2022-04-05 12:23:20\nprocs              0.12.3           main     2022-05-27 09:12:34\npython             3.10.5           main     2022-06-08 09:02:35\nrclone             1.58.1           main     2022-05-30 22:14:14\nrclone-browser     1.8.0            extras   2022-05-30 22:14:23\nruby               3.1.2-1          main     2022-04-22 08:45:36\nstunnel            5.64             extras   2022-06-07 16:07:12\nsudo               0.2020.01.26     main     2021-12-16 18:10:19\nvagrant            2.2.19           main     2022-04-15 16:09:16\nvagrant-manager    2.3.2            extras   2022-04-15 16:09:40\nvlc                3.0.17.4         extras   2022-04-22 08:46:33\nvscode             1.68.1           extras   2022-06-17 09:40:40\nvswhere            3.0.3            main     2022-06-03 09:47:31\nwget               1.21.3           main     2022-03-14 09:07:17\nzoom               5.11.1.6602      extras   2022-07-01 15:14:02\nzotero             6.0.9            extras   2022-06-25 11:18:32\ncygwin             2.918            main     2022-03-14 09:15:04 Global install"
+  },
+  {
+    "objectID": "posts/2024/09/1st-winget.html#winget",
+    "href": "posts/2024/09/1st-winget.html#winget",
+    "title": "Windows パッケージング・システム HOWTO",
+    "section": "winget",
+    "text": "winget\nwingetはMicrosoftｻﾏが自ら手がけているパッケージング・システムだ。 Windows 10 1709(build 16299)以降で使える。 まだまだ開発途上であり、よくエラーが出るが、気にしないことにする。\ncmd.exeを開いて、\n$ winget upgrade --all\nとすることで、wingetでインストールしたアプリケーション類が一括してアップグレードできる。"
+  },
+  {
+    "objectID": "posts/2024/09/1st-winget.html#chocolatey",
+    "href": "posts/2024/09/1st-winget.html#chocolatey",
+    "title": "Windows パッケージング・システム HOWTO",
+    "section": "chocolatey",
+    "text": "chocolatey\nhttps://chocolatey.org/\n基本的に管理者権限で動作するので、scoopでsudoをインストールしておくとスムーズだろう。\n$ scoop install sudo"
+  },
+  {
+    "objectID": "posts/2024/09/1st-winget.html#tex-live",
+    "href": "posts/2024/09/1st-winget.html#tex-live",
+    "title": "Windows パッケージング・システム HOWTO",
+    "section": "TeX Live",
+    "text": "TeX Live\nhttps://www.tug.org/texlive/ 綺麗な文書作成のためには、TeX Liveに限る！\nドキュメント通りにインストール。 参考： https://texwiki.texjp.org/?TeX%20Live%2FWindows\n$ tlmgr update --self --all\nで、更新される。"
+  },
+  {
+    "objectID": "posts/2024/09/1st-winget.html#どのアプリをどのパッケージングシステムで管理する",
+    "href": "posts/2024/09/1st-winget.html#どのアプリをどのパッケージングシステムで管理する",
+    "title": "Windows パッケージング・システム HOWTO",
+    "section": "どのアプリをどのパッケージング・システムで管理する？",
+    "text": "どのアプリをどのパッケージング・システムで管理する？\nAdobe Acrobat Reader DC（64-bit） は chocolatey、scoopでは提供されていないが、wingetなら導入できる。\n$ winget search acrobat\n名前                             ID                          バージョン   一致         ソース\n----------------------------------------------------------------------------------------------\nAdobe Acrobat Reader DC          XPDP273C0XHQH2              Unknown                   msstore\nBlossX Acrobat 11 - PDF Editor   9P51586BZKNG                Unknown                   msstore\nAdobe Acrobat Reader DC (64-bit) Adobe.Acrobat.Reader.64-bit 22.001.20117 Tag: acrobat winget\nAdobe Acrobat Reader DC          Adobe.Acrobat.Reader.32-bit 22.001.20117 Tag: acrobat winget\n$ winget install Adobe.Acrobat.Reader.64-bit"
+  },
+  {
+    "objectID": "posts/2024/09/07.html",
+    "href": "posts/2024/09/07.html",
+    "title": "Blogなのか？",
+    "section": "",
+    "text": "最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "魔狸",
+    "section": "",
+    "text": "Blogなのか？\n\n\n\n\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
+  }
+]

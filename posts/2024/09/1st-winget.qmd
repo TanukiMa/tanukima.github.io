@@ -1,0 +1,151 @@
+---
+title: "Windows パッケージング・システム HOWTO"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+code-fold: true
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-07"
+categories: [Windows, winget, scoop]
+---
+
+## 各種パッケージング・システムを使いこなせ
+
+必要に迫られて普段使っていなかったアプリケーションを起動させると
+最新版がリリースされていて、そのアップデートで時間が消費されるのは無駄と思う。
+
+Linuxでは20年以上前から、MacOSでも10年前から当たり前だった
+パッケージング・システムがWindowsでも普及してきた。
+
+パッケージングシステムを使いこなすことで、Windows環境を常に最新にしよう。
+
+[schtasksコマンド](https://learn.microsoft.com/ja-jp/windows-server/administration/windows-commands/schtasks)やlogon scriptで パッケージングシステムを起動させれば、定期的に最新の環境を整えることができる。
+
+## まずはscoop
+[http://scoop.sh/](http://scoop.sh/)
+
+webの通りにインストールする。
+
+一般ユーザ権限で動作し、インストールしたアプリは
+ホームディレクトリのscoop 以下に収納される。
+
+***asciidoc***環境を整えてみよう。
+
+```bash
+scoop search asciidoc
+'extras' bucket:
+    asciidocfx (1.7.4)
+
+'main' bucket:
+    asciidoctorj (2.5.4)
+```
+Javaで実装されている
+[***asciidoctorj***](https://github.com/asciidoctor/asciidoctorj)
+をインストールしてみよう。
+
+***asciidoctorj***の情報を見る。
+```bash
+scoop info asciidoctorj
+```
+
+***asciidoctorj***をインストールする。
+
+```{bash}
+scoop install asciidoctorj
+```
+
+scoopでどんなアプリケーションをインストールしたか確認する。
+```bash
+scoop list
+Installed apps:
+
+Name               Version          Source   Updated             Info
+----               -------          ------   -------             ----
+7zip               22.00            main     2022-06-20 09:41:18
+aria2              1.36.0-1         main     2022-05-19 10:19:22
+asciidoctorj       2.5.4            main     2022-07-05 19:01:24
+atom               1.60.0           extras   2022-05-19 10:20:56
+busybox            4716-g31467ddfc  main     2022-06-11 09:46:46
+cacert             2022-04-26       main     2022-05-19 10:21:05
+clink              1.3.33           main     2022-07-01 15:12:58
+dark               3.11.2           main     2022-05-19 10:21:12
+exiftool           12.42            main     2022-06-02 08:41:16
+file               5.38             main     2022-05-19 10:21:19
+ghostscript        9.56.1           main     2022-05-19 10:21:55
+git                2.37.0.windows.1 main     2022-07-01 15:13:24
+googlechrome       103.0.5060.66    extras   2022-07-01 15:13:44
+haskell-cabal      3.6.2.0          main     2022-05-19 10:22:19
+iconv              1.14-3           main     2022-05-19 10:22:34
+imagemagick-ffmpeg 7.1.0-37         versions 2022-06-08 09:00:24
+innounp            0.50             main     2022-05-19 10:22:41
+lessmsi            1.10.0           main     2022-05-19 10:23:19
+mysql-workbench    8.0.29           main     2022-04-30 17:10:02
+nkf                2.1.5.1          jp       2022-04-11 11:25:37
+pandoc             2.18             main     2022-04-05 08:58:47
+pdftk              2.02             main     2022-04-05 12:23:20
+procs              0.12.3           main     2022-05-27 09:12:34
+python             3.10.5           main     2022-06-08 09:02:35
+rclone             1.58.1           main     2022-05-30 22:14:14
+rclone-browser     1.8.0            extras   2022-05-30 22:14:23
+ruby               3.1.2-1          main     2022-04-22 08:45:36
+stunnel            5.64             extras   2022-06-07 16:07:12
+sudo               0.2020.01.26     main     2021-12-16 18:10:19
+vagrant            2.2.19           main     2022-04-15 16:09:16
+vagrant-manager    2.3.2            extras   2022-04-15 16:09:40
+vlc                3.0.17.4         extras   2022-04-22 08:46:33
+vscode             1.68.1           extras   2022-06-17 09:40:40
+vswhere            3.0.3            main     2022-06-03 09:47:31
+wget               1.21.3           main     2022-03-14 09:07:17
+zoom               5.11.1.6602      extras   2022-07-01 15:14:02
+zotero             6.0.9            extras   2022-06-25 11:18:32
+cygwin             2.918            main     2022-03-14 09:15:04 Global install
+```
+
+## winget
+***winget***はMicrosoftｻﾏが自ら手がけているパッケージング・システムだ。
+Windows 10 1709(build 16299)以降で使える。
+まだまだ開発途上であり、よくエラーが出るが、気にしないことにする。
+
+cmd.exeを開いて、
+```powershell
+$ winget upgrade --all
+```
+とすることで、wingetでインストールしたアプリケーション類が一括してアップグレードできる。
+
+## chocolatey
+[https://chocolatey.org/](https://chocolatey.org/)
+
+基本的に管理者権限で動作するので、scoopでsudoをインストールしておくとスムーズだろう。
+
+```
+$ scoop install sudo
+```
+
+## TeX Live
+[https://www.tug.org/texlive/](https://www.tug.org/texlive/)
+綺麗な文書作成のためには、TeX Liveに限る！
+
+ドキュメント通りにインストール。
+参考：
+[https://texwiki.texjp.org/?TeX%20Live%2FWindows](https://texwiki.texjp.org/?TeX%20Live%2FWindows)
+
+```
+$ tlmgr update --self --all
+```
+で、更新される。
+
+## どのアプリをどのパッケージング・システムで管理する？
+[***Adobe Acrobat Reader DC（64-bit）***](https://helpx.adobe.com/jp/acrobat/kb/download-64-bit-installer.html)
+は chocolatey、scoopでは提供されていないが、wingetなら導入できる。
+```
+$ winget search acrobat
+名前                             ID                          バージョン   一致         ソース
+----------------------------------------------------------------------------------------------
+Adobe Acrobat Reader DC          XPDP273C0XHQH2              Unknown                   msstore
+BlossX Acrobat 11 - PDF Editor   9P51586BZKNG                Unknown                   msstore
+Adobe Acrobat Reader DC (64-bit) Adobe.Acrobat.Reader.64-bit 22.001.20117 Tag: acrobat winget
+Adobe Acrobat Reader DC          Adobe.Acrobat.Reader.32-bit 22.001.20117 Tag: acrobat winget
+$ winget install Adobe.Acrobat.Reader.64-bit
+```

@@ -1,0 +1,12 @@
+---
+title: "Blogなのか？"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-07"
+categories: [魔狸]
+---
+
+最近、一箇所に何かを纏めて書くということが無く、
+日々の記録が途絶えがちになってきたので、
+[GitHub Pages](https://docs.github.com/ja/pages)と
+[quarto](https://quarto.org)を活用していくことにした。
