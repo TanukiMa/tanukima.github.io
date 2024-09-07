@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="魔狸">
 
-<title>魔狸</title>
+<title>tailscale – 魔狸</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +24,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/social-share-0.1.0/social-share.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "サーチ"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
 <script type="text/javascript">
 
@@ -115,47 +83,18 @@ ga('send', {
 });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">魔狸</span>
     </a>
   </div>
@@ -166,7 +105,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About 魔狸</span></a>
   </li>  
   <li class="nav-item compact">
@@ -189,203 +128,55 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">魔狸</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">tailscale</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">networking</div>
+                <div class="quarto-category">Windows</div>
+                <div class="quarto-category">MacOS</div>
+                <div class="quarto-category">Linux</div>
+                <div class="quarto-category">Debian GNU/Linux</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">作者</div>
+      <div class="quarto-title-meta-contents">
+               <p>魔狸 </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">公開</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">2024年9月8日</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">分類</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">すべて <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Debian GNU/Linux">Debian GNU/Linux <span class="quarto-category-count">(1)</span></div><div class="category" data-category="GitHub">GitHub <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linux">Linux <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MacOS">MacOS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PowerPoint">PowerPoint <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Windows">Windows <span class="quarto-category-count">(2)</span></div><div class="category" data-category="networking">networking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="scoop">scoop <span class="quarto-category-count">(1)</span></div><div class="category" data-category="winget">winget <span class="quarto-category-count">(1)</span></div><div class="category" data-category="魔狸">魔狸 <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><a href="https://tailscale.com/">tailscale</a></p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="quarto,PowerPoint" data-listing-date-sort="1725721200000" data-listing-file-modified-sort="1725728056167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
-<div class="thumbnail">
-<p><a href="./posts/2024/09/08.html" class="no-external"></a></p><a href="./posts/2024/09/08.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2024/09/08.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024/09/08.html" class="no-external">PowerPoint w quarto</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024/09/08.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('PowerPoint'); return false;">
-PowerPoint
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024/09/08.html" class="no-external">https://quarto.org/docs/projects/quarto-projects.html https://quarto.org/docs/gallery/#presentations が参考になる</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024/09/08.html" class="no-external">
-<div class="listing-date">
-2024/09/08
-</div>
-<div class="listing-author">
-Ma, Tanuki
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="networking,Windows,MacOS,Linux,Debian GNU/Linux" data-listing-date-sort="1725721200000" data-listing-file-modified-sort="1725731346368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/2024/09/tailscale.html" class="no-external"></a></p><a href="./posts/2024/09/tailscale.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2024/09/tailscale.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024/09/tailscale.html" class="no-external">tailscale</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024/09/tailscale.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('networking'); return false;">
-networking
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Windows'); return false;">
-Windows
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('MacOS'); return false;">
-MacOS
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Linux'); return false;">
-Linux
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Debian GNU/Linux'); return false;">
-Debian GNU/Linux
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024/09/tailscale.html" class="no-external">tailscale</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024/09/tailscale.html" class="no-external">
-<div class="listing-date">
-2024/09/08
-</div>
-<div class="listing-author">
-魔狸
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="魔狸,quarto,GitHub" data-listing-date-sort="1725634800000" data-listing-file-modified-sort="1725726555819" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/2024/09/07.html" class="no-external"></a></p><a href="./posts/2024/09/07.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2024/09/07.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024/09/07.html" class="no-external">Blogなのか？</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024/09/07.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('魔狸'); return false;">
-魔狸
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('GitHub'); return false;">
-GitHub
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024/09/07.html" class="no-external">最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024/09/07.html" class="no-external">
-<div class="listing-date">
-2024/09/07
-</div>
-<div class="listing-author">
-Ma, Tanuki
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Windows,winget,scoop" data-listing-date-sort="1725634800000" data-listing-file-modified-sort="1725728678332" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1368">
-<div class="thumbnail">
-<p><a href="./posts/2024/09/1st-winget.html" class="no-external"></a></p><a href="./posts/2024/09/1st-winget.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2024/09/1st-winget.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024/09/1st-winget.html" class="no-external">Windows パッケージング・システム HOWTO</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024/09/1st-winget.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Windows'); return false;">
-Windows
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('winget'); return false;">
-winget
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('scoop'); return false;">
-scoop
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024/09/1st-winget.html" class="no-external">必要に迫られて普段使っていなかったアプリケーションを起動させると 最新版がリリースされていて、そのアップデートで時間が消費されるのは無駄と思う。</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024/09/1st-winget.html" class="no-external">
-<div class="listing-date">
-2024/09/07
-</div>
-<div class="listing-author">
-Ma, Tanuki
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-一致なし
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -807,7 +598,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://TanukiMa.github.io/?&amp;text=魔狸 on GitHub Pages" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="javascript:void(0);" onclick="var mastodon_instance=prompt('Mastodon Instance / Server Name?'); if(typeof mastodon_instance==='string' &amp;&amp; mastodon_instance.length){this.href='https://'+mastodon_instance+'/share?text=魔狸 on GitHub Pages https://TanukiMa.github.io/?'}else{return false;}" target="_blank" class="mastodon"><i class="fa-brands fa-mastodon fa-fw fa-lg"></i></a></div></div>
 
 
 

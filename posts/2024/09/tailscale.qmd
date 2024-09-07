@@ -1,0 +1,8 @@
+---
+title: "tailscale"
+lang: ja
+author: "魔狸"
+date: "2024-09-08"
+categories: [networking,Windows,MacOS,Linux,Debian GNU/Linux]
+---
+[tailscale](https://tailscale.com/)
