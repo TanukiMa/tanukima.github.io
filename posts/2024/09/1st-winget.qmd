@@ -9,6 +9,13 @@ lang: ja
 author: "Ma, Tanuki"
 date: "2024-09-07"
 categories: [Windows, winget, scoop]
+filters:
+  - social-share
+share:
+  permalink: "https://mr.schochastics.net/"
+  description: "Windowsパッケージング・システム HOWTO"
+  twitter: true
+  mastodon: true
 ---
 
 ## 各種パッケージング・システムを使いこなせ
