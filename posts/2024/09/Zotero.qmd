@@ -5,6 +5,7 @@ author: "魔狸"
 date: "2024-09-08"
 categories: [文献管理,Zotero,Windows,MacOS]
 ---
+[Zotero](https://www.zotero.org/)
 
 ```bash
 winget install Zotero -a x64 --force
