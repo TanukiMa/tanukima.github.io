@@ -12,7 +12,7 @@ categories: [Windows, winget, scoop]
 filters:
   - social-share
 share:
-  permalink: "https://mr.schochastics.net/"
+  permalink: "https://tanukima.github.io/posts/2024/09/1st-winget.html"
   description: "Windowsパッケージング・システム HOWTO"
   twitter: true
   mastodon: true
