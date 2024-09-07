@@ -67,7 +67,7 @@
     "href": "posts/2024/09/Zotero.html",
     "title": "Zotero",
     "section": "",
-    "text": "winget install Zotero -a X64 --force\nする。"
+    "text": "winget install Zotero -a x64 --force\nする。"
   },
   {
     "objectID": "posts/2024/09/07.html",

@@ -7,6 +7,6 @@ categories: [文献管理,Zotero,Windows,MacOS]
 ---
 
 ```bash
-winget install Zotero -a X64 --force
+winget install Zotero -a x64 --force
 ```
 する。
