@@ -10,3 +10,5 @@ categories: [魔狸]
 日々の記録が途絶えがちになってきたので、
 [GitHub Pages](https://docs.github.com/ja/pages)と
 [quarto](https://quarto.org)を活用していくことにした。
+
+[PowerPointも作れる](https://quarto.org/docs/presentations/powerpoint.html)し、当面quartoとお付き合いしようと思う。
