@@ -63,6 +63,13 @@
     "text": "どのアプリをどのパッケージング・システムで管理する？\nAdobe Acrobat Reader DC（64-bit） は chocolatey、scoopでは提供されていないが、wingetなら導入できる。\n$ winget search acrobat\n名前                             ID                          バージョン   一致         ソース\n----------------------------------------------------------------------------------------------\nAdobe Acrobat Reader DC          XPDP273C0XHQH2              Unknown                   msstore\nBlossX Acrobat 11 - PDF Editor   9P51586BZKNG                Unknown                   msstore\nAdobe Acrobat Reader DC (64-bit) Adobe.Acrobat.Reader.64-bit 22.001.20117 Tag: acrobat winget\nAdobe Acrobat Reader DC          Adobe.Acrobat.Reader.32-bit 22.001.20117 Tag: acrobat winget\n$ winget install Adobe.Acrobat.Reader.64-bit"
   },
   {
+    "objectID": "posts/2024/09/Zotero.html",
+    "href": "posts/2024/09/Zotero.html",
+    "title": "Zotero",
+    "section": "",
+    "text": "winget install Zotero -a X64 --force\nする。"
+  },
+  {
     "objectID": "posts/2024/09/07.html",
     "href": "posts/2024/09/07.html",
     "title": "Blogなのか？",
@@ -81,6 +88,6 @@
     "href": "index.html",
     "title": "魔狸",
     "section": "",
-    "text": "PowerPoint w quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
+    "text": "Zotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint w quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
   }
 ]
