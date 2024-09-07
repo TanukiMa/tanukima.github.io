@@ -1,5 +1,5 @@
 ---
-title: "quarto de PowerPoint"
+title: "PowerPoint w quarto"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-09-08"
