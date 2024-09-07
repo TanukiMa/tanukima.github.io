@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About 魔狸"
 image: profile.png
 about:
   template: jolla
