@@ -3,7 +3,7 @@ title: "Blogなのか？"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-09-07"
-categories: [魔狸]
+categories: [魔狸,quarto,GitHub]
 ---
 
 最近、一箇所に何かを纏めて書くということが無く、
