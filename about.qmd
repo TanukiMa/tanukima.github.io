@@ -21,7 +21,13 @@ about:
           url: "https://booklog.jp/users/Matanuki/?"
 #        - text: "Email"
 #          url: mailto:
-
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/about.html"
+  description: "about 魔狸 on GitHub Pages"
+  twitter: true
+  mastodon: true
 ---
 # 自己紹介
 
