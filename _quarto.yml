@@ -12,6 +12,7 @@ website:
         href: https://github.com/TanukiMa
       - icon: twitter
         href: https://twitter.com/Matanuki
+  google-analytics: "UA-457627174"
 format:
   html:
     theme: Simplex
