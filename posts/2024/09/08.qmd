@@ -1,0 +1,15 @@
+---
+title: "quarto de PowerPoint"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-08"
+categories: [quarto,PowerPoint]
+---
+https://quarto.org/docs/projects/quarto-projects.html
+https://quarto.org/docs/gallery/#presentations
+が参考になる
+
+```bash
+quarto create project 
+```
+する。

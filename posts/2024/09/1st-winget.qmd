@@ -52,7 +52,7 @@ scoop info asciidoctorj
 
 ***asciidoctorj***をインストールする。
 
-```{bash}
+```bash
 scoop install asciidoctorj
 ```
 

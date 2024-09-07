@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ma, Tanuki">
 
-<title>Windows パッケージング・システム HOWTO – 魔狸</title>
+<title>quarto de PowerPoint – 魔狸</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -149,11 +149,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Windows パッケージング・システム HOWTO</h1>
+      <h1 class="title">quarto de PowerPoint</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Windows</div>
-                <div class="quarto-category">winget</div>
-                <div class="quarto-category">scoop</div>
+                <div class="quarto-category">quarto</div>
+                <div class="quarto-category">PowerPoint</div>
               </div>
                   </div>
   </div>
@@ -171,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">公開</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">2024年9月7日</p>
+        <p class="date">2024年9月8日</p>
       </div>
     </div>
     
@@ -182,20 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">目次</h2>
-   
-  <ul>
-  <li><a href="#各種パッケージングシステムを使いこなせ" id="toc-各種パッケージングシステムを使いこなせ" class="nav-link active" data-scroll-target="#各種パッケージングシステムを使いこなせ">各種パッケージング・システムを使いこなせ</a></li>
-  <li><a href="#まずはscoop" id="toc-まずはscoop" class="nav-link" data-scroll-target="#まずはscoop">まずはscoop</a></li>
-  <li><a href="#winget" id="toc-winget" class="nav-link" data-scroll-target="#winget">winget</a></li>
-  <li><a href="#chocolatey" id="toc-chocolatey" class="nav-link" data-scroll-target="#chocolatey">chocolatey</a></li>
-  <li><a href="#tex-live" id="toc-tex-live" class="nav-link" data-scroll-target="#tex-live">TeX Live</a></li>
-  <li><a href="#どのアプリをどのパッケージングシステムで管理する" id="toc-どのアプリをどのパッケージングシステムで管理する" class="nav-link" data-scroll-target="#どのアプリをどのパッケージングシステムで管理する">どのアプリをどのパッケージング・システムで管理する？</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -203,109 +189,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="各種パッケージングシステムを使いこなせ" class="level2">
-<h2 class="anchored" data-anchor-id="各種パッケージングシステムを使いこなせ">各種パッケージング・システムを使いこなせ</h2>
-<p>必要に迫られて普段使っていなかったアプリケーションを起動させると 最新版がリリースされていて、そのアップデートで時間が消費されるのは無駄と思う。</p>
-<p>Linuxでは20年以上前から、MacOSでも10年前から当たり前だった パッケージング・システムがWindowsでも普及してきた。</p>
-<p>パッケージングシステムを使いこなすことで、Windows環境を常に最新にしよう。</p>
-<p><a href="https://learn.microsoft.com/ja-jp/windows-server/administration/windows-commands/schtasks">schtasksコマンド</a>やlogon scriptで パッケージングシステムを起動させれば、定期的に最新の環境を整えることができる。</p>
-</section>
-<section id="まずはscoop" class="level2">
-<h2 class="anchored" data-anchor-id="まずはscoop">まずはscoop</h2>
-<p><a href="http://scoop.sh/">http://scoop.sh/</a></p>
-<p>webの通りにインストールする。</p>
-<p>一般ユーザ権限で動作し、インストールしたアプリは ホームディレクトリのscoop 以下に収納される。</p>
-<p><strong><em>asciidoc</em></strong>環境を整えてみよう。</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> search asciidoc</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st">'extras'</span> bucket:</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">asciidocfx</span> <span class="er">(</span><span class="ex">1.7.4</span><span class="kw">)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">'main'</span> bucket:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">asciidoctorj</span> <span class="er">(</span><span class="ex">2.5.4</span><span class="kw">)</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Javaで実装されている <a href="https://github.com/asciidoctor/asciidoctorj"><strong><em>asciidoctorj</em></strong></a> をインストールしてみよう。</p>
-<p><strong><em>asciidoctorj</em></strong>の情報を見る。</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> info asciidoctorj</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong><em>asciidoctorj</em></strong>をインストールする。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> install asciidoctorj</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>scoopでどんなアプリケーションをインストールしたか確認する。</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> list</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Installed</span> apps:</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Name</span>               Version          Source   Updated             Info</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">----</span>               <span class="at">-------</span>          <span class="at">------</span>   <span class="at">-------</span>             <span class="at">----</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">7zip</span>               22.00            main     2022-06-20 09:41:18</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">aria2</span>              1.36.0-1         main     2022-05-19 10:19:22</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">asciidoctorj</span>       2.5.4            main     2022-07-05 19:01:24</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">atom</span>               1.60.0           extras   2022-05-19 10:20:56</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">busybox</span>            4716-g31467ddfc  main     2022-06-11 09:46:46</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">cacert</span>             2022-04-26       main     2022-05-19 10:21:05</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">clink</span>              1.3.33           main     2022-07-01 15:12:58</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">dark</span>               3.11.2           main     2022-05-19 10:21:12</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">exiftool</span>           12.42            main     2022-06-02 08:41:16</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span>               5.38             main     2022-05-19 10:21:19</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ex">ghostscript</span>        9.56.1           main     2022-05-19 10:21:55</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span>                2.37.0.windows.1 main     2022-07-01 15:13:24</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ex">googlechrome</span>       103.0.5060.66    extras   2022-07-01 15:13:44</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ex">haskell-cabal</span>      3.6.2.0          main     2022-05-19 10:22:19</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">iconv</span>              1.14-3           main     2022-05-19 10:22:34</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ex">imagemagick-ffmpeg</span> 7.1.0-37         versions 2022-06-08 09:00:24</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="ex">innounp</span>            0.50             main     2022-05-19 10:22:41</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ex">lessmsi</span>            1.10.0           main     2022-05-19 10:23:19</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ex">mysql-workbench</span>    8.0.29           main     2022-04-30 17:10:02</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="ex">nkf</span>                2.1.5.1          jp       2022-04-11 11:25:37</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span>             2.18             main     2022-04-05 08:58:47</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftk</span>              2.02             main     2022-04-05 12:23:20</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="ex">procs</span>              0.12.3           main     2022-05-27 09:12:34</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span>             3.10.5           main     2022-06-08 09:02:35</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span>             1.58.1           main     2022-05-30 22:14:14</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone-browser</span>     1.8.0            extras   2022-05-30 22:14:23</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="ex">ruby</span>               3.1.2-1          main     2022-04-22 08:45:36</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="ex">stunnel</span>            5.64             extras   2022-06-07 16:07:12</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span>               0.2020.01.26     main     2021-12-16 18:10:19</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span>            2.2.19           main     2022-04-15 16:09:16</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant-manager</span>    2.3.2            extras   2022-04-15 16:09:40</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ex">vlc</span>                3.0.17.4         extras   2022-04-22 08:46:33</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ex">vscode</span>             1.68.1           extras   2022-06-17 09:40:40</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ex">vswhere</span>            3.0.3            main     2022-06-03 09:47:31</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span>               1.21.3           main     2022-03-14 09:07:17</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ex">zoom</span>               5.11.1.6602      extras   2022-07-01 15:14:02</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="ex">zotero</span>             6.0.9            extras   2022-06-25 11:18:32</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="ex">cygwin</span>             2.918            main     2022-03-14 09:15:04 Global install</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="winget" class="level2">
-<h2 class="anchored" data-anchor-id="winget">winget</h2>
-<p><strong><em>winget</em></strong>はMicrosoftｻﾏが自ら手がけているパッケージング・システムだ。 Windows 10 1709(build 16299)以降で使える。 まだまだ開発途上であり、よくエラーが出るが、気にしないことにする。</p>
-<p>cmd.exeを開いて、</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>$ winget upgrade <span class="op">--</span>all</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>とすることで、wingetでインストールしたアプリケーション類が一括してアップグレードできる。</p>
-</section>
-<section id="chocolatey" class="level2">
-<h2 class="anchored" data-anchor-id="chocolatey">chocolatey</h2>
-<p><a href="https://chocolatey.org/">https://chocolatey.org/</a></p>
-<p>基本的に管理者権限で動作するので、scoopでsudoをインストールしておくとスムーズだろう。</p>
-<pre><code>$ scoop install sudo</code></pre>
-</section>
-<section id="tex-live" class="level2">
-<h2 class="anchored" data-anchor-id="tex-live">TeX Live</h2>
-<p><a href="https://www.tug.org/texlive/">https://www.tug.org/texlive/</a> 綺麗な文書作成のためには、TeX Liveに限る！</p>
-<p>ドキュメント通りにインストール。 参考： <a href="https://texwiki.texjp.org/?TeX%20Live%2FWindows">https://texwiki.texjp.org/?TeX%20Live%2FWindows</a></p>
-<pre><code>$ tlmgr update --self --all</code></pre>
-<p>で、更新される。</p>
-</section>
-<section id="どのアプリをどのパッケージングシステムで管理する" class="level2">
-<h2 class="anchored" data-anchor-id="どのアプリをどのパッケージングシステムで管理する">どのアプリをどのパッケージング・システムで管理する？</h2>
-<p><a href="https://helpx.adobe.com/jp/acrobat/kb/download-64-bit-installer.html"><strong><em>Adobe Acrobat Reader DC（64-bit）</em></strong></a> は chocolatey、scoopでは提供されていないが、wingetなら導入できる。</p>
-<pre><code>$ winget search acrobat
-名前                             ID                          バージョン   一致         ソース
-----------------------------------------------------------------------------------------------
-Adobe Acrobat Reader DC          XPDP273C0XHQH2              Unknown                   msstore
-BlossX Acrobat 11 - PDF Editor   9P51586BZKNG                Unknown                   msstore
-Adobe Acrobat Reader DC (64-bit) Adobe.Acrobat.Reader.64-bit 22.001.20117 Tag: acrobat winget
-Adobe Acrobat Reader DC          Adobe.Acrobat.Reader.32-bit 22.001.20117 Tag: acrobat winget
-$ winget install Adobe.Acrobat.Reader.64-bit</code></pre>
+<p>https://quarto.org/docs/projects/quarto-projects.html https://quarto.org/docs/gallery/#presentations が参考になる</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project </span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>する。</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
