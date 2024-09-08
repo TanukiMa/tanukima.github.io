@@ -116,14 +116,14 @@
     "href": "posts/2024/09/StirlingPDF.html#port-8080",
     "title": "Stirling PDF",
     "section": "port 8080",
-    "text": "port 8080\nStirling PDFはyaws経由で動作しますが、標準ではTCPの8080番ポートを使おうとします。他のアプリケーションがTCPの8080番を使っている場合は、Stirling PDFの画面が表示されません。\n\n解\n$HOME-pdf_settings.yml\nserver:\n  host: 0.0.0.0 #(Can skip if don't want to add any).\n  port: 3000 #(or whatever new port you want)\nfrom https://github.com/Stirling-Tools/Stirling-PDF/issues/1173"
+    "text": "port 8080\nStirling PDFはyaws経由で動作しますが、標準ではTCPの8080番ポートを使おうとします。他のアプリケーションがTCPの8080番を使っている場合は、Stirling PDFの画面が表示されません。\n\n解\n$HOME/scoop/persist-pdf/configs/custom_settings.yml を編集する\nserver:\n  host: localhost #(Can skip if don't want to add any).\n  port: 18080 #(or whatever new port you want)\nfrom https://github.com/Stirling-Tools/Stirling-PDF/issues/1173"
   },
   {
     "objectID": "posts/2024/09/StirlingPDF.html#メニューetc.が日本語表示されない",
     "href": "posts/2024/09/StirlingPDF.html#メニューetc.が日本語表示されない",
     "title": "Stirling PDF",
     "section": "メニューetc.が日本語表示されない",
-    "text": "メニューetc.が日本語表示されない\n\n解1\nhttps://127.0.0.1:8080/?lang=ja-JP にアクセス\n\n\n解2\n$HOME-pdf.ymlを編集する\ndefaultLocale ja-JP\nにして再起動。\n\n\n\n日本語化したStirling PDF"
+    "text": "メニューetc.が日本語表示されない\n\n解1\nhttps://127.0.0.1:8080/?lang=ja-JP にアクセス\n\n\n解2\n$HOME/scoop/persist/stirling-pdf/configs/settings.ymlを編集する\ndefaultLocale ja-JP\nにして再起動。\n\n\n\n日本語化したStirling PDF"
   },
   {
     "objectID": "index.html",

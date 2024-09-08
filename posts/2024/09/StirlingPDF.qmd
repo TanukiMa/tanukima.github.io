@@ -45,11 +45,11 @@ Stirling-PDFのアイコンを叩きます。
 Stirling PDFは[yaws](https://erlyaws.github.io/)経由で動作しますが、標準ではTCPの8080番ポートを使おうとします。他のアプリケーションがTCPの8080番を使っている場合は、Stirling PDFの画面が表示されません。
 
 ### 解
-$HOME\scoop\persist\stirling-pdf\configs\custom_settings.yml 
+$HOME/scoop/persist\stirling-pdf/configs/custom_settings.yml を編集する 
 ```bash
 server:
-  host: 0.0.0.0 #(Can skip if don't want to add any).
-  port: 3000 #(or whatever new port you want)
+  host: localhost #(Can skip if don't want to add any).
+  port: 18080 #(or whatever new port you want)
 ```
 from [https://github.com/Stirling-Tools/Stirling-PDF/issues/1173](https://github.com/Stirling-Tools/Stirling-PDF/issues/1173)
 
@@ -58,7 +58,7 @@ from [https://github.com/Stirling-Tools/Stirling-PDF/issues/1173](https://github
 https://127.0.0.1:8080/?lang=ja-JP にアクセス
 
 ### 解2
-$HOME\scoop\persist\stirling-pdf\configs\settings.ymlを編集する
+$HOME/scoop/persist/stirling-pdf/configs/settings.ymlを編集する
 ```bash
 defaultLocale ja-JP
 ```
