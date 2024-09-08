@@ -14,7 +14,7 @@ filters:
   - social-share
 share:
   permalink: "https://TanukiMa.github.io/?"
-  description: "魔狸 on GitHub Pages"
+  description: "「魔狸 on GitHub Pages」"
   twitter: true
   mastodon: true
 ---

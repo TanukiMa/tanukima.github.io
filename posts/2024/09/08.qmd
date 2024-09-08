@@ -1,13 +1,35 @@
 ---
-title: "PowerPoint w quarto"
+title: "PowerPoint with quarto"
+format:
+  html:
+    toc: true
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-09-08"
 categories: [quarto,PowerPoint]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/08.html"
+  description: "「PowerPoint with quarto」"
+  twitter: true
+  mastodon: true
 ---
-https://quarto.org/docs/projects/quarto-projects.html
-https://quarto.org/docs/gallery/#presentations
-が参考になる
+大学での講義のため、[PowerPoint](https://www.microsoft.com/ja-jp/microsoft-365/powerpoint)を使ってスライドを作らねばならないことがある。
+
+動作は重いし、編集が面倒。
+
+というわけで、[marp](https://marpit.marp.app/)への転向も検討したが、marpで作られるpptxファイルは編集が困難。
+
+[pandoc](https://pandoc.org/)でpptxに変換することもできるが、手になじまなかった。
+
+ところが、[quarto](https://quarto.org/)で pptxを作成できるそうだ。
+
+[https://quarto.org/docs/projects/quarto-projects.html](https://quarto.org/docs/projects/quarto-projects.html)や
+[https://quarto.org/docs/gallery/#presentations](https://quarto.org/docs/gallery/#presentations)
+が参考になる。
+
+# 初手
 
 ```bash
 quarto create project 
