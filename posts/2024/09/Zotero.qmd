@@ -11,7 +11,7 @@ categories: [文献管理,Zotero,Windows,MacOS,winget,homebrew]
 [Zotero](https://www.zotero.org/)
 を使っています。
 
-[![Zotero](zotero.svg)](https://www.zotero.org/static/images/home/privacy.svg)
+[![Zotero](https://www.zotero.org/static/images/home/privacy.svg)](https://www.zotero.org/static/images/home/privacy.svg)
 
 
 ## WindowsでZotero
