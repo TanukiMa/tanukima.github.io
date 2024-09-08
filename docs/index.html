@@ -109,6 +109,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 </script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -142,7 +145,6 @@ window.Quarto = {
 
 <link rel="stylesheet" href="styles.css">
 <meta name="twitter:title" content="魔狸">
-<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@Matanuki">
 <meta name="twitter:site" content="@Matanuki">
 <meta name="twitter:card" content="summary">
@@ -207,7 +209,13 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#mermaid-で-gantt-chart" id="toc-mermaid-で-gantt-chart" class="nav-link active" data-scroll-target="#mermaid-で-gantt-chart">Mermaid で Gantt chart</a></li>
+  </ul>
+</nav>
     <h5 class="quarto-listing-category-title">分類</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">すべて <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Debian GNU/Linux">Debian GNU/Linux <span class="quarto-category-count">(2)</span></div><div class="category" data-category="GitHub">GitHub <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Graphviz">Graphviz <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linux">Linux <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MacOS">MacOS <span class="quarto-category-count">(2)</span></div><div class="category" data-category="PDF">PDF <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PowerPoint">PowerPoint <span class="quarto-category-count">(1)</span></div><div class="category" data-category="WSL2">WSL2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Windows">Windows <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Zotero">Zotero <span class="quarto-category-count">(1)</span></div><div class="category" data-category="homebrew">homebrew <span class="quarto-category-count">(2)</span></div><div class="category" data-category="mermaid">mermaid <span class="quarto-category-count">(1)</span></div><div class="category" data-category="networking">networking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="rust">rust <span class="quarto-category-count">(1)</span></div><div class="category" data-category="scoop">scoop <span class="quarto-category-count">(2)</span></div><div class="category" data-category="winget">winget <span class="quarto-category-count">(3)</span></div><div class="category" data-category="文献管理">文献管理 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="魔狸">魔狸 <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
@@ -216,10 +224,32 @@ window.Quarto = {
 
 
 
-<p>???</p>
+<section id="mermaid-で-gantt-chart" class="level2">
+<h2 class="anchored" data-anchor-id="mermaid-で-gantt-chart">Mermaid で Gantt chart</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">gantt
+    title A Gantt Diagram
+    dateFormat YYYY-MM-DD
+    section Section
+        A task          :a1, 2014-01-01, 30d
+        Another task    :after a1, 20d
+    section Another
+        Task in Another :2014-01-12, 12d
+        another task    :24d
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
