@@ -13,6 +13,9 @@ website:
       - icon: twitter
         href: https://twitter.com/Matanuki
   google-analytics: "G-FXEGPMHPVZ"
+  twitter-card: 
+    creator: "@Matanuki"
+    site: "@Matanuki"
 format:
   html:
     theme: journal
