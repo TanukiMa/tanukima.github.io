@@ -1,8 +1,24 @@
 ---
 title: "tailscale"
+format:
+  html:
+    toc: true
 lang: ja
 author: "魔狸"
 date: "2024-09-08"
 categories: [networking,Windows,MacOS,Linux,Debian GNU/Linux]
+filters:
+  - social-share
+share:
+  permalink: "https://tanukima.github.io/posts/2024/09/tailscale.html"
+  description: "「tailscale」"
+  twitter: true
+  mastodon: true
+
 ---
-[tailscale](https://tailscale.com/)
+昔は[OpenVPN](https://openvpn.net/)網を構築するのが面倒だったなぁ...（遠い目）
+
+今は
+[**tailscale**](https://tailscale.com/)が 便利すぎる。
+
+tailscaleについては、[WikiPediaの項](https://w.wiki/6hnD)が詳しい。

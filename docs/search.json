@@ -11,7 +11,7 @@
     "href": "posts/2024/09/tailscale.html",
     "title": "tailscale",
     "section": "",
-    "text": "tailscale"
+    "text": "昔はOpenVPN網を構築するのが面倒だったなぁ…（遠い目）\n今は tailscaleが 便利すぎる。\ntailscaleについては、WikiPediaの項が詳しい。"
   },
   {
     "objectID": "posts/2024/09/WSL2.html",
