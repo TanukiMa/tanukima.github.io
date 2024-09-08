@@ -1,0 +1,77 @@
+---
+title: "Stirling PDF"
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2024-09-08"
+categories: [PDF,Windows,scoop]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/StirlingPDF.html"
+  description: "「Stirling PDF」"
+  twitter: true
+  mastodon: true
+---
+PDFの処理に [Acrobat Pro](https://www.adobe.com/jp/acrobat/acrobat-pro.html)は必要ですか？
+電子書類保存法が施行されたのと関連するのか、年々ライセンスが高騰していくのが気になります。
+
+たかが、スタンプを押したりするだけですよ？
+
+私のような臍曲りの需要を満たしてくれるのが、[**Stirling PDF**](https://github.com/Stirling-Tools/Stirling-PDF)です。
+
+一方で、記入可能なPDFフォームを備えたPDFの作成は、
+[LibreOffice](https://www.libreoffice.org/)で一応可能ですが、万人が満足できる？と問われると疑問符が付きます。
+
+**TeX**でPDFフォームを扱うpackageは CTANにありますが、TeX故の困難さが付き纏います。
+
+[**Typst**](https://typst.app/)は、これらを解決してくれるのでしょうか？
+
+# インストール
+**scoop**で
+```bash
+scoop install stirling-pdf 
+```
+# 起動
+Stirling-PDFのアイコンを叩きます。
+
+すると、command.comが起動し、続いてブラウザがStirling-PDFを呼び出してくれる筈です。
+
+# Trouble Shooting
+
+## port 8080
+Stirling PDFは[yaws](https://erlyaws.github.io/)経由で動作しますが、標準ではTCPの8080番ポートを使おうとします。他のアプリケーションがTCPの8080番を使っている場合は、Stirling PDFの画面が表示されません。
+
+### 解
+$HOME\scoop\persist\stirling-pdf\configs\custom_settings.yml 
+```bash
+server:
+  host: 0.0.0.0 #(Can skip if don't want to add any).
+  port: 3000 #(or whatever new port you want)
+```
+from [https://github.com/Stirling-Tools/Stirling-PDF/issues/1173](https://github.com/Stirling-Tools/Stirling-PDF/issues/1173)
+
+## メニューetc.が日本語表示されない
+### 解1
+https://127.0.0.1:8080/?lang=ja-JP にアクセス
+
+### 解2
+$HOME\scoop\persist\stirling-pdf\configs\settings.ymlを編集する
+```bash
+defaultLocale ja-JP
+```
+にして再起動。
+
+![日本語化したStirling PDF](StirlingPDFja.png)
+
+# PDFを扱うツール色々
+
+* [PDFCrack](https://pdfcrack.sourceforge.net/)
+
+* [Poppler](https://poppler.freedesktop.org/)
+
+* [mupdf](https://mupdf.com/)
+
+
