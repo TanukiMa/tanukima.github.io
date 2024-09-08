@@ -30,8 +30,9 @@ sudo mount -t drvfs H: /mnt/h
 ```
 すれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。
 
+WSL2の起動時に自動でmountするためには、
 rootのcrontabに
 ```bash
 @reboot		mount -t drvfs H: /mnt/h
 ```
-と書いてしまうのがラクチンです。
+と書きます。

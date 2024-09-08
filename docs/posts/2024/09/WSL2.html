@@ -221,9 +221,9 @@ ga('send', {
 <p>Google Driveを動作させているWindowsがhostならば、 WSL2コンテナ内で</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mount <span class="at">-t</span> drvfs H: /mnt/h</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>すれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。</p>
-<p>rootのcrontabに</p>
+<p>WSL2の起動時に自動でmountするためには、 rootのcrontabに</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">@reboot</span>     mount <span class="at">-t</span> drvfs H: /mnt/h</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>と書いてしまうのがラクチンです。</p>
+<p>と書きます。</p>
 
 
 </section>
