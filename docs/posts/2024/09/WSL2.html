@@ -75,6 +75,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/social-share-0.1.0/social-share.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -212,13 +214,13 @@ ga('send', {
 
 
 
-<p>WSL2便利！</p>
+<p><strong>WSL2</strong>は便利ですねー</p>
 <p>私は <a href="https://github.com/nullpo-head/wsl-distrod">wsl-distrod</a>を使っています。</p>
 <section id="google-driveをmount" class="level1">
 <h1>Google Driveをmount</h1>
-<p>Google Driveを動作させているWindowsがhostならば、 WSL2 container内で</p>
+<p>Google Driveを動作させているWindowsがhostならば、 WSL2コンテナ内で</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mount <span class="at">-t</span> drvfs H: /mnt/h</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>すれば、Hドライブに割り振られているGoogle Driveが WSL2 containerの /mnt/h にmountされます。</p>
+<p>すれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。</p>
 <p>rootのcrontabに</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">@reboot</span>     mount <span class="at">-t</span> drvfs H: /mnt/h</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>と書いてしまうのがラクチンです。</p>
@@ -648,6 +650,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://tanukima.github.io/posts/2024/09/WSL2.html&amp;text=WSL2小技" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="javascript:void(0);" onclick="var mastodon_instance=prompt('Mastodon Instance / Server Name?'); if(typeof mastodon_instance==='string' &amp;&amp; mastodon_instance.length){this.href='https://'+mastodon_instance+'/share?text=WSL2小技 https://tanukima.github.io/posts/2024/09/WSL2.html'}else{return false;}" target="_blank" class="mastodon"><i class="fa-brands fa-mastodon fa-fw fa-lg"></i></a></div></div>
 
 
 

@@ -7,21 +7,28 @@ lang: ja
 author: "魔狸"
 date: "2024-09-08"
 categories: [Windows,WSL2,Debian GNU/Linux]
+filters:
+  - social-share
+share:
+  permalink: "https://tanukima.github.io/posts/2024/09/WSL2.html"
+  description: "WSL2小技"
+  twitter: true
+  mastodon: true
 ---
 
-WSL2便利！
+**WSL2**は便利ですねー
 
 私は 
 [wsl-distrod](https://github.com/nullpo-head/wsl-distrod)を使っています。
 
 # Google Driveをmount
 Google Driveを動作させているWindowsがhostならば、
-WSL2 container内で
+WSL2コンテナ内で
 
 ```bash
 sudo mount -t drvfs H: /mnt/h
 ```
-すれば、Hドライブに割り振られているGoogle Driveが WSL2 containerの /mnt/h にmountされます。
+すれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。
 
 rootのcrontabに
 ```bash
