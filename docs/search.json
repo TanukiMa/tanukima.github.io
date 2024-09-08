@@ -14,6 +14,13 @@
     "text": "tailscale"
   },
   {
+    "objectID": "posts/2024/09/WSL2.html",
+    "href": "posts/2024/09/WSL2.html",
+    "title": "WSL2小技",
+    "section": "",
+    "text": "WSL2便利！\n私は wsl-distrodを使っています。\n\nGoogle Driveをmount\nGoogle Driveを動作させているWindowsがhostならば、 WSL2 container内で\nsudo mount -t drvfs H: /mnt/h\nすれば、Hドライブに割り振られているGoogle Driveが WSL2 containerの /mnt/h にmountされます。\nrootのcrontabに\n@reboot     mount -t drvfs H: /mnt/h\nと書いてしまうのがラクチンです。"
+  },
+  {
     "objectID": "posts/2024/09/07.html",
     "href": "posts/2024/09/07.html",
     "title": "Blogなのか？",
