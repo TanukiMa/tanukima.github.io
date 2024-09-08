@@ -67,7 +67,21 @@
     "href": "posts/2024/09/Zotero.html",
     "title": "Zotero",
     "section": "",
-    "text": "Zotero\nwinget install Zotero -a x64 --force\nする。"
+    "text": "皆さん、文献管理はどうしていますか？\n私は Zotero を使っています。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html#windowsでzotero",
+    "href": "posts/2024/09/Zotero.html#windowsでzotero",
+    "title": "Zotero",
+    "section": "WindowsでZotero",
+    "text": "WindowsでZotero\nwinget ならば、\nwinget install Zotero -a x64 --force\nしましょう。\nオプション-a(= –architecture )でCPU architectureを指定します。デフォルトではx86となるようで、今更32bitアプリを使う必要も無いと思うので、-a x64を指定します。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html#macosでzotero",
+    "href": "posts/2024/09/Zotero.html#macosでzotero",
+    "title": "Zotero",
+    "section": "MacOSでZotero",
+    "text": "MacOSでZotero\nHomebrew を使い\nbrew install zotero"
   },
   {
     "objectID": "posts/2024/09/07.html",

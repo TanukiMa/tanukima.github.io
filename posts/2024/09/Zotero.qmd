@@ -5,9 +5,26 @@ author: "魔狸"
 date: "2024-09-08"
 categories: [文献管理,Zotero,Windows,MacOS]
 ---
-[Zotero](https://www.zotero.org/)
+皆さん、文献管理はどうしていますか？
 
+私は
+[Zotero](https://www.zotero.org/)
+を使っています。
+
+## WindowsでZotero
+
+**winget** ならば、
 ```bash
 winget install Zotero -a x64 --force
 ```
-する。
+しましょう。
+
+オプション-a(= --architecture )でCPU architectureを指定します。デフォルトではx86となるようで、今更32bitアプリを使う必要も無いと思うので、-a x64を指定します。
+
+## MacOSでZotero
+
+**Homebrew** を使い
+
+```bash
+brew install zotero
+```
