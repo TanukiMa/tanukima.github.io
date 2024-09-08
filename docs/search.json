@@ -123,7 +123,7 @@
     "href": "posts/2024/09/StirlingPDF.html#メニューetc.が日本語表示されない",
     "title": "Stirling PDF",
     "section": "メニューetc.が日本語表示されない",
-    "text": "メニューetc.が日本語表示されない\n\n解1\nhttps://127.0.0.1:8080/?lang=ja-JP にアクセス\n\n\n解2\n$HOME/scoop/persist/stirling-pdf/configs/settings.ymlを編集する\ndefaultLocale ja-JP\nにして再起動。\n\n\n\n日本語化したStirling PDF"
+    "text": "メニューetc.が日本語表示されない\n\n解1\nhttps://127.0.0.1:8080/?lang=ja-JP にアクセス\n\n\n解2\n$HOME/scoop/persist/stirling-pdf/configs/settings.ymlを編集する\ndefaultLocale ja-JP\nにして再起動。\nfrom https://x.com/lempickaau/status/1831876285980930073\n\n\n\n日本語化したStirling PDF"
   },
   {
     "objectID": "index.html",

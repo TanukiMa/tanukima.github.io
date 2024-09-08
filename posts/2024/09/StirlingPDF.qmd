@@ -64,6 +64,8 @@ defaultLocale ja-JP
 ```
 にして再起動。
 
+from [https://x.com/lempickaau/status/1831876285980930073](https://x.com/lempickaau/status/1831876285980930073)
+
 ![日本語化したStirling PDF](StirlingPDFja.png)
 
 # PDFを扱うツール色々
