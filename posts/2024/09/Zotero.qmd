@@ -3,7 +3,7 @@ title: "Zotero"
 lang: ja
 author: "魔狸"
 date: "2024-09-08"
-categories: [文献管理,Zotero,Windows,MacOS]
+categories: [文献管理,Zotero,Windows,MacOS,winget,homebrew]
 ---
 皆さん、文献管理はどうしていますか？
 
@@ -30,3 +30,4 @@ winget install Zotero -a x64 --force
 ```bash
 brew install zotero
 ```
+でインストールされます。
