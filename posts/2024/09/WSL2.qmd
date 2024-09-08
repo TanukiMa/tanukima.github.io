@@ -1,0 +1,8 @@
+---
+title: "WSL2小技"
+lang: ja
+author: "魔狸"
+date: "2024-09-08"
+categories: [Windows,WSL2,Debian GNU/Linux]
+---
+
