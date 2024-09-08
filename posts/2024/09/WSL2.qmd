@@ -16,7 +16,7 @@ share:
   mastodon: true
 ---
 
-**WSL2**は便利ですねー
+[**WSL2**](https://learn.microsoft.com/ja-jp/windows/wsl/)は便利ですねー
 
 私は 
 [wsl-distrod](https://github.com/nullpo-head/wsl-distrod)を使っています。
