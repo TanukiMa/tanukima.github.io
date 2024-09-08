@@ -22,6 +22,8 @@ PDFの処理に [Acrobat Pro](https://www.adobe.com/jp/acrobat/acrobat-pro.html)
 
 私のような臍曲りの需要を満たしてくれるのが、[**Stirling PDF**](https://github.com/Stirling-Tools/Stirling-PDF)です。
 
+[![](https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png)](https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png)
+
 一方で、記入可能なPDFフォームを備えたPDFの作成は、
 [LibreOffice](https://www.libreoffice.org/)で一応可能ですが、万人が満足できる？と問われると疑問符が付きます。
 
