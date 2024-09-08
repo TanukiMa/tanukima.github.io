@@ -1,5 +1,6 @@
 ---
 title: "魔狸"
+image: profile.png
 lang: ja
 listing:
   contents: posts
@@ -13,15 +14,43 @@ title-block-banner: true
 filters:
   - social-share
 share:
-  permalink: "https://TanukiMa.github.io/?"
+  permalink: "https://TanukiMa.github.io/"
   description: "「魔狸 on GitHub Pages」"
   twitter: true
   mastodon: true
 format:
   html:
     toc: true
+about:
+  template: jolla
+  links:
+        - icon: twitter
+          text: Twitter
+          url: https://twitter.com/Matanuki
+        - icon: github
+          text: Github
+          url: https://github.com/TanukiMa
+        - text: Mastodon
+          icon: mastodon
+          url: "https://mstdn.jp/@Matanuki"
+        - text: 🦋 Bluesky
+          url: "https://bsky.app/profile/Matanuki.bsky.social"
+        - text: ResearchGate
+          url: "https://www.researchgate.net/profile/Masamichi-Goudge"
+        - text: ブクログ
+          url: "https://booklog.jp/users/Matanuki/?"
+#        - text: "Email"
+#          url: mailto:
 ---
-## Mermaid で Gantt chart
+# 自己紹介
+
+（自称）（
+[日本内科学会](https://www.naika.or.jp/)
+認定）ブラッド・ピット兼ポケモンGoトレーナー・医畜（総合内科・周術期内科・ER・ICU・CCU・HCU・ICD・PCT）兼セレブ（自治体認定済）、FJSIM、ICD。最近は大学生の卒論指導。主な訳書に[「データ匿名化手法」](https://x.gd/uT8FF)
+、[「実践バイオインフォマティクス」](https://x.gd/k4eLb)、[「バイオインフォマティクスのためのPerl入門」](https://x.gd/D4rql)など。
+監訳協力に[「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」](https://x.gd/qZcA4)。
+
+# Mermaid で Gantt chart
 
 ```{mermaid}
 gantt
