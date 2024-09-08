@@ -30,7 +30,7 @@ PDFの処理に [Acrobat Pro](https://www.adobe.com/jp/acrobat/acrobat-pro.html)
 [**Typst**](https://typst.app/)は、これらを解決してくれるのでしょうか？
 
 # インストール
-**scoop**で
+[**scoop**](https://scoop.sh/)で
 ```bash
 scoop install stirling-pdf 
 ```
