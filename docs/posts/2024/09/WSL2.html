@@ -165,6 +165,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
                 <div class="quarto-category">Windows</div>
                 <div class="quarto-category">WSL2</div>
                 <div class="quarto-category">Debian GNU/Linux</div>
+                <div class="quarto-category">rust</div>
               </div>
                   </div>
   </div>
@@ -199,6 +200,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#google-driveをmount" id="toc-google-driveをmount" class="nav-link active" data-scroll-target="#google-driveをmount">Google Driveをmount</a></li>
+  <li><a href="#command-lineやshellからgoogle-driveを操作する" id="toc-command-lineやshellからgoogle-driveを操作する" class="nav-link" data-scroll-target="#command-lineやshellからgoogle-driveを操作する">command lineやshellからGoogle Driveを操作する</a></li>
   </ul>
 </nav>
     </div>
@@ -218,7 +220,12 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <p>すれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。</p>
 <p>WSL2の起動時に自動でmountするためには、 rootのcrontabに</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">@reboot</span>     mount <span class="at">-t</span> drvfs H: /mnt/h</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>と書きます。</p>
+<p>と書く。</p>
+</section>
+<section id="command-lineやshellからgoogle-driveを操作する" class="level1">
+<h1>command lineやshellからGoogle Driveを操作する</h1>
+<p><a href="https://www.rust-lang.org/"><strong>Rust</strong></a>で書かれた <a href="https://crates.io/crates/google-drive3-cli">google-drive-3-cli</a>を使うのが一つの手かもしれません。</p>
+<p>rust-msvcを使えば、 <strong>WoA</strong>(Windows On Arm)でもbuild、動作します。</p>
 
 
 </section>

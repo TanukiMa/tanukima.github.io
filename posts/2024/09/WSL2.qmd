@@ -6,7 +6,7 @@ format:
 lang: ja
 author: "魔狸"
 date: "2024-09-08"
-categories: [Windows,WSL2,Debian GNU/Linux]
+categories: [Windows,WSL2,Debian GNU/Linux,rust]
 filters:
   - social-share
 share:
@@ -35,4 +35,11 @@ rootのcrontabに
 ```bash
 @reboot		mount -t drvfs H: /mnt/h
 ```
-と書きます。
+と書く。
+
+# command lineやshellからGoogle Driveを操作する
+[**Rust**](https://www.rust-lang.org/)で書かれた
+[google-drive-3-cli](https://crates.io/crates/google-drive3-cli)を使うのが一つの手かもしれません。
+
+rust-msvcを使えば、
+**WoA**(Windows On Arm)でもbuild、動作します。
