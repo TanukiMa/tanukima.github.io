@@ -26,7 +26,6 @@ format:
 以下、このqmd内にmermaid記法で記した例。
 
 ```{mermaid}
-%%{init:{'theme':'base'}}%%
     gitGraph
        commit
        commit
@@ -42,7 +41,6 @@ format:
 ## Mermaid で Gantt chart
 
 ```{mermaid}
-%%{init:{'theme':'base'}}%%
 gantt
     title A Gantt Diagram
     dateFormat YYYY-MM-DD

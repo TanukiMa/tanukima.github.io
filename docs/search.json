@@ -102,7 +102,7 @@
     "href": "posts/2024/09/07.html#mermaid-で-gantt-chart",
     "title": "Blogなのか？",
     "section": "Mermaid で Gantt chart",
-    "text": "Mermaid で Gantt chart\n\n\n\n\n\n%%{init:{'theme':'base'}}%%\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
+    "text": "Mermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
   },
   {
     "objectID": "posts/2024/09/WSL2.html",
