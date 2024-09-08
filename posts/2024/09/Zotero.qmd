@@ -4,6 +4,13 @@ lang: ja
 author: "魔狸"
 date: "2024-09-08"
 categories: [文献管理,Zotero,Windows,MacOS,winget,homebrew]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/2024/09/Zotero.html"
+  description: "Zotero"
+  twitter: true
+  mastodon: true
 ---
 皆さん、文献管理はどうしていますか？
 
@@ -11,7 +18,7 @@ categories: [文献管理,Zotero,Windows,MacOS,winget,homebrew]
 [Zotero](https://www.zotero.org/)
 を使っています。
 
-[![Zotero](https://www.zotero.org/static/images/home/privacy.svg)](https://www.zotero.org/static/images/home/privacy.svg)
+[![](https://www.zotero.org/static/images/home/privacy.svg)](https://www.zotero.org/static/images/home/privacy.svg)
 
 
 ## WindowsでZotero
