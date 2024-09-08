@@ -1,0 +1,33 @@
+---
+title: "quarto"
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2024-09-09"
+categories: [Windows,MacOS,winget,homebrew]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/quarto.html"
+  description: "「quarto」"
+  twitter: true
+  mastodon: true
+
+---
+色々な文書を作成する機会が多いです。
+
+# Mermaid で Gantt chart
+
+```{mermaid}
+gantt
+    title A Gantt Diagram
+    dateFormat YYYY-MM-DD
+    section Section
+        A task          :a1, 2014-01-01, 30d
+        Another task    :after a1, 20d
+    section Another
+        Task in Another :2014-01-12, 12d
+        another task    :24d
+```

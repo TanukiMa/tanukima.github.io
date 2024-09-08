@@ -50,16 +50,3 @@ about:
 、[「実践バイオインフォマティクス」](https://x.gd/k4eLb)、[「バイオインフォマティクスのためのPerl入門」](https://x.gd/D4rql)など。
 監訳協力に[「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」](https://x.gd/qZcA4)。
 
-# Mermaid で Gantt chart
-
-```{mermaid}
-gantt
-    title A Gantt Diagram
-    dateFormat YYYY-MM-DD
-    section Section
-        A task          :a1, 2014-01-01, 30d
-        Another task    :after a1, 20d
-    section Another
-        Task in Another :2014-01-12, 12d
-        another task    :24d
-```
