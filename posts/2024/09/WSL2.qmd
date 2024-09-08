@@ -10,7 +10,7 @@ categories: [Windows,WSL2,Debian GNU/Linux]
 filters:
   - social-share
 share:
-  permalink: "https://tanukima.github.io/posts/2024/09/WSL2.html"
+  permalink: "https://TanukiMa.github.io/posts/2024/09/WSL2.html"
   description: "「WSL2小技」"
   twitter: true
   mastodon: true
