@@ -6,11 +6,11 @@ format:
 lang: ja
 author: "魔狸"
 date: "2024-09-08"
-categories: [networking,Windows,MacOS,Linux,Debian GNU/Linux]
+categories: [networking,Windows,MacOS,Linux,Debian GNU/Linuxi,winget,homebrew]
 filters:
   - social-share
 share:
-  permalink: "https://tanukima.github.io/posts/2024/09/tailscale.html"
+  permalink: "https://TanukiMa.github.io/posts/2024/09/tailscale.html"
   description: "「tailscale」"
   twitter: true
   mastodon: true
@@ -21,4 +21,19 @@ share:
 今は
 [**tailscale**](https://tailscale.com/)が 便利すぎる。
 
-tailscaleについては、[WikiPediaの項](https://w.wiki/6hnD)が詳しい。
+tailscaleについては、[WikiPedia](https://w.wiki/6hnD)が詳しい。
+
+[**wireguard**](https://www.wireguard.com)ベースなので、OpenVPNに比較して高速。kernel baseなのでセキュリティ関係で配慮が必要。
+
+# Windowsでtailscale
+```bash
+winget install -e tailscale
+```
+
+# MacOSでtailscale
+```bash
+brew install tailscale --cask
+```
+
+# Debian GNU/Linuxでtailscale
+[https://tailscale.com/kb/1031/install-linux](https://tailscale.com/kb/1031/install-linux) の当該項目参照。

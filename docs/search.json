@@ -11,7 +11,7 @@
     "href": "posts/2024/09/tailscale.html",
     "title": "tailscale",
     "section": "",
-    "text": "昔はOpenVPN網を構築するのが面倒だったなぁ…（遠い目）\n今は tailscaleが 便利すぎる。\ntailscaleについては、WikiPediaの項が詳しい。"
+    "text": "昔はOpenVPN網を構築するのが面倒だったなぁ…（遠い目）\n今は tailscaleが 便利すぎる。\ntailscaleについては、WikiPediaが詳しい。\nwireguardベースなので、OpenVPNに比較して高速。kernel baseなのでセキュリティ関係で配慮が必要。\n\nWindowsでtailscale\nwinget install -e tailscale\n\n\nMacOSでtailscale\nbrew install tailscale --cask\n\n\nDebian GNU/Linuxでtailscale\nhttps://tailscale.com/kb/1031/install-linux の当該項目参照。"
   },
   {
     "objectID": "posts/2024/09/WSL2.html",
@@ -109,6 +109,6 @@
     "href": "index.html",
     "title": "魔狸",
     "section": "",
-    "text": "Zotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint w quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
+    "text": "Zotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint w quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linuxi\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
   }
 ]
