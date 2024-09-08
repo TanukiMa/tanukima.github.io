@@ -11,7 +11,7 @@ categories: [文献管理,Zotero,Windows,MacOS]
 [Zotero](https://www.zotero.org/)
 を使っています。
 
-![Zotero](https://www.zotero.org/static/images/home/privacy.svg)
+!(https://www.zotero.org/static/images/home/privacy.svg)
 
 ## WindowsでZotero
 
@@ -25,7 +25,7 @@ winget install Zotero -a x64 --force
 
 ## MacOSでZotero
 
-**Homebrew** を使い
+[**Homebrew**](https://brew.sh/) を使い
 
 ```bash
 brew install zotero
