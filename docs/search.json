@@ -14,6 +14,34 @@
     "text": "tailscale"
   },
   {
+    "objectID": "posts/2024/09/07.html",
+    "href": "posts/2024/09/07.html",
+    "title": "Blogなのか？",
+    "section": "",
+    "text": "最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、当面quartoとお付き合いしようと思う。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html",
+    "href": "posts/2024/09/Zotero.html",
+    "title": "Zotero",
+    "section": "",
+    "text": "皆さん、文献管理はどうしていますか？\n私は Zotero を使っています。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html#windowsでzotero",
+    "href": "posts/2024/09/Zotero.html#windowsでzotero",
+    "title": "Zotero",
+    "section": "WindowsでZotero",
+    "text": "WindowsでZotero\nwinget ならば、\nwinget install Zotero -a x64 --force\nしましょう。\nオプション-a(= –architecture )でCPU architectureを指定します。デフォルトではx86となるようで、今更32bitアプリを使う必要も無いと思うので、-a x64を指定します。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html#macosでzotero",
+    "href": "posts/2024/09/Zotero.html#macosでzotero",
+    "title": "Zotero",
+    "section": "MacOSでZotero",
+    "text": "MacOSでZotero\nHomebrew を使い\nbrew install zotero\nでインストールされます。"
+  },
+  {
     "objectID": "posts/2024/09/1st-winget.html",
     "href": "posts/2024/09/1st-winget.html",
     "title": "Windows パッケージング・システム HOWTO",
@@ -63,34 +91,6 @@
     "text": "どのアプリをどのパッケージング・システムで管理する？\nAdobe Acrobat Reader DC（64-bit） は chocolatey、scoopでは提供されていないが、wingetなら導入できる。\n$ winget search acrobat\n名前                             ID                          バージョン   一致         ソース\n----------------------------------------------------------------------------------------------\nAdobe Acrobat Reader DC          XPDP273C0XHQH2              Unknown                   msstore\nBlossX Acrobat 11 - PDF Editor   9P51586BZKNG                Unknown                   msstore\nAdobe Acrobat Reader DC (64-bit) Adobe.Acrobat.Reader.64-bit 22.001.20117 Tag: acrobat winget\nAdobe Acrobat Reader DC          Adobe.Acrobat.Reader.32-bit 22.001.20117 Tag: acrobat winget\n$ winget install Adobe.Acrobat.Reader.64-bit"
   },
   {
-    "objectID": "posts/2024/09/Zotero.html",
-    "href": "posts/2024/09/Zotero.html",
-    "title": "Zotero",
-    "section": "",
-    "text": "皆さん、文献管理はどうしていますか？\n私は Zotero を使っています。"
-  },
-  {
-    "objectID": "posts/2024/09/Zotero.html#windowsでzotero",
-    "href": "posts/2024/09/Zotero.html#windowsでzotero",
-    "title": "Zotero",
-    "section": "WindowsでZotero",
-    "text": "WindowsでZotero\nwinget ならば、\nwinget install Zotero -a x64 --force\nしましょう。\nオプション-a(= –architecture )でCPU architectureを指定します。デフォルトではx86となるようで、今更32bitアプリを使う必要も無いと思うので、-a x64を指定します。"
-  },
-  {
-    "objectID": "posts/2024/09/Zotero.html#macosでzotero",
-    "href": "posts/2024/09/Zotero.html#macosでzotero",
-    "title": "Zotero",
-    "section": "MacOSでZotero",
-    "text": "MacOSでZotero\nHomebrew を使い\nbrew install zotero\nでインストールされます。"
-  },
-  {
-    "objectID": "posts/2024/09/07.html",
-    "href": "posts/2024/09/07.html",
-    "title": "Blogなのか？",
-    "section": "",
-    "text": "最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、当面quartoとお付き合いしようと思う。"
-  },
-  {
     "objectID": "posts/2024/09/08.html",
     "href": "posts/2024/09/08.html",
     "title": "PowerPoint w quarto",
@@ -102,6 +102,6 @@
     "href": "index.html",
     "title": "魔狸",
     "section": "",
-    "text": "Zotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint w quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
+    "text": "Zotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint w quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
   }
 ]
