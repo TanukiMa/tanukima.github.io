@@ -3,7 +3,11 @@ title: "Blogなのか？"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-09-07"
-categories: [魔狸,quarto,GitHub]
+categories: [魔狸,quarto,GitHub,mermaid,Graphviz]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
 ---
 
 最近、一箇所に何かを纏めて書くということが無く、
@@ -12,3 +16,63 @@ categories: [魔狸,quarto,GitHub]
 [quarto](https://quarto.org)を活用していくことにした。
 
 [PowerPointも作れる](https://quarto.org/docs/presentations/powerpoint.html)し、当面quartoとお付き合いしようと思う。
+
+# quartoでMermaid
+
+[Mermaid](https://mermaid.js.org/)は比較的最近のDiagramming and charting tool。
+
+自分はdot languageと[Graphviz](https://graphviz.org/)に慣れ親しんできたが、移行していこうかと思う。
+
+以下、このqmd内にmermaid記法で記した例。
+
+```{mermaid}
+%%{init:{'theme':'base'}}%%
+    gitGraph
+       commit
+       commit
+       branch develop
+       commit
+       commit
+       commit
+       checkout main
+       commit
+       commit
+```
+
+## Mermaid で Gantt chart
+
+```{mermaid}
+%%{init:{'theme':'base'}}%%
+gantt
+    title A Gantt Diagram
+    dateFormat YYYY-MM-DD
+    section Section
+        A task          :a1, 2014-01-01, 30d
+        Another task    :after a1, 20d
+    section Another
+        Task in Another :2014-01-12, 12d
+        another task    :24d
+```
+
+# quartoでdot
+
+qmd内にdot languageを直接記載して、graph表示することもできる。
+
+```{dot}
+graph G {
+  layout=neato
+  run -- intr;
+  intr -- runbl;
+  runbl -- run;
+  run -- kernel;
+  kernel -- zombie;
+  kernel -- sleep;
+  kernel -- runmem;
+  sleep -- swap;
+  swap -- runswap;
+  runswap -- new;
+  runswap -- runmem;
+  new -- runmem;
+  sleep -- runmem;
+}
+```
