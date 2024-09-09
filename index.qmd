@@ -51,3 +51,14 @@ about:
 監訳協力に[「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」](https://x.gd/qZcA4)。
 
 # 日々の記録
+
+最近、一箇所に何かを纏めて書くということが無く、
+日々の記録が途絶えがちになってきたので、
+[GitHub Pages](https://docs.github.com/ja/pages)と
+[quarto](https://quarto.org)を活用していくことにした。
+
+[PowerPointも作れる](https://quarto.org/docs/presentations/powerpoint.html)し、
+当面quartoとお付き合いしようと思う。
+
+------
+

@@ -6,7 +6,7 @@ format:
 lang: ja
 author: "魔狸"
 date: "2024-09-08"
-categories: [Windows,WSL2,Debian GNU/Linux,rust]
+categories: [Windows,WSL2,Debian GNU/Linux,Rust]
 filters:
   - social-share
 share:
