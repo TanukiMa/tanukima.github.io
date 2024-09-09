@@ -11,10 +11,10 @@ title-block-banner: true
 author:
   - id: cvc
     number: 1
-    name:
-      given: Masamichi
-      family: Csefalvay
-      literal: Goudge
+#    name:
+#      given: Masamichi
+#      family: Goudge
+#      literal: Goudge
 #      non-dropping-particle: von
 #    orcid: 0000-0003-3131-0864
 #    email: chris@chrisvoncsefalvay.com
