@@ -15,7 +15,8 @@ share:
   twitter: true
   mastodon: true
 ---
-
+Windows Subsystem for Linux、
+所謂
 [**WSL2**](https://learn.microsoft.com/ja-jp/windows/wsl/)は便利ですねー
 
 私は 

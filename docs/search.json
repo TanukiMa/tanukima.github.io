@@ -11,21 +11,21 @@
     "href": "posts/2024/09/tailscale.html",
     "title": "tailscale",
     "section": "",
-    "text": "昔はOpenVPN網を構築するのが面倒だったなぁ…（遠い目）\n今は tailscaleが 便利すぎる。\ntailscaleについては、WikiPediaが詳しい。\nwireguardベースなので、OpenVPNに比較して高速。kernel baseなのでセキュリティ関係で配慮が必要。\n\nWindowsでtailscale\nwinget install -e tailscale\n\n\nMacOSでtailscale\nbrew install tailscale --cask\n\n\nDebian GNU/Linuxでtailscale\nhttps://tailscale.com/kb/1031/install-linux の当該項目参照。"
+    "text": "昔はOpenVPN網を構築するのが面倒だったなぁ…（遠い目）\n今は tailscaleが 便利すぎる。\ntailscaleについては、WikiPediaが詳しい。\nwireguardベースなので、OpenVPNに比較して高速。kernel baseなのでセキュリティ関係で配慮が必要。\n\nWindowsでtailscale\nwinget install -e tailscale\n\n\nMacOSでtailscale\nbrew install tailscale --cask\n\n\nDebian GNU/Linuxでtailscale\nhttps://tailscale.com/kb/1031/install-linux の当該項目参照。\n\n\n\n\n引用BibTeX@misc{csefalvay2024,\n  author = {Goudge and , 魔狸},\n  title = {tailscale},\n  date = {2024-09-08},\n  langid = {ja}\n}\n引用方法\nGoudge, and 魔狸. 2024. “tailscale.”"
   },
   {
     "objectID": "posts/2024/09/08.html",
     "href": "posts/2024/09/08.html",
     "title": "PowerPoint with quarto",
     "section": "",
-    "text": "大学での講義のため、PowerPointを使ってスライドを作らねばならないことがある。\n動作は重いし、編集が面倒。\nというわけで、marpへの転向も検討したが、marpで作られるpptxファイルは編集が困難。\npandocでpptxに変換することもできるが、手になじまなかった。\nところが、quartoで pptxを作成できるそうだ。\nhttps://quarto.org/docs/projects/quarto-projects.htmlや https://quarto.org/docs/gallery/#presentations が参考になる。\n\n初手\nquarto create project \nする。"
+    "text": "大学での講義のため、PowerPointを使ってスライドを作らねばならないことがある。\n動作は重いし、編集が面倒。\nというわけで、marpへの転向も検討したが、marpで作られるpptxファイルは編集が困難。\npandocでpptxに変換することもできるが、手になじまなかった。\nところが、quartoで pptxを作成できるそうだ。\nhttps://quarto.org/docs/projects/quarto-projects.htmlや https://quarto.org/docs/gallery/#presentations が参考になる。\n\n初手\nquarto create project \nする。\n\n\n\n\n引用BibTeX@misc{csefalvay2024,\n  author = {Goudge and Tanuki , Ma},\n  title = {PowerPoint with quarto},\n  date = {2024-09-08},\n  langid = {ja}\n}\n引用方法\nGoudge, and Ma Tanuki. 2024. “PowerPoint with quarto.”"
   },
   {
     "objectID": "posts/2024/09/quarto.html",
     "href": "posts/2024/09/quarto.html",
     "title": "quarto",
     "section": "",
-    "text": "色々な文書を作成する機会が多いです。\n\nMermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
+    "text": "色々な文書を作成する機会が多いです。\n\nMermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d\n\n\n\n\n\n\n\n\n\n\n引用BibTeX@misc{csefalvay2024,\n  author = {Goudge and , 魔狸},\n  title = {quarto},\n  date = {2024-09-09},\n  langid = {ja}\n}\n引用方法\nGoudge, and 魔狸. 2024. “quarto.”"
   },
   {
     "objectID": "posts/2024/09/07.html",
@@ -116,7 +116,7 @@
     "href": "posts/2024/09/WSL2.html",
     "title": "WSL2小技",
     "section": "",
-    "text": "WSL2は便利ですねー\n私は wsl-distrodを使っています。\n\nGoogle Driveをmount\nGoogle Driveを動作させているWindowsがhostならば、 WSL2コンテナ内で\nsudo mount -t drvfs H: /mnt/h\nすれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。\nWSL2の起動時に自動でmountするためには、 rootのcrontabに\n@reboot     mount -t drvfs H: /mnt/h\nと書く。\n\n\ncommand lineやshellからGoogle Driveを操作する\nRustで書かれた google-drive-3-cliを使うのが一つの手かもしれません。\nrust-msvcを使えば、 WoA(Windows On Arm)でもbuild、動作します。"
+    "text": "Windows Subsystem for Linux、 所謂 WSL2は便利ですねー\n私は wsl-distrodを使っています。\n\nGoogle Driveをmount\nGoogle Driveを動作させているWindowsがhostならば、 WSL2コンテナ内で\nsudo mount -t drvfs H: /mnt/h\nすれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。\nWSL2の起動時に自動でmountするためには、 rootのcrontabに\n@reboot     mount -t drvfs H: /mnt/h\nと書く。\n\n\ncommand lineやshellからGoogle Driveを操作する\nRustで書かれた google-drive-3-cliを使うのが一つの手かもしれません。\nrust-msvcを使えば、 WoA(Windows On Arm)でもbuild、動作します。\n\n\n\n\n引用BibTeX@misc{csefalvay2024,\n  author = {Goudge and , 魔狸},\n  title = {WSL2小技},\n  date = {2024-09-08},\n  langid = {ja}\n}\n引用方法\nGoudge, and 魔狸. 2024. “WSL2小技.”"
   },
   {
     "objectID": "posts/2024/09/StirlingPDF.html",
@@ -144,6 +144,6 @@
     "href": "index.html",
     "title": "魔狸",
     "section": "",
-    "text": "自己紹介\n（自称）（ 日本内科学会 認定）ブラッド・ピット兼ポケモンGoトレーナー・医畜（総合内科・周術期内科・ER・ICU・CCU・HCU・ICD・PCT）兼セレブ（自治体認定済）、FJSIM、ICD。最近は大学生の卒論指導。主な訳書に「データ匿名化手法」 、「実践バイオインフォマティクス」、「バイオインフォマティクスのためのPerl入門」など。 監訳協力に「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」。\n\n\n日々の記録\n最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、 当面quartoとお付き合いしようと思う。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/09\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nZotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\nRust\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint with quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nStirling PDF\n\n\n\n\n\n\nPDF\n\n\nWindows\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\nmermaid\n\n\nGraphviz\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
+    "text": "自己紹介\n（自称）（ 日本内科学会 認定）ブラッド・ピット兼ポケモンGoトレーナー・医畜（総合内科・周術期内科・ER・ICU・CCU・HCU・ICD・PCT）兼セレブ（自治体認定済）、FJSIM、ICD。最近は大学生の卒論指導。主な訳書に「データ匿名化手法」 、「実践バイオインフォマティクス」、「バイオインフォマティクスのためのPerl入門」など。 監訳協力に「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」。\n\n\n日々の記録\n最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、 当面quartoとお付き合いしようと思う。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/09\n\n\nGoudge, 魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nZotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nGoudge, 魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\nRust\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nGoudge, 魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint with quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nGoudge, Ma, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nStirling PDF\n\n\n\n\n\n\nPDF\n\n\nWindows\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nGoudge, 魔狸\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nGoudge, 魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\nmermaid\n\n\nGraphviz\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nGoudge, Ma, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nGoudge, Ma, Tanuki\n\n\n\n\n\n\n一致なし"
   }
 ]

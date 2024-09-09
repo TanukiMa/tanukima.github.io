@@ -22,7 +22,7 @@ format:
   html:
     toc: true
 about:
-  template: jolla
+  template: trestles
   links:
         - icon: twitter
           text: Twitter
