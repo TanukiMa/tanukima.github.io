@@ -41,6 +41,37 @@ gantt
         Task in Another :2014-01-12, 12d
         another task    :24d
 ```
+<!--
+# Mermaid で 
+
+```{mermaid}
+---
+title: 不安定狭心症/NSTEMIへのアプローチ
+---
+flowchart TD
+    A[低リスク] --> B(アスピリン、
+    P2Y<sub>12</sub>阻害薬：クロピドグレル、チカグレロル
+    抗凝固薬：エノキサバリン、フォンダバリヌクス、UFH)
+    C[高リスク] --> D(アスピリン、
+    P2Y<sub>12</sub>阻害薬：チカグレロル（ or クロピドグレル）、
+    抗凝固薬：UFH、エノキサバリン、bivalirudin±GPIIb/IIIa阻害薬)
+    D --> F[侵襲的戦略]
+    B --> E[保存的戦略]
+    F --> G[血管造影]
+    E --> |繰り返す虚血発作| X((( ))) -->|±GPIIb/IIIa阻害薬| G
+    style X fill:#ffffff,stroke:#ffffff
+    E --> H[血行動態が安定したら
+    退院前に負荷試験]
+    G --> I[CABG]
+    G --> J[PCI]
+    J --> K[長期薬物療法]
+    I --> K
+    G --> L[薬物療法]
+    L --> K
+    H --> |低リスク| N[薬物療法]
+    H --> |高リスク| G 
+```
+-->
 
 <!--
 ```{mermaid}

@@ -210,6 +210,56 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 </div>
 </div>
 <!--
+# Mermaid で 
+
+
+
+
+::::::{.cell layout-align="default"}
+
+:::::{.cell-output-display}
+
+::::{}
+`<figure class=''>`{=html}
+
+:::{}
+
+<pre class="mermaid mermaid-js">---
+title: 不安定狭心症/NSTEMIへのアプローチ
+---
+flowchart TD
+    A[低リスク] --&gt; B(アスピリン、
+    P2Y&lt;sub&gt;12&lt;/sub&gt;阻害薬：クロピドグレル、チカグレロル
+    抗凝固薬：エノキサバリン、フォンダバリヌクス、UFH)
+    C[高リスク] --&gt; D(アスピリン、
+    P2Y&lt;sub&gt;12&lt;/sub&gt;阻害薬：チカグレロル（ or クロピドグレル）、
+    抗凝固薬：UFH、エノキサバリン、bivalirudin±GPIIb/IIIa阻害薬)
+    D --&gt; F[侵襲的戦略]
+    B --&gt; E[保存的戦略]
+    F --&gt; G[血管造影]
+    E --&gt; |繰り返す虚血発作| X((( ))) --&gt;|±GPIIb/IIIa阻害薬| G
+    style X fill:#ffffff,stroke:#ffffff
+    E --&gt; H[血行動態が安定したら
+    退院前に負荷試験]
+    G --&gt; I[CABG]
+    G --&gt; J[PCI]
+    J --&gt; K[長期薬物療法]
+    I --&gt; K
+    G --&gt; L[薬物療法]
+    L --&gt; K
+    H --&gt; |低リスク| N[薬物療法]
+    H --&gt; |高リスク| G 
+</pre>
+:::
+`</figure>`{=html}
+::::
+:::::
+::::::
+
+
+
+-->
+<!--
 
 
 
