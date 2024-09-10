@@ -1,0 +1,88 @@
+---
+title: "各種マスター更新チェッカーの開発、運営"
+format:
+  html:
+    toc: false
+lang: ja
+author: "魔狸"
+date: "2024-09-09"
+categories: [python,mozc4med]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/gl-checker.html"
+  description: "「Developing and operation of Japanese Medical term Master checker with magaged Mozc4med dictionary」"
+  twitter: true
+  mastodon: true
+draft: true
+---
+
+Mozc4med辞書の内容は各種マスター更新に伴い更新される必要がある。
+これまでは、各種マスターの更新を目視で確認してきた。
+各種マスターの更新を確認、Mozc4med辞書の自動生成を実施する。
+
+# Master checkerの構成
+
+Master checker（以下MC）は、MC agent、MC cook、MC database(以下MC db）、複数のMC worker（以下MC workers）で構成される。
+以下に、構成を説明する。
+
+## MC agent
+MC agentは更新を検知したいURLにhttp(もしくはhttps)でアクセスし、httpサーバからURL上のコンテンツを受け取り、MC cookにコンテンツを渡す。MC agentはhttpエラーの処理も行う。
+
+## MC cook
+MC cookはコンテンツを処理し、更新の有無を確認するデータを抽出する。抽出したデータをMC dbにSQL文で問い合わせ、MC db内のデータと違いがあるか確認する。
+
+## MC db
+MC dbはSQL databaseで構成されている。
+schemaとしてid, URL, formula, resultsを持つ。
+
+idはURL毎に別個の値を有している。
+URLは検知対象のURLを格納している。
+formulaはMC cookのデータ抽出プログラムを格納している。
+resultsはMC cookが抽出したデータを格納し、MC cookは定期的にresultsを照合し、更新があった場合は新たなデータに更新される。
+
+以下は、resultsの一例である。
+
+```python
+import requests; from bs4 import BeautifulSoup; print(str.strip(BeautifulSoup(requests.get('https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/r06/kihonmasta_04.html', headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36'}).content, 'html.parser').find('div', class_='update clearfix').text.replace('最終更新日：', '')))
+```
+
+## MC workers
+
+MC workersは複数から成る。
+
+MC mozc4medは 更新が検知されたURLに対しhttp requestを発行し、コンテンツを入手し、mozc4med辞書を生成する。
+
+MC Twitterは、コンテンツが更新されたことをTwitter®に投稿する。
+
+MC mastodonは、コンテンツが更新されたことをmastodonに投稿する。
+
+MC mailは、コンテンツが更新されたことを電子メールで配信する。
+
+以下は、傷病名マスターを例としたMCの動作を示したsequense diagramである。
+
+![Sequense diagram of Master checker](mc.svg)
+
+```{mermaid}
+title : Sequence diagram of Master checker
+
+sequenceDiagram
+    participant 傷病名マスター
+    box MC
+    participant MC agent
+    participant MC cook
+    participant MC db
+    participant MC workers
+    end
+    MC agent->>+傷病名マスター: http request
+    傷病名マスター->>+MC agent: contents
+    MC agent->>+MC cook: contents
+    MC cook->>+MC cook: data processing of content
+    MC cook->>+MC db: compare data
+    MC db->>+MC workers: if contents renewal
+    MC db->>+MC db: compare, if it renew, insert new value
+    MC db-->>-MC cook: not renew
+
+``` 
+
+# 結語
