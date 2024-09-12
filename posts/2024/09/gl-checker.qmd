@@ -59,6 +59,8 @@ MC mastodonは、コンテンツが更新されたことをmastodonに投稿す�
 
 MC mailは、コンテンツが更新されたことを電子メールで配信する。
 
+MC savepagenow は、更新されたコンテンツを[Internet Archive, Wayback Machine](https://web.archive.org/)で保存する。
+
 以下は、傷病名マスターを例としたMCの動作を示したsequense diagramである。
 
 ![Sequense diagram of Master checker](mc.svg)
