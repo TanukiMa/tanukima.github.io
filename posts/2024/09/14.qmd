@@ -1,0 +1,26 @@
+---
+title: "読書「愛の顛末」"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-14"
+categories: [読書]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/14.html"
+  description: "読書「愛の顛末」"
+  twitter: true
+  mastodon: true
+---
+一度読了しているが、本棚から取り出す。
+
+[![](B07K9M81W3.png)](https://x.gd/H3yeG){width=80%}
+
+最近、我が家は「文豪ストレイドッグス」ブームであり、
+中島敦の名前を聞くことは珍しくない。
+
+中島敦に関する蘊蓄を垂れるためにも再読する。
