@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "私の高血圧症診療"
 lang: ja
 author: "Ma, Tanuki"
