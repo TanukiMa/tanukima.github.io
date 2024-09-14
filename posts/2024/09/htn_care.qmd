@@ -1,0 +1,26 @@
+---
+draft: true
+title: "私の高血圧症診療"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-14"
+categories: [医療]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/htn_care.html"
+  description: "高血圧症診療"
+  twitter: true
+  mastodon: true
+---
+
+# 参考文献
+
+* [内科ポケットレファランス](https://x.gd/tTFRf)
+[![](481573013X.png)](https://x.gd/tTFRf){.lightbox}
+
+* []

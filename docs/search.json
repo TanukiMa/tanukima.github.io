@@ -28,48 +28,6 @@
     "text": "色々な文書を作成する機会が多いです。\n正直、辟易としています。\n昭和のガリ版印刷を引きずったような汚いフォント、歪んだ罫線、構成力も校正力も欠けている文章。\nPDF化されているのに、印刷して記入して、スキャンして取り込む？\nそんな不思議なことが平然とまかり通っているのが、日本の医療の現場です。\n医療の情報化を通じて効率化を推進していきたいと常々考えています。\n\nMermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
   },
   {
-    "objectID": "posts/2024/09/07.html",
-    "href": "posts/2024/09/07.html",
-    "title": "Blogなのか？",
-    "section": "",
-    "text": "最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、当面quartoとお付き合いしようと思う。"
-  },
-  {
-    "objectID": "posts/2024/09/07.html#mermaid-で-gantt-chart",
-    "href": "posts/2024/09/07.html#mermaid-で-gantt-chart",
-    "title": "Blogなのか？",
-    "section": "Mermaid で Gantt chart",
-    "text": "Mermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
-  },
-  {
-    "objectID": "posts/2024/09/Zotero.html",
-    "href": "posts/2024/09/Zotero.html",
-    "title": "Zotero",
-    "section": "",
-    "text": "皆さん、文献管理はどうしていますか？\n私は Zotero を使っています。"
-  },
-  {
-    "objectID": "posts/2024/09/Zotero.html#windowsでzotero",
-    "href": "posts/2024/09/Zotero.html#windowsでzotero",
-    "title": "Zotero",
-    "section": "WindowsでZotero",
-    "text": "WindowsでZotero\nwinget ならば、\nwinget install Zotero -a x64 --force\nしましょう。\nオプション-a(= –architecture )でCPU architectureを指定します。デフォルトではx86となるようで、今更32bitアプリを使う必要も無いと思うので、-a x64を指定します。"
-  },
-  {
-    "objectID": "posts/2024/09/Zotero.html#macosでzotero",
-    "href": "posts/2024/09/Zotero.html#macosでzotero",
-    "title": "Zotero",
-    "section": "MacOSでZotero",
-    "text": "MacOSでZotero\nHomebrew を使い\nbrew install zotero\nでインストールされます。"
-  },
-  {
-    "objectID": "posts/2024/09/14.html",
-    "href": "posts/2024/09/14.html",
-    "title": "読書「愛の顛末」",
-    "section": "",
-    "text": "一度読了しているが、本棚から取り出す。\n\n最近、我が家は「文豪ストレイドッグス」ブームであり、 中島敦の名前を聞くことは珍しくない。\n中島敦に関する蘊蓄を垂れるためにも再読する。"
-  },
-  {
     "objectID": "posts/2024/09/1st-winget.html",
     "href": "posts/2024/09/1st-winget.html",
     "title": "Windows パッケージング・システム HOWTO",
@@ -117,6 +75,48 @@
     "title": "Windows パッケージング・システム HOWTO",
     "section": "どのアプリをどのパッケージング・システムで管理する？",
     "text": "どのアプリをどのパッケージング・システムで管理する？\nAdobe Acrobat Reader DC（64-bit） は chocolatey、scoopでは提供されていないが、wingetなら導入できる。\n$ winget search acrobat\n名前                             ID                          バージョン   一致         ソース\n----------------------------------------------------------------------------------------------\nAdobe Acrobat Reader DC          XPDP273C0XHQH2              Unknown                   msstore\nBlossX Acrobat 11 - PDF Editor   9P51586BZKNG                Unknown                   msstore\nAdobe Acrobat Reader DC (64-bit) Adobe.Acrobat.Reader.64-bit 22.001.20117 Tag: acrobat winget\nAdobe Acrobat Reader DC          Adobe.Acrobat.Reader.32-bit 22.001.20117 Tag: acrobat winget\n$ winget install Adobe.Acrobat.Reader.64-bit"
+  },
+  {
+    "objectID": "posts/2024/09/14.html",
+    "href": "posts/2024/09/14.html",
+    "title": "読書「愛の顛末」",
+    "section": "",
+    "text": "一度読了しているが、本棚から取り出す。\n\n最近、我が家は「文豪ストレイドッグス」ブームであり、 中島敦の名前を聞くことは珍しくない。\n中島敦に関する蘊蓄を垂れるためにも再読する。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html",
+    "href": "posts/2024/09/Zotero.html",
+    "title": "Zotero",
+    "section": "",
+    "text": "皆さん、文献管理はどうしていますか？\n私は Zotero を使っています。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html#windowsでzotero",
+    "href": "posts/2024/09/Zotero.html#windowsでzotero",
+    "title": "Zotero",
+    "section": "WindowsでZotero",
+    "text": "WindowsでZotero\nwinget ならば、\nwinget install Zotero -a x64 --force\nしましょう。\nオプション-a(= –architecture )でCPU architectureを指定します。デフォルトではx86となるようで、今更32bitアプリを使う必要も無いと思うので、-a x64を指定します。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html#macosでzotero",
+    "href": "posts/2024/09/Zotero.html#macosでzotero",
+    "title": "Zotero",
+    "section": "MacOSでZotero",
+    "text": "MacOSでZotero\nHomebrew を使い\nbrew install zotero\nでインストールされます。"
+  },
+  {
+    "objectID": "posts/2024/09/07.html",
+    "href": "posts/2024/09/07.html",
+    "title": "Blogなのか？",
+    "section": "",
+    "text": "最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、当面quartoとお付き合いしようと思う。"
+  },
+  {
+    "objectID": "posts/2024/09/07.html#mermaid-で-gantt-chart",
+    "href": "posts/2024/09/07.html#mermaid-で-gantt-chart",
+    "title": "Blogなのか？",
+    "section": "Mermaid で Gantt chart",
+    "text": "Mermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
   },
   {
     "objectID": "posts/2024/09/WSL2.html",
