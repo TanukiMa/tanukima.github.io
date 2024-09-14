@@ -1,0 +1,87 @@
+
+---
+title: "quarto記法でカレンダー"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-14"
+categories: [quarto, python]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/quarto-cal.html"
+  description: "quarto記法でカレンダー"
+  twitter: true
+  mastodon: true
+---
+
+[quarto](https://quarto/)でカレンダーは書けるか？
+
+```{python}
+import calendar
+import datetime
+
+def generate_quarto_calendar_code():
+    # 現在の年と月を取得
+    today = datetime.date.today()
+    year = today.year
+    month = today.month
+    
+    # カレンダーオブジェクトを作成
+    cal = calendar.monthcalendar(year, month)
+    
+    # 月の名前を取得（日本語）
+    month_names = ["睦月", "如月", "弥生", "卯月", "皐月", "水無月",
+                   "文月", "葉月", "長月", "神無月", "霜月", "師走"]
+    month_name = month_names[month - 1]
+    
+    # Quarto記法用のMarkdown形式のカレンダーを構築
+    quarto_code = '| 日 | 月 | 火 | 水 | 木 | 金 | 土 |\n|:--:|:--:|:--:|:--:|:--:|:--:|:--:|\n'
+    
+    # 各週の行を生成
+    for week in cal:
+        day_row = '|'
+        for day in week:
+            if day == 0:
+                day_row += ' |'
+            else:
+                style = ''
+                if week.index(day) == 0:  # 日曜日
+                    style = '{style="color: red;"}'
+                elif week.index(day) == 6:  # 土曜日
+                    style = '{style="color: deepskyblue;"}'
+                day_row += f' [{day}]{style} |' if style else f' {day} |'
+        quarto_code += day_row + '\n'
+    
+    # ヘッダーの挿入
+    quarto_code = f'''---
+title: "{year}年 {month}月 （{month_name}）のカレンダー"
+---
+
+{quarto_code}
+
+: {year}年{month}月のカレンダー
+'''
+    return quarto_code
+
+# 実行して結果を表示
+print(generate_quarto_calendar_code())
+```
+
+こんな感じ。
+
+| 日 | 月 | 火 | 水 | 木 | 金 | 土 |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| | | | | | | [1]{style="color: deepskyblue;"} |
+| [2]{style="color: red;"} | 3 | 4 | 5 | 6 | 7 | [8]{style="color: deepskyblue;"} |
+| [9]{style="color: red;"} | 10 | 11 | 12 | 13 | 14 | [15]{style="color: deepskyblue;"} |
+| [16]{style="color: red;"} | 17 | 18 | 19 | 20 | 21 | [22]{style="color: deepskyblue;"} |
+| [23]{style="color: red;"} | 24 | 25 | 26 | 27 | 28 | [29]{style="color: deepskyblue;"} |
+| [30]{style="color: red;"} | | | | | | |
+
+
+: 2024年9月のカレンダー
+
