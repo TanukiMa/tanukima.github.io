@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "私の高血圧症診療"
 lang: ja
 author: "Ma, Tanuki"
@@ -17,10 +17,32 @@ share:
   twitter: true
   mastodon: true
 ---
+高血圧症診療は奥が深いです。
+只々、アムロジピンを処方していれば良い、というものではありません。
+
+**「高血圧って一度薬飲み始めるとやめられないんですよね？」**
+の患者さんからの問いは最早FAQ(Frequently Asked Question)。
+
+[Twitter/X](https://twitter.com/)でも投稿があったので、つい応えてしまいました。
+
+{{< tweet teursbx1cwkjhnj 1834559153869836593 >}}
+
+{{< tweet Matanuki 1834593963724116088 >}}
+
+{{< tweet Matanuki 1834603357639749889 >}}
+
+Twitterの文字数制限もあり、十分説明することは難しいので、
+[quarto](https://quarto.org/)で補足します。
+
 
 # 参考文献
 
 * [内科ポケットレファランス](https://x.gd/tTFRf)
+
 [![](481573013X.png)](https://x.gd/tTFRf){.lightbox}
 
-* []
+* [外来診療レファランス](https://x.gd/lm1bL)
+
+[![](4815701962.png)](https://x.gd/lm1bL){.lightbox}
+
+[メディカルサイエンスインターナショナル](https://www.medsi.co.jp/)社から献本して頂きました！
