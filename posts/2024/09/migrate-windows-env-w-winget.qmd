@@ -1,0 +1,57 @@
+---
+title: "wingetとscoopでWindows環境を移植"
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2024-09-15"
+categories: [Windows,winget,scoop]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/2024/09/migrate-windows-env-w-winget.html"
+  description: "「wingetでWindows環境を移植」"
+  twitter: true
+  mastodon: true
+---
+Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。
+
+このWindows環境は90日の期限があるので [^longnote] 、別のコンテナを作って開発環境を移植します。
+
+[^longnote]: 仮想環境台数分のライセンス買えばいいけど、その余裕はありません。
+
+ゴミも色々蓄積して、diskも足りなくなるし、**90日使い捨てWindows環境**というのは悪くないと思ってます。
+
+command.com上で
+```bash
+winget export -o winget-PackageList.json --include-versions
+```
+で、winget-PackageList.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。
+
+
+[scoop](https://scoop.sh/)でも環境移行ができます。
+```bash
+scoop export scoop-exported.json
+```
+scoop -g で global installしているパッケージは注意が必要かもしれません。
+
+移行先で
+```bash
+winget import -i winget-PackageList.json \
+	   --ignore-versions \
+	   --ignore-unavailable \
+	   --disable-interactivity \
+	   --accept-package-agreements \
+	   --accept-source-agreements
+scoop import scoop-exported.json
+```
+します。
+
+wingetの引数の意味は
+```bash
+winget import --help
+```
+参照。
+もしくは
+https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import
