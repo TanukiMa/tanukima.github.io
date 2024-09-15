@@ -11,7 +11,7 @@ filters:
   - social-share
 share:
   permalink: "https://TanukiMa.github.io/2024/09/migrate-windows-env-w-winget.html"
-  description: "「wingetでWindows環境を移植」"
+  description: "「wingetとscoopでWindows環境を移植」"
   twitter: true
   mastodon: true
 ---
