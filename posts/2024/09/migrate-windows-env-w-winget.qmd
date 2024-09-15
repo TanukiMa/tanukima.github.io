@@ -10,7 +10,7 @@ categories: [Windows,winget,scoop]
 filters:
   - social-share
 share:
-  permalink: "https://TanukiMa.github.io/2024/09/migrate-windows-env-w-winget.html"
+  permalink: "https://TanukiMa.github.io/posts/2024/09/migrate-windows-env-w-winget.html"
   description: "「wingetとscoopでWindows環境を移植」"
   twitter: true
   mastodon: true
