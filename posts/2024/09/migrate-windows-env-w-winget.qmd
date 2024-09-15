@@ -22,7 +22,7 @@ Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上
 [^longnote]: 仮想環境台数分のライセンス買えばいいけど、その余裕はありません。
 
 ゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、
-**90日使い捨てWindows環境**というのは悪くありません。
+**90日使い捨てWindows環境** というのは悪くありません。
 
 command.com上で
 ```bash
@@ -55,4 +55,4 @@ winget import --help
 ```
 参照。
 もしくは
-https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import
+[https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import](https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import)を読みましょう。
