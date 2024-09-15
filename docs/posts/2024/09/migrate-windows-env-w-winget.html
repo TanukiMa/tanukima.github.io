@@ -208,19 +208,19 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <p>このWindows環境は90日の期限があるので <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 、別のコンテナを作って開発環境を移植します。</p>
 <p>ゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 <strong>90日使い捨てWindows環境</strong> というのは悪くありません。</p>
 <p>command.com上で</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> export <span class="at">-o</span> winget-PackageList.json <span class="at">--include-versions</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>で、winget-PackageList.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> export <span class="at">-o</span> winget.json <span class="at">--include-versions</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>で、winget.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。</p>
 <p><a href="https://scoop.sh/">scoop</a>でも環境移行ができます。</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> export scoop-exported.json</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> export scoop.json</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>scoop -g で global installしているパッケージは注意が必要かもしれません。</p>
 <p>移行先で</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> import <span class="at">-i</span> winget-PackageList.json <span class="dt">\</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> import <span class="at">-i</span> winget.json <span class="dt">\</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">--ignore-versions</span> <span class="dt">\</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">--ignore-unavailable</span> <span class="dt">\</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">--disable-interactivity</span> <span class="dt">\</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">--accept-package-agreements</span> <span class="dt">\</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">--accept-source-agreements</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> import scoop-exported.json</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> import scoop.json</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>します。</p>
 <p>wingetの引数の意味は</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> import <span class="at">--help</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
