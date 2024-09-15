@@ -158,7 +158,7 @@
     "href": "posts/2024/09/migrate-windows-env-w-winget.html",
     "title": "wingetとscoopでWindows環境を移植",
     "section": "",
-    "text": "Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。\nこのWindows環境は90日の期限があるので 1 、別のコンテナを作って開発環境を移植します。\nゴミも色々蓄積して、diskも足りなくなるし、90日使い捨てWindows環境というのは悪くないと思ってます。\ncommand.com上で\nで、winget-PackageList.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。\nscoopでも環境移行ができます。\nscoop -g で global installしているパッケージは注意が必要かもしれません。\n移行先で\nします。\nwingetの引数の意味は\n参照。 もしくは https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import"
+    "text": "Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。\nこのWindows環境は90日の期限があるので 1 、別のコンテナを作って開発環境を移植します。\nゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 90日使い捨てWindows環境というのは悪くありません。\ncommand.com上で\nで、winget-PackageList.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。\nscoopでも環境移行ができます。\nscoop -g で global installしているパッケージは注意が必要かもしれません。\n移行先で\nします。\nwingetの引数の意味は\n参照。 もしくは https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import"
   },
   {
     "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#footnotes",

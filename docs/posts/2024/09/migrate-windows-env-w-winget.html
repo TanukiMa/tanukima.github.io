@@ -206,7 +206,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 
 <p>Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。</p>
 <p>このWindows環境は90日の期限があるので <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 、別のコンテナを作って開発環境を移植します。</p>
-<p>ゴミも色々蓄積して、diskも足りなくなるし、<strong>90日使い捨てWindows環境</strong>というのは悪くないと思ってます。</p>
+<p>ゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 <strong>90日使い捨てWindows環境</strong>というのは悪くありません。</p>
 <p>command.com上で</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> export <span class="at">-o</span> winget-PackageList.json <span class="at">--include-versions</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>で、winget-PackageList.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。</p>
