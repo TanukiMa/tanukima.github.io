@@ -45,6 +45,12 @@ winget import -i winget.json \
 	   --disable-interactivity \
 	   --accept-package-agreements \
 	   --accept-source-agreements
+```
+します。
+
+
+```bash
+scoop install git
 scoop import scoop.json
 ```
 します。
