@@ -21,6 +21,9 @@ share:
 format:
   html:
     toc: true
+    include-in-header: 
+      - text: |
+          <script src="Last-Modified.js"></script>
 about:
   template: trestles
   links:
@@ -42,6 +45,7 @@ about:
 #        - text: "Email"
 #          url: mailto:
 ---
+<div id="last-modified"></div>
 
 # 自己紹介
 
