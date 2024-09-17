@@ -1,0 +1,96 @@
+---
+title: "Last-Modified.ja"
+format:
+  html:
+    toc: true
+    include-in-header: 
+      - text: |
+          <script src="/Last-Modified.js"></script>
+    code-fold: true
+    code-line-numbers: true
+    code-overflow: wrap
+#    code-tools: true
+#    code-link: true
+lang: ja
+author: "魔狸"
+date: "2024-09-17"
+categories: [JavaScript]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/2024/09/Last-Modified-js.html"
+  description: "JavaScriptでLast-Modifiedを表示する"
+  twitter: true
+  mastodon: true
+---
+<div id="last-modified"></div>
+
+個人的には
+http headerのLast-Modified: 、便利だと思うんですが、廃れましたね。
+
+[quarto](https://quarto.org/)でも **JavaScript** で Last-Modified: をHTML bodyで表示するようにしてみました。
+
+# まずは Last-Modified.js
+以下。quarto project dirのトップに置きます。
+
+````{HTML}
+// HTMLファイルの更新時間をJSTでHTTP_headerのLast-Modifiedフォーマットで表示するJavaScriptコード
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 最終更新日時を取得
+    var lastModified = new Date(document.lastModified);
+    
+    // JSTオフセットを設定（ミリ秒単位）
+    var jstOffset = 9 * 60 * 60 * 1000;
+    
+    // ローカル時間をJSTに変換
+    var jstTime = new Date(lastModified.getTime() + jstOffset);
+    
+    // 曜日の配列
+    var weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    
+    // 月の配列
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    
+    // フォーマットされた日時文字列を作成
+    var formattedDate = weekdays[jstTime.getUTCDay()] + ", " +
+                        ("0" + jstTime.getUTCDate()).slice(-2) + " " +
+                        months[jstTime.getUTCMonth()] + " " +
+                        jstTime.getUTCFullYear() + " " +
+                        ("0" + jstTime.getUTCHours()).slice(-2) + ":" +
+                        ("0" + jstTime.getUTCMinutes()).slice(-2) + ":" +
+                        ("0" + jstTime.getUTCSeconds()).slice(-2) + " JST";
+    
+    // 表示する要素を取得
+    var displayElement = document.getElementById('last-modified');
+    
+    // 要素が存在する場合、内容を更新
+    if (displayElement) {
+        displayElement.textContent = 'Last-Modified: ' + formattedDate;
+    } else {
+        console.log('表示要素が見つかりません。');
+    }
+});
+````
+
+
+## qmd yaml
+
+以下を追加。
+
+````{HTML}
+format:
+  html:
+    toc: true
+    include-in-header:
+      - text: |
+          <script src="/Last-Modified.js"></script>
+````
+
+## qmd
+
+bodyに以下を記入。
+
+````{HTML}
+<div id="last-modified"></div>
+````
