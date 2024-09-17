@@ -18,28 +18,7 @@
     "href": "posts/2024/09/Last-Modified-js.html",
     "title": "Last-Modified.js",
     "section": "",
-    "text": "個人的には http headerのLast-Modified: 、便利だと思うんですが、廃れましたね。\nquartoでも JavaScript で Last-Modified: をHTML bodyで表示するようにしてみました。"
-  },
-  {
-    "objectID": "posts/2024/09/Last-Modified-js.html#qmd-yaml",
-    "href": "posts/2024/09/Last-Modified-js.html#qmd-yaml",
-    "title": "Last-Modified.js",
-    "section": "qmd yaml",
-    "text": "qmd yaml\n以下を追加。\nformat:\n  html:\n    toc: true\n    include-in-header:\n      - text: |\n          &lt;script src=\"/Last-Modified.js\"&gt;&lt;/script&gt;"
-  },
-  {
-    "objectID": "posts/2024/09/Last-Modified-js.html#qmd",
-    "href": "posts/2024/09/Last-Modified-js.html#qmd",
-    "title": "Last-Modified.js",
-    "section": "qmd",
-    "text": "qmd\nbodyに以下を記入。\n&lt;div id=\"last-modified\"&gt;&lt;/div&gt;"
-  },
-  {
-    "objectID": "posts/2024/09/Last-Modified-js.html#結果",
-    "href": "posts/2024/09/Last-Modified-js.html#結果",
-    "title": "Last-Modified.js",
-    "section": "結果",
-    "text": "結果"
+    "text": "個人的には http headerのLast-Modified: 、便利だと思うんですが、廃れましたね。\nquartoでも JavaScript で Last-Modified: をHTML bodyで表示するようにしてみました。\n\nまずは Last-Modified.js\n以下。quarto project dirのトップに置きます。 docs/にも配置する。\n// HTMLファイルの更新時間をJSTでHTTP_headerのLast-Modifiedフォーマットで表示するJavaScriptコード\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    // 最終更新日時を取得\n    var lastModified = new Date(document.lastModified);\n    \n    // JSTオフセットを設定（ミリ秒単位）\n    var jstOffset = 9 * 60 * 60 * 1000;\n    \n    // ローカル時間をJSTに変換\n    var jstTime = new Date(lastModified.getTime() + jstOffset);\n    \n    // 曜日の配列\n    var weekdays = [\"Sun\", \"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\"];\n    \n    // 月の配列\n    var months = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\n    \n    // フォーマットされた日時文字列を作成\n    var formattedDate = weekdays[jstTime.getUTCDay()] + \", \" +\n                        (\"0\" + jstTime.getUTCDate()).slice(-2) + \" \" +\n                        months[jstTime.getUTCMonth()] + \" \" +\n                        jstTime.getUTCFullYear() + \" \" +\n                        (\"0\" + jstTime.getUTCHours()).slice(-2) + \":\" +\n                        (\"0\" + jstTime.getUTCMinutes()).slice(-2) + \":\" +\n                        (\"0\" + jstTime.getUTCSeconds()).slice(-2) + \" JST\";\n    \n    // 表示する要素を取得\n    var displayElement = document.getElementById('last-modified');\n    \n    // 要素が存在する場合、内容を更新\n    if (displayElement) {\n        displayElement.textContent = 'Last-Modified: ' + formattedDate;\n    } else {\n        console.log('表示要素が見つかりません。');\n    }\n});\n\n\nqmd yaml\n以下を追加。\nformat:\n  html:\n    toc: true\n    include-in-header:\n      - text: |\n          &lt;script src=\"/Last-Modified.js\"&gt;&lt;/script&gt;\n\n\nqmd\nbodyに以下を記入。\n&lt;div id=\"last-modified\"&gt;&lt;/div&gt;\n\n\n結果"
   },
   {
     "objectID": "posts/2024/09/08.html",

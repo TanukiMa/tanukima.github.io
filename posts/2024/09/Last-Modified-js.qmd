@@ -30,6 +30,7 @@ http headerのLast-Modified: 、便利だと思うんですが、廃れました
 
 # まずは Last-Modified.js
 以下。quarto project dirのトップに置きます。
+docs/にも配置する。
 
 ````{HTML}
 // HTMLファイルの更新時間をJSTでHTTP_headerのLast-Modifiedフォーマットで表示するJavaScriptコード
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ````
 
 
-## qmd yaml
+# qmd yaml
 
 以下を追加。
 
@@ -85,7 +86,7 @@ format:
           <script src="/Last-Modified.js"></script>
 ````
 
-## qmd
+# qmd
 
 bodyに以下を記入。
 
@@ -93,6 +94,6 @@ bodyに以下を記入。
 <div id="last-modified"></div>
 ````
 
-## 結果
+# 結果
 
 <div id="last-modified"></div>

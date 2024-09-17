@@ -199,12 +199,10 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
     <h2 id="toc-title">目次</h2>
    
   <ul>
-  <li><a href="#まずは-last-modified.js" id="toc-まずは-last-modified.js" class="nav-link active" data-scroll-target="#まずは-last-modified.js">まずは Last-Modified.js</a>
-  <ul class="collapse">
+  <li><a href="#まずは-last-modified.js" id="toc-まずは-last-modified.js" class="nav-link active" data-scroll-target="#まずは-last-modified.js">まずは Last-Modified.js</a></li>
   <li><a href="#qmd-yaml" id="toc-qmd-yaml" class="nav-link" data-scroll-target="#qmd-yaml">qmd yaml</a></li>
   <li><a href="#qmd" id="toc-qmd" class="nav-link" data-scroll-target="#qmd">qmd</a></li>
   <li><a href="#結果" id="toc-結果" class="nav-link" data-scroll-target="#結果">結果</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -219,7 +217,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <p><a href="https://quarto.org/">quarto</a>でも <strong>JavaScript</strong> で Last-Modified: をHTML bodyで表示するようにしてみました。</p>
 <section id="まずは-last-modified.js" class="level1">
 <h1>まずは Last-Modified.js</h1>
-<p>以下。quarto project dirのトップに置きます。</p>
+<p>以下。quarto project dirのトップに置きます。 docs/にも配置する。</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {HTML} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>// HTMLファイルの更新時間をJSTでHTTP_headerのLast-Modifiedフォーマットで表示するJavaScriptコード</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>document.addEventListener('DOMContentLoaded', function() {</span>
@@ -257,8 +255,9 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <span id="cb1-35"><a href="#cb1-35"></a>        console.log('表示要素が見つかりません。');</span>
 <span id="cb1-36"><a href="#cb1-36"></a>    }</span>
 <span id="cb1-37"><a href="#cb1-37"></a>});</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="qmd-yaml" class="level2">
-<h2 class="anchored" data-anchor-id="qmd-yaml">qmd yaml</h2>
+</section>
+<section id="qmd-yaml" class="level1">
+<h1>qmd yaml</h1>
 <p>以下を追加。</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {HTML} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>format:</span>
 <span id="cb2-2"><a href="#cb2-2"></a>  html:</span>
@@ -267,19 +266,18 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <span id="cb2-5"><a href="#cb2-5"></a>      - text: |</span>
 <span id="cb2-6"><a href="#cb2-6"></a>          &lt;script src="/Last-Modified.js"&gt;&lt;/script&gt;</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="qmd" class="level2">
-<h2 class="anchored" data-anchor-id="qmd">qmd</h2>
+<section id="qmd" class="level1">
+<h1>qmd</h1>
 <p>bodyに以下を記入。</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {HTML} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>&lt;div id="last-modified"&gt;&lt;/div&gt;</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="結果" class="level2">
-<h2 class="anchored" data-anchor-id="結果">結果</h2>
+<section id="結果" class="level1">
+<h1>結果</h1>
 <div id="last-modified">
 
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
