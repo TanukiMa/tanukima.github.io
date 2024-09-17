@@ -14,7 +14,7 @@ format:
 lang: ja
 author: "魔狸"
 date: "2024-09-17"
-categories: [JavaScript]
+categories: [JavaScript,quarto]
 filters:
   - social-share
 share:
@@ -23,8 +23,6 @@ share:
   twitter: true
   mastodon: true
 ---
-<div id="last-modified"></div>
-
 個人的には
 http headerのLast-Modified: 、便利だと思うんですが、廃れましたね。
 
@@ -94,3 +92,7 @@ bodyに以下を記入。
 ````{HTML}
 <div id="last-modified"></div>
 ````
+
+## 結果
+
+<div id="last-modified"></div>
