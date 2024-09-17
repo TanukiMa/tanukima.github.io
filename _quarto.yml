@@ -18,5 +18,5 @@ website:
     site: "@Matanuki"
 format:
   html:
-    theme: Simplex
+    theme: simplex
     css: styles.css
