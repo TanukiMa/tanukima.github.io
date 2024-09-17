@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "魔狸"
+  title: "魔狸的日々"
   favicon: favicon.svg
   navbar:
     right:

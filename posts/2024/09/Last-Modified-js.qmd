@@ -32,7 +32,7 @@ http headerのLast-Modified: 、便利だと思うんですが、廃れました
 以下。quarto project dirのトップに置きます。
 docs/にも配置する。
 
-````{HTML}
+````{.python .code-overflow-wrap}
 // HTMLファイルの更新時間をJSTでHTTP_headerのLast-Modifiedフォーマットで表示するJavaScriptコード
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 月の配列
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     
-    // フォーマットされた日時文字列を作成
+    /d="last-modified"></div>/ フォーマットされた日時文字列を作成
     var formattedDate = weekdays[jstTime.getUTCDay()] + ", " +
                         ("0" + jstTime.getUTCDate()).slice(-2) + " " +
                         months[jstTime.getUTCMonth()] + " " +

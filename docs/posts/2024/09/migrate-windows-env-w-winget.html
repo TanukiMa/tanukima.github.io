@@ -8,7 +8,7 @@
 
 <meta name="author" content="魔狸">
 
-<title>wingetとscoopでWindows環境を移植 – 魔狸</title>
+<title>wingetとscoopでWindows環境を移行、Visual Studio環境の移行 – 魔狸的日々</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,7 +116,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta name="twitter:title" content="wingetとscoopでWindows環境を移植 – 魔狸">
+<meta name="twitter:title" content="wingetとscoopでWindows環境を移行、Visual Studio環境の移行 – 魔狸的日々">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@Matanuki">
 <meta name="twitter:site" content="@Matanuki">
@@ -131,7 +131,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">魔狸</span>
+    <span class="navbar-title">魔狸的日々</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="サーチ"></div>
@@ -161,11 +161,12 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">wingetとscoopでWindows環境を移植</h1>
+      <h1 class="title">wingetとscoopでWindows環境を移行、Visual Studio環境の移行</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Windows</div>
                 <div class="quarto-category">winget</div>
                 <div class="quarto-category">scoop</div>
+                <div class="quarto-category">Visual Studio</div>
               </div>
                   </div>
   </div>
@@ -194,8 +195,22 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#wingetの環境移行" id="toc-wingetの環境移行" class="nav-link active" data-scroll-target="#wingetの環境移行">wingetの環境移行</a></li>
+  <li><a href="#scoopの環境移行" id="toc-scoopの環境移行" class="nav-link" data-scroll-target="#scoopの環境移行">scoopの環境移行</a></li>
+  <li><a href="#visual-studio-2002の環境移行" id="toc-visual-studio-2002の環境移行" class="nav-link" data-scroll-target="#visual-studio-2002の環境移行">Visual Studio 2002の環境移行</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -205,30 +220,63 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 
 
 <p>Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。</p>
-<p>このWindows環境は90日の期限があるので <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 、別のコンテナを作って開発環境を移植します。</p>
-<p>ゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 <strong>90日使い捨てWindows環境</strong> というのは悪くありません。</p>
-<p>command.com上で</p>
+<p>このWindows環境は90日の期限があるので <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 、別のコンテナを作って開発環境を移行します。</p>
+<p>ゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 <strong>90日使い捨てWindows環境</strong> は悪くありません。</p>
+<section id="wingetの環境移行" class="level1">
+<h1>wingetの環境移行</h1>
+<p>移行元のcommand.com上で</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> export <span class="at">-o</span> winget.json <span class="at">--include-versions</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>で、winget.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。</p>
-<p><a href="https://scoop.sh/">scoop</a>でも環境移行ができます。</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> export scoop.json</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>scoop -g で global installしているパッケージは注意が必要かもしれません。</p>
 <p>移行先で</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> import <span class="at">-i</span> winget.json <span class="dt">\</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">--ignore-versions</span> <span class="dt">\</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">--ignore-unavailable</span> <span class="dt">\</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">--disable-interactivity</span> <span class="dt">\</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">--accept-package-agreements</span> <span class="dt">\</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">--accept-source-agreements</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>します。</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> install git</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> import scoop.json</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> import <span class="at">-i</span> winget.json <span class="at">--ignore-versions</span> <span class="at">--ignore-unavailable</span> <span class="at">--disable-interactivity</span> <span class="at">--accept-package-agreements</span> <span class="at">--accept-source-agreements</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>します。</p>
 <p>wingetの引数の意味は</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> import <span class="at">--help</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> import <span class="at">--help</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>参照。 もしくは <a href="https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import">https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import</a>を参照。</p>
+</section>
+<section id="scoopの環境移行" class="level1">
+<h1>scoopの環境移行</h1>
+<p><a href="https://scoop.sh/">scoop</a>でも環境移行ができます。</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> export scoop.json</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>scoop -g で global installしているパッケージは注意が必要かもしれません。</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> install git</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> import scoop.json</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>します。</p>
+<p>wingetの引数の意味は</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> import <span class="at">--help</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>参照。 もしくは <a href="https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import">https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import</a>を読みましょう。</p>
+</section>
+<section id="visual-studio-2002の環境移行" class="level1">
+<h1>Visual Studio 2002の環境移行</h1>
+<p>Visual Studioも「以前の環境ではbuildできていたのに…」と嘆くことが無くなります。</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p>まずは 移行元で Visual Studio Installer を起動し、menuから “Export configuration” を選択。 <img src="vs2022_export.png" class="img-fluid" alt="移行元環境でVS installer.exe起動後にmenuからexportを選択"></p>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
+<p>~/Documents/.vsconfig に インストールしているコンポーネント一覧と機能拡張の情報が書き込まれます。</p>
+<p><img src="vs2022_exportconfig.png" class="img-fluid" alt="移行元環境でvsconfig fileをexport"></p>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2"></h2>
+<p>移行先で Visual Studio Installer を起動し、menuから “Import configuration” を選択。</p>
+<p><img src="vs2022_import.png" class="img-fluid" alt="移行先環境でVS installer.exe起動後にmenuからimportを選択"></p>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3"></h2>
+<p>Google Driveに移動、vsconfig.vsconfigにrenameした ~.vsconfig を 読み込みます。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="vs2022_importconfig.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>移行先環境でvsconfig fileをimport</figcaption>
+</figure>
+</div>
+<p>後はクリックするだけで、コンポーネント、機能拡張のinstall / uninstallが進んでいきます。</p>
 
 
+</section>
+</section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
@@ -658,7 +706,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://TanukiMa.github.io/posts/2024/09/migrate-windows-env-w-winget.html&amp;text=「wingetとscoopでWindows環境を移植」" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="javascript:void(0);" onclick="var mastodon_instance=prompt('Mastodon Instance / Server Name?'); if(typeof mastodon_instance==='string' &amp;&amp; mastodon_instance.length){this.href='https://'+mastodon_instance+'/share?text=「wingetとscoopでWindows環境を移植」 https://TanukiMa.github.io/posts/2024/09/migrate-windows-env-w-winget.html'}else{return false;}" target="_blank" class="mastodon"><i class="fa-brands fa-mastodon fa-fw fa-lg"></i></a></div></div>
+<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://TanukiMa.github.io/posts/2024/09/migrate-windows-env-w-winget.html&amp;text=「wingetとscoopでWindows環境を移行、Visual Studio環境の移行」" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="javascript:void(0);" onclick="var mastodon_instance=prompt('Mastodon Instance / Server Name?'); if(typeof mastodon_instance==='string' &amp;&amp; mastodon_instance.length){this.href='https://'+mastodon_instance+'/share?text=「wingetとscoopでWindows環境を移行、Visual Studio環境の移行」 https://TanukiMa.github.io/posts/2024/09/migrate-windows-env-w-winget.html'}else{return false;}" target="_blank" class="mastodon"><i class="fa-brands fa-mastodon fa-fw fa-lg"></i></a></div></div>
 
 
 

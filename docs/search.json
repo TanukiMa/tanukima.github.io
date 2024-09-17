@@ -18,7 +18,7 @@
     "href": "posts/2024/09/Last-Modified-js.html",
     "title": "Last-Modified.js",
     "section": "",
-    "text": "個人的には http headerのLast-Modified: 、便利だと思うんですが、廃れましたね。\nquartoでも JavaScript で Last-Modified: をHTML bodyで表示するようにしてみました。\n\nまずは Last-Modified.js\n以下。quarto project dirのトップに置きます。 docs/にも配置する。\n// HTMLファイルの更新時間をJSTでHTTP_headerのLast-Modifiedフォーマットで表示するJavaScriptコード\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    // 最終更新日時を取得\n    var lastModified = new Date(document.lastModified);\n    \n    // JSTオフセットを設定（ミリ秒単位）\n    var jstOffset = 9 * 60 * 60 * 1000;\n    \n    // ローカル時間をJSTに変換\n    var jstTime = new Date(lastModified.getTime() + jstOffset);\n    \n    // 曜日の配列\n    var weekdays = [\"Sun\", \"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\"];\n    \n    // 月の配列\n    var months = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\n    \n    // フォーマットされた日時文字列を作成\n    var formattedDate = weekdays[jstTime.getUTCDay()] + \", \" +\n                        (\"0\" + jstTime.getUTCDate()).slice(-2) + \" \" +\n                        months[jstTime.getUTCMonth()] + \" \" +\n                        jstTime.getUTCFullYear() + \" \" +\n                        (\"0\" + jstTime.getUTCHours()).slice(-2) + \":\" +\n                        (\"0\" + jstTime.getUTCMinutes()).slice(-2) + \":\" +\n                        (\"0\" + jstTime.getUTCSeconds()).slice(-2) + \" JST\";\n    \n    // 表示する要素を取得\n    var displayElement = document.getElementById('last-modified');\n    \n    // 要素が存在する場合、内容を更新\n    if (displayElement) {\n        displayElement.textContent = 'Last-Modified: ' + formattedDate;\n    } else {\n        console.log('表示要素が見つかりません。');\n    }\n});\n\n\nqmd yaml\n以下を追加。\nformat:\n  html:\n    toc: true\n    include-in-header:\n      - text: |\n          &lt;script src=\"/Last-Modified.js\"&gt;&lt;/script&gt;\n\n\nqmd\nbodyに以下を記入。\n&lt;div id=\"last-modified\"&gt;&lt;/div&gt;\n\n\n結果"
+    "text": "個人的には http headerのLast-Modified: 、便利だと思うんですが、廃れましたね。\nquartoでも JavaScript で Last-Modified: をHTML bodyで表示するようにしてみました。\n\nまずは Last-Modified.js\n以下。quarto project dirのトップに置きます。 docs/にも配置する。\n// HTMLファイルの更新時間をJSTでHTTP_headerのLast-Modifiedフォーマットで表示するJavaScriptコード\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    // 最終更新日時を取得\n    var lastModified = new Date(document.lastModified);\n    \n    // JSTオフセットを設定（ミリ秒単位）\n    var jstOffset = 9 * 60 * 60 * 1000;\n    \n    // ローカル時間をJSTに変換\n    var jstTime = new Date(lastModified.getTime() + jstOffset);\n    \n    // 曜日の配列\n    var weekdays = [\"Sun\", \"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\"];\n    \n    // 月の配列\n    var months = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\n    \n    /d=\"last-modified\"&gt;&lt;/div&gt;/ フォーマットされた日時文字列を作成\n    var formattedDate = weekdays[jstTime.getUTCDay()] + \", \" +\n                        (\"0\" + jstTime.getUTCDate()).slice(-2) + \" \" +\n                        months[jstTime.getUTCMonth()] + \" \" +\n                        jstTime.getUTCFullYear() + \" \" +\n                        (\"0\" + jstTime.getUTCHours()).slice(-2) + \":\" +\n                        (\"0\" + jstTime.getUTCMinutes()).slice(-2) + \":\" +\n                        (\"0\" + jstTime.getUTCSeconds()).slice(-2) + \" JST\";\n    \n    // 表示する要素を取得\n    var displayElement = document.getElementById('last-modified');\n    \n    // 要素が存在する場合、内容を更新\n    if (displayElement) {\n        displayElement.textContent = 'Last-Modified: ' + formattedDate;\n    } else {\n        console.log('表示要素が見つかりません。');\n    }\n});\n\n\nqmd yaml\n以下を追加。\nformat:\n  html:\n    toc: true\n    include-in-header:\n      - text: |\n          &lt;script src=\"/Last-Modified.js\"&gt;&lt;/script&gt;\n\n\nqmd\nbodyに以下を記入。\n&lt;div id=\"last-modified\"&gt;&lt;/div&gt;\n\n\n結果"
   },
   {
     "objectID": "posts/2024/09/08.html",
@@ -30,14 +30,42 @@
   {
     "objectID": "posts/2024/09/migrate-windows-env-w-winget.html",
     "href": "posts/2024/09/migrate-windows-env-w-winget.html",
-    "title": "wingetとscoopでWindows環境を移植",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
     "section": "",
-    "text": "Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。\nこのWindows環境は90日の期限があるので 1 、別のコンテナを作って開発環境を移植します。\nゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 90日使い捨てWindows環境 というのは悪くありません。\ncommand.com上で\nで、winget.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。\nscoopでも環境移行ができます。\nscoop -g で global installしているパッケージは注意が必要かもしれません。\n移行先で\nします。\nします。\nwingetの引数の意味は\n参照。 もしくは https://learn.microsoft.com/ja-jp/windows/package-manager/winget/importを読みましょう。"
+    "text": "Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。\nこのWindows環境は90日の期限があるので 1 、別のコンテナを作って開発環境を移行します。\nゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 90日使い捨てWindows環境 は悪くありません。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "まずは 移行元で Visual Studio Installer を起動し、menuから “Export configuration” を選択。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-1",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-1",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "~/Documents/.vsconfig に インストールしているコンポーネント一覧と機能拡張の情報が書き込まれます。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-2",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-2",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "移行先で Visual Studio Installer を起動し、menuから “Import configuration” を選択。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-3",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-3",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "Google Driveに移動、vsconfig.vsconfigにrenameした ~.vsconfig を 読み込みます。\n\n\n\n移行先環境でvsconfig fileをimport\n\n\n後はクリックするだけで、コンポーネント、機能拡張のinstall / uninstallが進んでいきます。"
   },
   {
     "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#footnotes",
     "href": "posts/2024/09/migrate-windows-env-w-winget.html#footnotes",
-    "title": "wingetとscoopでWindows環境を移植",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
     "section": "脚注",
     "text": "脚注\n\n\n仮想環境台数分のライセンス買えばいいけど、その余裕はありません。↩︎"
   },
@@ -186,6 +214,6 @@
     "href": "index.html",
     "title": "魔狸",
     "section": "",
-    "text": "自己紹介\n（自称）（ 日本内科学会 認定）ブラッド・ピット兼ポケモンGoトレーナー・医畜（総合内科・周術期内科・ER・ICU・CCU・HCU・ICD・PCT）兼セレブ（自治体認定済）、FJSIM（Fellow of the Japanese Society of Internal Medicine ; 総合内科専門医）、ICD（Infection Control Doctor）。最近は 大学生の卒論指導も。主な訳書に「データ匿名化手法」 、「実践バイオインフォマティクス」、「バイオインフォマティクスのためのPerl入門」など。 監訳協力に「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」。\n\n\n日々の記録\n最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、 当面quartoとお付き合いしようと思う。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLast-Modified.js\n\n\n\n\n\n\nJavaScript\n\n\nquarto\n\n\n\n\n\n\n\n\n\n2024/09/17\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nwingetとscoopでWindows環境を移植\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/15\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\n読書「愛の顛末」\n\n\n\n\n\n\n読書\n\n\n\n\n\n\n\n\n\n2024/09/14\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nquarto記法でカレンダー\n\n\n\n\n\n\nquarto\n\n\npython\n\n\n\n\n\n\n\n\n\n2024/09/14\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/09\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nZotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\nRust\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint with quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nStirling PDF\n\n\n\n\n\n\nPDF\n\n\nWindows\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\nmermaid\n\n\nGraphviz\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
+    "text": "自己紹介\n（自称）（ 日本内科学会 認定）ブラッド・ピット兼ポケモンGoトレーナー・医畜（総合内科・周術期内科・ER・ICU・CCU・HCU・ICD・PCT）兼セレブ（自治体認定済）、FJSIM（Fellow of the Japanese Society of Internal Medicine ; 総合内科専門医）、ICD（Infection Control Doctor）。最近は 大学生の卒論指導も。主な訳書に「データ匿名化手法」 、「実践バイオインフォマティクス」、「バイオインフォマティクスのためのPerl入門」など。 監訳協力に「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」。\n\n\n日々の記録\n最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、 当面quartoとお付き合いしようと思う。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLast-Modified.js\n\n\n\n\n\n\nJavaScript\n\n\nquarto\n\n\n\n\n\n\n\n\n\n2024/09/17\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nwingetとscoopでWindows環境を移行、Visual Studio環境の移行\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\nVisual Studio\n\n\n\n\n\n\n\n\n\n2024/09/15\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\n読書「愛の顛末」\n\n\n\n\n\n\n読書\n\n\n\n\n\n\n\n\n\n2024/09/14\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nquarto記法でカレンダー\n\n\n\n\n\n\nquarto\n\n\npython\n\n\n\n\n\n\n\n\n\n2024/09/14\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/09\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nZotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\nRust\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint with quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nStirling PDF\n\n\n\n\n\n\nPDF\n\n\nWindows\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\nmermaid\n\n\nGraphviz\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
   }
 ]

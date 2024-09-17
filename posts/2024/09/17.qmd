@@ -1,0 +1,26 @@
+---
+draft: true
+title: "2024/09/17 Tweets"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-17"
+categories: [Twitter]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    include-in-header: 
+      - text: |
+          <script src="/Last-Modified.js"></script>
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/17.html"
+  description: "2024年9月17日のTweets"
+  twitter: true
+  mastodon: true
+---
+
+{{< tweet Matanuki 1835871462886187189 >}}
+
+<div id="last-modified"></div>

@@ -1,53 +1,58 @@
 ---
-title: "wingetとscoopでWindows環境を移植"
+title: "wingetとscoopでWindows環境を移行、Visual Studio環境の移行"
 format:
   html:
     toc: true
 lang: ja
 author: "魔狸"
 date: "2024-09-15"
-categories: [Windows,winget,scoop]
+categories: [Windows,winget,scoop,Visual Studio]
 filters:
   - social-share
 share:
   permalink: "https://TanukiMa.github.io/posts/2024/09/migrate-windows-env-w-winget.html"
-  description: "「wingetとscoopでWindows環境を移植」"
+  description: "「wingetとscoopでWindows環境を移行、Visual Studio環境の移行」"
   twitter: true
   mastodon: true
 ---
 Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。
 
-このWindows環境は90日の期限があるので [^longnote] 、別のコンテナを作って開発環境を移植します。
+このWindows環境は90日の期限があるので [^longnote] 、別のコンテナを作って開発環境を移行します。
 
 [^longnote]: 仮想環境台数分のライセンス買えばいいけど、その余裕はありません。
 
 ゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、
-**90日使い捨てWindows環境** というのは悪くありません。
+**90日使い捨てWindows環境** は悪くありません。
 
-command.com上で
+# wingetの環境移行
+
+移行元のcommand.com上で
 ```bash
 winget export -o winget.json --include-versions
 ```
 で、winget.jsonにwingetでインストールされたパッケージ情報が詰め込まれます。
 
+移行先で
+```{.bash .code-overflow-wrap}
+winget import -i winget.json --ignore-versions --ignore-unavailable --disable-interactivity --accept-package-agreements --accept-source-agreements
+```
+します。
+
+wingetの引数の意味は
+```bash
+winget import --help
+```
+参照。
+もしくは
+[https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import](https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import)を参照。
+
+# scoopの環境移行
 
 [scoop](https://scoop.sh/)でも環境移行ができます。
 ```bash
 scoop export scoop.json
 ```
 scoop -g で global installしているパッケージは注意が必要かもしれません。
-
-移行先で
-```bash
-winget import -i winget.json \
-	   --ignore-versions \
-	   --ignore-unavailable \
-	   --disable-interactivity \
-	   --accept-package-agreements \
-	   --accept-source-agreements
-```
-します。
-
 
 ```bash
 scoop install git
@@ -62,3 +67,46 @@ winget import --help
 参照。
 もしくは
 [https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import](https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import)を読みましょう。
+
+# Visual Studio 2002の環境移行
+
+Visual Studioも「以前の環境ではbuildできていたのに...」と嘆くことが無くなります。
+
+## 
+
+まずは 
+移行元で
+Visual Studio Installer
+を起動し、menuから
+"Export configuration"
+を選択。
+![](vs2022_export.png){fig-alt="移行元環境でVS installer.exe起動後にmenuからexportを選択"}
+
+## 
+
+ ~/Documents/.vsconfig に インストールしているコンポーネント一覧と機能拡張の情報が書き込まれます。
+
+![](vs2022_exportconfig.png){fig-alt="移行元環境でvsconfig fileをexport"}
+
+## 
+
+移行先で
+Visual Studio Installer
+を起動し、menuから
+"Import configuration"
+を選択。
+
+![](vs2022_import.png){fig-alt="移行先環境でVS installer.exe起動後にmenuからimportを選択"}
+
+## 
+
+Google Driveに移動、vsconfig.vsconfigにrenameした
+~\Documents\.vsconfig を
+読み込みます。
+
+![移行先環境でvsconfig fileをimport](vs2022_importconfig.png){width=70%}
+
+後はクリックするだけで、コンポーネント、機能拡張のinstall
+/
+uninstallが進んでいきます。
+
