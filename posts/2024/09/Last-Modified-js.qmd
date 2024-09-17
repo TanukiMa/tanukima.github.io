@@ -1,5 +1,5 @@
 ---
-title: "Last-Modified.ja"
+title: "Last-Modified.js"
 format:
   html:
     toc: true
@@ -19,7 +19,7 @@ filters:
   - social-share
 share:
   permalink: "https://TanukiMa.github.io/2024/09/Last-Modified-js.html"
-  description: "JavaScriptでLast-Modifiedを表示する"
+  description: "「JavaScriptでLast-Modified: を表示する」"
   twitter: true
   mastodon: true
 ---
