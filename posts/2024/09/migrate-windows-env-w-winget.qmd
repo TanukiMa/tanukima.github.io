@@ -104,7 +104,7 @@ Google Driveに移動、vsconfig.vsconfigにrenameした
 ~/Documents/.vsconfig を
 読み込みます。
 
-![移行先環境でvsconfig fileをimport](vs2022_importconfig.png){width=70%}
+![](vs2022_importconfig.png){fig-alt="移行先環境でvsconfig fileをimport"}
 
 後はクリックするだけで、コンポーネント、機能拡張のinstall
 /
