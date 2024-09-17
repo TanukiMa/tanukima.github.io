@@ -18,7 +18,7 @@ categories: [JavaScript,quarto]
 filters:
   - social-share
 share:
-  permalink: "https://TanukiMa.github.io/2024/09/Last-Modified-js.html"
+  permalink: "https://tanukima.github.io/posts/2024/09/Last-Modified-js.html"
   description: "「JavaScriptでLast-Modified: を表示する」"
   twitter: true
   mastodon: true
