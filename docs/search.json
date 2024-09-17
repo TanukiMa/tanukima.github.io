@@ -60,7 +60,7 @@
     "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-3",
     "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
     "section": "",
-    "text": "Google Driveに移動、vsconfig.vsconfigにrenameした ~.vsconfig を 読み込みます。\n\n\n\n移行先環境でvsconfig fileをimport\n\n\n後はクリックするだけで、コンポーネント、機能拡張のinstall / uninstallが進んでいきます。"
+    "text": "Google Driveに移動、vsconfig.vsconfigにrenameした ~/Documents/.vsconfig を 読み込みます。\n\n\n\n移行先環境でvsconfig fileをimport\n\n\n後はクリックするだけで、コンポーネント、機能拡張のinstall / uninstallが進んでいきます。"
   },
   {
     "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#footnotes",

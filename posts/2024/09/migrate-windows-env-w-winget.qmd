@@ -101,7 +101,7 @@ Visual Studio Installer
 ## 
 
 Google Driveに移動、vsconfig.vsconfigにrenameした
-~\Documents\.vsconfig を
+~/Documents/.vsconfig を
 読み込みます。
 
 ![移行先環境でvsconfig fileをimport](vs2022_importconfig.png){width=70%}
