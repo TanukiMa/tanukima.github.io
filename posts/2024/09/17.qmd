@@ -1,10 +1,10 @@
 ---
 draft: true
-title: "2024/09/17 Tweets"
+title: "2024/09/17"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-09-17"
-categories: [Twitter]
+categories: [Twitter,Visual Studio]
 format:
   html:
     code-fold: true
@@ -16,10 +16,16 @@ filters:
   - social-share
 share:
   permalink: "https://TanukiMa.github.io/posts/2024/09/17.html"
-  description: "2024年9月17日のTweets"
+  description: "2024年9月17日(火)"
   twitter: true
   mastodon: true
 ---
+
+tweetを挿入すると、
+[quarto](https://quarto.org/)のレンダリングが乱れます。
+原因はよく分かりません。
+
+# 
 
 {{< tweet Matanuki 1835871462886187189 >}}
 

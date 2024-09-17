@@ -28,6 +28,38 @@ http headerのLast-Modified: 、便利だと思うんですが、廃れました
 
 [quarto](https://quarto.org/)でも **JavaScript** で Last-Modified: をHTML bodyで表示するようにしてみました。
 
+quarto render して、HTMLが生成された時間がLast-Modified: になります。
+
+# 作った理由
+
+日本の医学系学会で一番会員数が多いであろう
+[日本内科学会](https://www.naika.or.jp/)
+は
+内科専門医試験や総合内科専門医試験の情報提供に
+[資格認定試験](https://www.naika.or.jp/nintei/exam/)
+というページを設けているのですが、一見しても隅々まで読んでも、いつ情報が更新されたのか分かりません。
+
+これでは受験生が可哀想ではないでしょうか。
+
+他にも、内容は変わっていないのに、**更新日の日付だけが変更される**
+[J-STAGE](https://www.jstage.jst.go.jp/browse/-char/ja/)
+の
+[日本内科学会雑誌](https://www.jstage.jst.go.jp/browse/naika/-char/ja)
+トップページや、
+http headerで現在時刻をLast-Modified: として返すコンテンツもあったりします。
+
+以前公開していた**魔狸アンテナ**を再開するために現在コーディングを頑張っていますが、コンテンツ提供側の方々には、そのコンテンツの更新時間を明確にすることにも配慮して欲しいと思っています。
+
+[GitHub Pages](https://docs.github.com/ja/pages)
+はLast-Modified: を返してくれるようですが、いつ仕様変更があるかは分かりません。
+
+[Node.js](https://nodejs.org/en)
+/JavaScript/TypeScriptで擬似的にLast-Modified: を表示させれば良くない？と思いついたのは昨夜の入浴時でした。
+
+起床後にｻｻｻｯと書いてみました。
+
+後日整理して、GitHubで公開します。ご自由にお使い下さい。（ライセンス形態は未定です）
+
 # まずは Last-Modified.js
 以下。quarto project dirのトップに置きます。
 docs/にも配置する。

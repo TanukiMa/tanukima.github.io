@@ -199,7 +199,8 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
     <h2 id="toc-title">目次</h2>
    
   <ul>
-  <li><a href="#まずは-last-modified.js" id="toc-まずは-last-modified.js" class="nav-link active" data-scroll-target="#まずは-last-modified.js">まずは Last-Modified.js</a></li>
+  <li><a href="#作った理由" id="toc-作った理由" class="nav-link active" data-scroll-target="#作った理由">作った理由</a></li>
+  <li><a href="#まずは-last-modified.js" id="toc-まずは-last-modified.js" class="nav-link" data-scroll-target="#まずは-last-modified.js">まずは Last-Modified.js</a></li>
   <li><a href="#qmd-yaml" id="toc-qmd-yaml" class="nav-link" data-scroll-target="#qmd-yaml">qmd yaml</a></li>
   <li><a href="#qmd" id="toc-qmd" class="nav-link" data-scroll-target="#qmd">qmd</a></li>
   <li><a href="#結果" id="toc-結果" class="nav-link" data-scroll-target="#結果">結果</a></li>
@@ -215,6 +216,18 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 
 <p>個人的には http headerのLast-Modified: 、便利だと思うんですが、廃れましたね。</p>
 <p><a href="https://quarto.org/">quarto</a>でも <strong>JavaScript</strong> で Last-Modified: をHTML bodyで表示するようにしてみました。</p>
+<p>quarto render して、HTMLが生成された時間がLast-Modified: になります。</p>
+<section id="作った理由" class="level1">
+<h1>作った理由</h1>
+<p>日本の医学系学会で一番会員数が多いであろう <a href="https://www.naika.or.jp/">日本内科学会</a> は 内科専門医試験や総合内科専門医試験の情報提供に <a href="https://www.naika.or.jp/nintei/exam/">資格認定試験</a> というページを設けているのですが、一見しても隅々まで読んでも、いつ情報が更新されたのか分かりません。</p>
+<p>これでは受験生が可哀想ではないでしょうか。</p>
+<p>他にも、内容は変わっていないのに、<strong>更新日の日付だけが変更される</strong> <a href="https://www.jstage.jst.go.jp/browse/-char/ja/">J-STAGE</a> の <a href="https://www.jstage.jst.go.jp/browse/naika/-char/ja">日本内科学会雑誌</a> トップページや、 http headerで現在時刻をLast-Modified: として返すコンテンツもあったりします。</p>
+<p>以前公開していた<strong>魔狸アンテナ</strong>を再開するために現在コーディングを頑張っていますが、コンテンツ提供側の方々には、そのコンテンツの更新時間を明確にすることにも配慮して欲しいと思っています。</p>
+<p><a href="https://docs.github.com/ja/pages">GitHub Pages</a> はLast-Modified: を返してくれるようですが、いつ仕様変更があるかは分かりません。</p>
+<p><a href="https://nodejs.org/en">Node.js</a> /JavaScript/TypeScriptで擬似的にLast-Modified: を表示させれば良くない？と思いついたのは昨夜の入浴時でした。</p>
+<p>起床後にｻｻｻｯと書いてみました。</p>
+<p>後日整理して、GitHubで公開します。ご自由にお使い下さい。（ライセンス形態は未定です）</p>
+</section>
 <section id="まずは-last-modified.js" class="level1">
 <h1>まずは Last-Modified.js</h1>
 <p>以下。quarto project dirのトップに置きます。 docs/にも配置する。</p>
