@@ -24,11 +24,12 @@ share:
   mastodon: true
 ---
 個人的には
-http headerのLast-Modified: 、便利だと思うんですが、廃れましたね。
+http headerのLast-Modified: 、便利だと思うのですが、動的コンテンツが持て囃されるためか、廃れましたね。
 
 [quarto](https://quarto.org/)でも **JavaScript** で Last-Modified: をHTML bodyで表示するようにしてみました。
 
-quarto render して、HTMLが生成された時間がLast-Modified: になります。
+quarto render して、HTMLが生成された時間が
+Last-Modified: になります。
 
 # 作った理由
 
