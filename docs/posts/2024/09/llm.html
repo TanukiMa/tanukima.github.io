@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ma, Tanuki">
 
-<title>llm – 魔狸的日々</title>
+<title>llmとかgptel – 魔狸的日々</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,6 +75,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/social-share-0.1.0/social-share.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,7 +116,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta name="twitter:title" content="llm – 魔狸的日々">
+<meta name="twitter:title" content="llmとかgptel – 魔狸的日々">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@Matanuki">
 <meta name="twitter:site" content="@Matanuki">
@@ -159,10 +161,11 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">llm</h1>
+      <h1 class="title">llmとかgptel</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">llm</div>
                 <div class="quarto-category">Windows</div>
+                <div class="quarto-category">Emacs</div>
               </div>
                   </div>
   </div>
@@ -197,6 +200,11 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#reor" id="toc-reor" class="nav-link active" data-scroll-target="#reor">Reor</a></li>
+  <li><a href="#gptelでgeminiする" id="toc-gptelでgeminiする" class="nav-link" data-scroll-target="#gptelでgeminiする">gptelでGeminiする</a>
+  <ul class="collapse">
+  <li><a href="#emacs.dinit.el" id="toc-emacs.dinit.el" class="nav-link" data-scroll-target="#emacs.dinit.el">~/.emacs.d/init.el</a></li>
+  <li><a href="#emacsからgeminiに質問してみた" id="toc-emacsからgeminiに質問してみた" class="nav-link" data-scroll-target="#emacsからgeminiに質問してみた">EmacsからGeminiに質問してみた</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -215,11 +223,43 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <p>とか</p>
 <p><a href="https://reorproject.org/">https://reorproject.org/</a></p>
 <p>参照。</p>
+</section>
+<section id="gptelでgeminiする" class="level1">
+<h1>gptelでGeminiする</h1>
+<p>日本の医師免許所有者で一番Emacsを使っているのはおそらく私だろう、という自負 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> があります。</p>
+<p>各種生成AIもEmacsから使います。</p>
+<p><a href="https://github.com/karthink/gptel">gptel</a>です。</p>
+<p><a href="https://www.gnu.org/software/emacs/">GNU Emacs</a>で</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">M-x</span> package-install</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gptel</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>します。</p>
+<section id="emacs.dinit.el" class="level2">
+<h2 class="anchored" data-anchor-id="emacs.dinit.el">~/.emacs.d/init.el</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(gptel<span class="op">-</span>make<span class="op">-</span>gemini <span class="st">"Gemini"</span> :key <span class="st">"Gemini_API_KEY"</span> :stream t)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">;;</span> OPTIONAL configuration</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>(setq</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">;;</span> gptel<span class="op">-</span>model <span class="st">"gemini-pro"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> gptel<span class="op">-</span>model <span class="st">"gemini-1.5-pro-latest"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> gptel<span class="op">-</span>backend (gptel<span class="op">-</span>make<span class="op">-</span>gemini <span class="st">"Gemini"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                 :key <span class="st">"Gemini_API_KEY"</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>を設定します。</p>
+</section>
+<section id="emacsからgeminiに質問してみた" class="level2">
+<h2 class="anchored" data-anchor-id="emacsからgeminiに質問してみた">EmacsからGeminiに質問してみた</h2>
+<p>結果。</p>
+<p><img src="gptel-gemini.png" class="img-fluid" alt="EmacsからGemini-"></p>
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
+
+<ol>
+<li id="fn1"><p>だからどうした<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -641,6 +681,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://tanukima.github.io/posts/2024/09/llm.html&amp;text=「llmとかgptel」" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="javascript:void(0);" onclick="var mastodon_instance=prompt('Mastodon Instance / Server Name?'); if(typeof mastodon_instance==='string' &amp;&amp; mastodon_instance.length){this.href='https://'+mastodon_instance+'/share?text=「llmとかgptel」 https://tanukima.github.io/posts/2024/09/llm.html'}else{return false;}" target="_blank" class="mastodon"><i class="fa-brands fa-mastodon fa-fw fa-lg"></i></a></div></div>
 
 
 

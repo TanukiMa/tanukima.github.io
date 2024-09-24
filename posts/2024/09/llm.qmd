@@ -1,13 +1,20 @@
 ---
-title: "llm"
+title: "llmとかgptel"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-09-24"
-categories: [llm, Windows]
+categories: [llm, Windows,Emacs]
 format:
   html:
     code-fold: true
     code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://tanukima.github.io/posts/2024/09/llm.html"
+  description: "「llmとかgptel」"
+  twitter: true
+  mastodon: true
 ---
 Windowsで **llm** 関係アプリを一括してインストール。当然wingetを使う。
 
@@ -24,3 +31,44 @@ winget install Ollama.Ollama MintplexLabs.AnythingLLM ReorProject.Reor TabbyML.T
 [https://reorproject.org/](https://reorproject.org/)
 
 参照。
+
+# gptelでGeminiする
+
+日本の医師免許所有者で一番Emacsを使っているのはおそらく私だろう、という自負
+[^longnote]
+があります。
+
+
+ [^longnote]: だからどうした
+
+
+各種生成AIもEmacsから使います。
+
+[gptel](https://github.com/karthink/gptel)です。
+
+[GNU Emacs](https://www.gnu.org/software/emacs/)で
+
+```{.bash .code-overflow-wrap}
+M-x package-install
+gptel
+```
+します。
+
+## ~/.emacs.d/init.el
+
+```{.python .code-overflow-wrap}
+(gptel-make-gemini "Gemini" :key "Gemini_API_KEY" :stream t)
+;; OPTIONAL configuration
+(setq
+;; gptel-model "gemini-pro"
+ gptel-model "gemini-1.5-pro-latest"
+ gptel-backend (gptel-make-gemini "Gemini"
+                 :key "Gemini_API_KEY"
+```
+を設定します。
+
+## EmacsからGeminiに質問してみた
+
+結果。
+
+![](gptel-gemini.png){fig-alt="EmacsからGemini-"}
