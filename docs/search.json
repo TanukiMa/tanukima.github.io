@@ -1,17 +1,45 @@
 [
   {
+    "objectID": "glc.html",
+    "href": "glc.html",
+    "title": "魔狸アンテナ",
+    "section": "",
+    "text": "2024年09月23日、22:12(JST)、株式会社グローバルヘルスコンサルティング・ジャパン の GemMed が更新されました。🪦\n2024年09月23日、18:39(JST)、日本内科学会 の 専門医制度 が更新されました。🪦\n\n\n\n\n\n2024年09月19日、17:48(JST)、株式会社ヒューマン・リサーチ の 日本医師会認定産業医研修会 が更新されました。🪦\n\n\n\n\n\n\n\n\n2024年06月25日、09:55(JST)、社会保険診療報酬支払基金 の 傷病名マスター が更新されました。🪦\n\n\n\n\n\n\n\n\n\n\n\n2023年11月30日、18:19(JST)、日本肥満学会 の 刊行物 が更新されました。🪦"
+  },
+  {
     "objectID": "glc.html#年",
     "href": "glc.html#年",
     "title": "魔狸アンテナ",
-    "section": "2024年",
-    "text": "2024年\n\n2024年9月\n\n2024年9月16日\n\n20:45(JST)、日本内科学会 の 専門医制度 が更新されました。🪦\n\n\n\n\n2024年6月\n\n2024年6月25日\n\n09:55(JST)、社会保険診療報酬支払基金 の 傷病名マスター が更新されました。🪦"
+    "section": "",
+    "text": "2024年09月23日、22:12(JST)、株式会社グローバルヘルスコンサルティング・ジャパン の GemMed が更新されました。🪦\n2024年09月23日、18:39(JST)、日本内科学会 の 専門医制度 が更新されました。🪦\n\n\n\n\n\n2024年09月19日、17:48(JST)、株式会社ヒューマン・リサーチ の 日本医師会認定産業医研修会 が更新されました。🪦\n\n\n\n\n\n\n\n\n2024年06月25日、09:55(JST)、社会保険診療報酬支払基金 の 傷病名マスター が更新されました。🪦"
   },
   {
     "objectID": "glc.html#年-1",
     "href": "glc.html#年-1",
     "title": "魔狸アンテナ",
-    "section": "2023年",
-    "text": "2023年\n\n2023年11月\n\n2023年11月30日\n\n18:19(JST)、日本肥満学会 の 刊行物 が更新されました。🪦"
+    "section": "",
+    "text": "2023年11月30日、18:19(JST)、日本肥満学会 の 刊行物 が更新されました。🪦"
+  },
+  {
+    "objectID": "BeSQHfMQ.html",
+    "href": "BeSQHfMQ.html",
+    "title": "魔狸アンテナ日本肥満学会の刊行物",
+    "section": "",
+    "text": "日本肥満学会 の 刊行物 の更新履歴\n\n2023年11月30日、18:19(JST)、日本肥満学会 の 刊行物 が更新されました。[🪦]([‘archive.org’, ‘https://web.archive.org/web/20240921141753/http://www.jasso.or.jp/contents/magazine/journal.html’])"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "魔狸",
+    "section": "",
+    "text": "自己紹介\n（自称）（ 日本内科学会 認定）ブラッド・ピット兼ポケモンGoトレーナー・医畜（総合内科・周術期内科・ER・ICU・CCU・HCU・ICD・PCT）兼セレブ（自治体認定済）、FJSIM（Fellow of the Japanese Society of Internal Medicine ; 総合内科専門医）、ICD（Infection Control Doctor）。最近は 大学生の卒論指導も。主な訳書に「データ匿名化手法」 、「実践バイオインフォマティクス」、「バイオインフォマティクスのためのPerl入門」など。 監訳協力に「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」。\n\n\n日々の記録\n最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、 当面quartoとお付き合いしようと思う。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nllm\n\n\n\n\n\n\nllm\n\n\nWindows\n\n\n\n\n\n\n\n\n\n2024/09/24\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nLast-Modified.js\n\n\n\n\n\n\nJavaScript\n\n\nquarto\n\n\n\n\n\n\n\n\n\n2024/09/17\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nwingetとscoopでWindows環境を移行、Visual Studio環境の移行\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\nVisual Studio\n\n\n\n\n\n\n\n\n\n2024/09/15\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\n読書「愛の顛末」\n\n\n\n\n\n\n読書\n\n\n\n\n\n\n\n\n\n2024/09/14\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nquarto記法でカレンダー\n\n\n\n\n\n\nquarto\n\n\npython\n\n\n\n\n\n\n\n\n\n2024/09/14\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/09\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nZotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\nRust\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint with quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nStirling PDF\n\n\n\n\n\n\nPDF\n\n\nWindows\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\nmermaid\n\n\nGraphviz\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
+  },
+  {
+    "objectID": "wdaVl0lR.html",
+    "href": "wdaVl0lR.html",
+    "title": "魔狸アンテナ：日本肥満学会の刊行物",
+    "section": "",
+    "text": "日本肥満学会 の 刊行物 の更新履歴\n\n2023年11月30日、18:19(JST)、日本肥満学会 の 刊行物 が更新されました。🪦"
   },
   {
     "objectID": "posts/2024/09/Last-Modified-js.html",
@@ -28,95 +56,18 @@
     "text": "大学での講義のため、PowerPointを使ってスライドを作らねばならないことがある。\n動作は重いし、編集が面倒。\nというわけで、marpへの転向も検討したが、marpで作られるpptxファイルは編集が困難。\npandocでpptxに変換することもできるが、手になじまなかった。\nところが、quartoで pptxを作成できるそうだ。\nhttps://quarto.org/docs/projects/quarto-projects.htmlや https://quarto.org/docs/gallery/#presentations が参考になる。\n\n初手\nquarto create project \nする。"
   },
   {
-    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html",
-    "href": "posts/2024/09/migrate-windows-env-w-winget.html",
-    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "objectID": "posts/2024/09/WSL2.html",
+    "href": "posts/2024/09/WSL2.html",
+    "title": "WSL2小技",
     "section": "",
-    "text": "Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。\nこのWindows環境は90日の期限があるので 1 、別のコンテナを作って開発環境を移行します。\nゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 90日使い捨てWindows環境 は悪くありません。"
+    "text": "Windows Subsystem for Linux、 所謂 WSL2は便利ですねー\n私は wsl-distrodを使っています。\n\nGoogle Driveをmount\nGoogle Driveを動作させているWindowsがhostならば、 WSL2コンテナ内で\nsudo mount -t drvfs H: /mnt/h\nすれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。\nWSL2の起動時に自動でmountするためには、 rootのcrontabに\n@reboot     mount -t drvfs H: /mnt/h\nと書く。\n\n\ncommand lineやshellからGoogle Driveを操作する\nRustで書かれた google-drive-3-cliを使うのが一つの手かもしれません。\nrust-msvcを使えば、 WoA(Windows On Arm)でもbuild、動作します。"
   },
   {
-    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section",
-    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section",
-    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "objectID": "posts/2024/09/quarto.html",
+    "href": "posts/2024/09/quarto.html",
+    "title": "quarto",
     "section": "",
-    "text": "まずは 移行元で Visual Studio Installer を起動し、menuから “Export configuration” を選択。"
-  },
-  {
-    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-1",
-    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-1",
-    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
-    "section": "",
-    "text": "~/Documents/.vsconfig に インストールしているコンポーネント一覧と機能拡張の情報が書き込まれます。"
-  },
-  {
-    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-2",
-    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-2",
-    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
-    "section": "",
-    "text": "移行先で Visual Studio Installer を起動し、menuから “Import configuration” を選択。"
-  },
-  {
-    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-3",
-    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-3",
-    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
-    "section": "",
-    "text": "Google Driveに移動、vsconfig.vsconfigにrenameした ~/Documents/.vsconfig を 読み込みます。\n\n後はクリックするだけで、コンポーネント、機能拡張のinstall / uninstallが進んでいきます。"
-  },
-  {
-    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#footnotes",
-    "href": "posts/2024/09/migrate-windows-env-w-winget.html#footnotes",
-    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
-    "section": "脚注",
-    "text": "脚注\n\n\n仮想環境台数分のライセンス買えばいいけど、その余裕はありません。↩︎"
-  },
-  {
-    "objectID": "posts/2024/09/quarto-cal.html",
-    "href": "posts/2024/09/quarto-cal.html",
-    "title": "quarto記法でカレンダー",
-    "section": "",
-    "text": "quartoでカレンダーは書けるか？\n\n\nShow the code\nimport calendar\nimport datetime\n\ndef generate_quarto_calendar_code():\n    # 現在の年と月を取得\n    today = datetime.date.today()\n    year = today.year\n    month = today.month\n    \n    # カレンダーオブジェクトを作成\n    cal = calendar.monthcalendar(year, month)\n    \n    # 月の名前を取得（日本語）\n    month_names = [\"睦月\", \"如月\", \"弥生\", \"卯月\", \"皐月\", \"水無月\",\n                   \"文月\", \"葉月\", \"長月\", \"神無月\", \"霜月\", \"師走\"]\n    month_name = month_names[month - 1]\n    \n    # Quarto記法用のMarkdown形式のカレンダーを構築\n    quarto_code = '| 日 | 月 | 火 | 水 | 木 | 金 | 土 |\\n|:--:|:--:|:--:|:--:|:--:|:--:|:--:|\\n'\n    \n    # 各週の行を生成\n    for week in cal:\n        day_row = '|'\n        for day in week:\n            if day == 0:\n                day_row += ' |'\n            else:\n                style = ''\n                if week.index(day) == 0:  # 日曜日\n                    style = '{style=\"color: red;\"}'\n                elif week.index(day) == 6:  # 土曜日\n                    style = '{style=\"color: deepskyblue;\"}'\n                day_row += f' [{day}]{style} |' if style else f' {day} |'\n        quarto_code += day_row + '\\n'\n    \n    # ヘッダーの挿入\n    quarto_code = f'''---\ntitle: \"{year}年 {month}月 （{month_name}）のカレンダー\"\n---\n\n{quarto_code}\n\n: {year}年{month}月のカレンダー\n'''\n    return quarto_code\n\n# 実行して結果を表示\nprint(generate_quarto_calendar_code())\n\n\n---\ntitle: \"2024年 9月 （長月）のカレンダー\"\n---\n\n| 日 | 月 | 火 | 水 | 木 | 金 | 土 |\n|:--:|:--:|:--:|:--:|:--:|:--:|:--:|\n| | | | | | | [1]{style=\"color: deepskyblue;\"} |\n| [2]{style=\"color: red;\"} | 3 | 4 | 5 | 6 | 7 | [8]{style=\"color: deepskyblue;\"} |\n| [9]{style=\"color: red;\"} | 10 | 11 | 12 | 13 | 14 | [15]{style=\"color: deepskyblue;\"} |\n| [16]{style=\"color: red;\"} | 17 | 18 | 19 | 20 | 21 | [22]{style=\"color: deepskyblue;\"} |\n| [23]{style=\"color: red;\"} | 24 | 25 | 26 | 27 | 28 | [29]{style=\"color: deepskyblue;\"} |\n| [30]{style=\"color: red;\"} | | | | | | |\n\n\n: 2024年9月のカレンダー\n\n\n\nこんな感じ。\n\n2024年9月のカレンダー\n\n\n\n\n\n\n\n\n\n\n\n日\n月\n火\n水\n木\n金\n土\n\n\n\n\n\n\n\n\n\n\n1\n\n\n2\n3\n4\n5\n6\n7\n8\n\n\n9\n10\n11\n12\n13\n14\n15\n\n\n16\n17\n18\n19\n20\n21\n22\n\n\n23\n24\n25\n26\n27\n28\n29\n\n\n30"
-  },
-  {
-    "objectID": "posts/2024/09/14.html",
-    "href": "posts/2024/09/14.html",
-    "title": "読書「愛の顛末」",
-    "section": "",
-    "text": "一度読了しているが、本棚から取り出す。\n\n最近、我が家は「文豪ストレイドッグス」ブームであり、 中島敦の名前を聞くことは珍しくない。\n中島敦に関する蘊蓄を垂れるためにも再読する。"
-  },
-  {
-    "objectID": "posts/2024/09/Zotero.html",
-    "href": "posts/2024/09/Zotero.html",
-    "title": "Zotero",
-    "section": "",
-    "text": "皆さん、文献管理はどうしていますか？\n私は Zotero を使っています。"
-  },
-  {
-    "objectID": "posts/2024/09/Zotero.html#windowsでzotero",
-    "href": "posts/2024/09/Zotero.html#windowsでzotero",
-    "title": "Zotero",
-    "section": "WindowsでZotero",
-    "text": "WindowsでZotero\nwinget ならば、\nwinget install Zotero -a x64 --force\nしましょう。\nオプション-a(= –architecture )でCPU architectureを指定します。デフォルトではx86となるようで、今更32bitアプリを使う必要も無いと思うので、-a x64を指定します。"
-  },
-  {
-    "objectID": "posts/2024/09/Zotero.html#macosでzotero",
-    "href": "posts/2024/09/Zotero.html#macosでzotero",
-    "title": "Zotero",
-    "section": "MacOSでZotero",
-    "text": "MacOSでZotero\nHomebrew を使い\nbrew install zotero\nでインストールされます。"
-  },
-  {
-    "objectID": "posts/2024/09/07.html",
-    "href": "posts/2024/09/07.html",
-    "title": "Blogなのか？",
-    "section": "",
-    "text": "最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、当面quartoとお付き合いしようと思う。"
-  },
-  {
-    "objectID": "posts/2024/09/07.html#mermaid-で-gantt-chart",
-    "href": "posts/2024/09/07.html#mermaid-で-gantt-chart",
-    "title": "Blogなのか？",
-    "section": "Mermaid で Gantt chart",
-    "text": "Mermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
+    "text": "色々な文書を作成する機会が多いです。\n正直、辟易としています。\n昭和のガリ版印刷を引きずったような汚いフォント、歪んだ罫線、構成力も校正力も欠けている文章。\nPDF化されているのに、印刷して記入して、スキャンして取り込む？\nそんな不思議なことが平然とまかり通っているのが、日本の医療の現場です。\n医療の情報化を通じて効率化を推進していきたいと常々考えています。\n\nMermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
   },
   {
     "objectID": "posts/2024/09/1st-winget.html",
@@ -168,18 +119,102 @@
     "text": "どのアプリをどのパッケージング・システムで管理する？\nAdobe Acrobat Reader DC（64-bit） は chocolatey、scoopでは提供されていないが、wingetなら導入できる。\n$ winget search acrobat\n名前                             ID                          バージョン   一致         ソース\n----------------------------------------------------------------------------------------------\nAdobe Acrobat Reader DC          XPDP273C0XHQH2              Unknown                   msstore\nBlossX Acrobat 11 - PDF Editor   9P51586BZKNG                Unknown                   msstore\nAdobe Acrobat Reader DC (64-bit) Adobe.Acrobat.Reader.64-bit 22.001.20117 Tag: acrobat winget\nAdobe Acrobat Reader DC          Adobe.Acrobat.Reader.32-bit 22.001.20117 Tag: acrobat winget\n$ winget install Adobe.Acrobat.Reader.64-bit"
   },
   {
-    "objectID": "posts/2024/09/quarto.html",
-    "href": "posts/2024/09/quarto.html",
-    "title": "quarto",
+    "objectID": "posts/2024/09/07.html",
+    "href": "posts/2024/09/07.html",
+    "title": "Blogなのか？",
     "section": "",
-    "text": "色々な文書を作成する機会が多いです。\n正直、辟易としています。\n昭和のガリ版印刷を引きずったような汚いフォント、歪んだ罫線、構成力も校正力も欠けている文章。\nPDF化されているのに、印刷して記入して、スキャンして取り込む？\nそんな不思議なことが平然とまかり通っているのが、日本の医療の現場です。\n医療の情報化を通じて効率化を推進していきたいと常々考えています。\n\nMermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
+    "text": "最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、当面quartoとお付き合いしようと思う。"
   },
   {
-    "objectID": "posts/2024/09/WSL2.html",
-    "href": "posts/2024/09/WSL2.html",
-    "title": "WSL2小技",
+    "objectID": "posts/2024/09/07.html#mermaid-で-gantt-chart",
+    "href": "posts/2024/09/07.html#mermaid-で-gantt-chart",
+    "title": "Blogなのか？",
+    "section": "Mermaid で Gantt chart",
+    "text": "Mermaid で Gantt chart\n\n\n\n\n\ngantt\n    title A Gantt Diagram\n    dateFormat YYYY-MM-DD\n    section Section\n        A task          :a1, 2014-01-01, 30d\n        Another task    :after a1, 20d\n    section Another\n        Task in Another :2014-01-12, 12d\n        another task    :24d"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html",
+    "href": "posts/2024/09/Zotero.html",
+    "title": "Zotero",
     "section": "",
-    "text": "Windows Subsystem for Linux、 所謂 WSL2は便利ですねー\n私は wsl-distrodを使っています。\n\nGoogle Driveをmount\nGoogle Driveを動作させているWindowsがhostならば、 WSL2コンテナ内で\nsudo mount -t drvfs H: /mnt/h\nすれば、Hドライブに割り振られているGoogle Driveが WSL2コンテナの /mnt/h にmountされます。\nWSL2の起動時に自動でmountするためには、 rootのcrontabに\n@reboot     mount -t drvfs H: /mnt/h\nと書く。\n\n\ncommand lineやshellからGoogle Driveを操作する\nRustで書かれた google-drive-3-cliを使うのが一つの手かもしれません。\nrust-msvcを使えば、 WoA(Windows On Arm)でもbuild、動作します。"
+    "text": "皆さん、文献管理はどうしていますか？\n私は Zotero を使っています。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html#windowsでzotero",
+    "href": "posts/2024/09/Zotero.html#windowsでzotero",
+    "title": "Zotero",
+    "section": "WindowsでZotero",
+    "text": "WindowsでZotero\nwinget ならば、\nwinget install Zotero -a x64 --force\nしましょう。\nオプション-a(= –architecture )でCPU architectureを指定します。デフォルトではx86となるようで、今更32bitアプリを使う必要も無いと思うので、-a x64を指定します。"
+  },
+  {
+    "objectID": "posts/2024/09/Zotero.html#macosでzotero",
+    "href": "posts/2024/09/Zotero.html#macosでzotero",
+    "title": "Zotero",
+    "section": "MacOSでZotero",
+    "text": "MacOSでZotero\nHomebrew を使い\nbrew install zotero\nでインストールされます。"
+  },
+  {
+    "objectID": "posts/2024/09/14.html",
+    "href": "posts/2024/09/14.html",
+    "title": "読書「愛の顛末」",
+    "section": "",
+    "text": "一度読了しているが、本棚から取り出す。\n\n最近、我が家は「文豪ストレイドッグス」ブームであり、 中島敦の名前を聞くことは珍しくない。\n中島敦に関する蘊蓄を垂れるためにも再読する。"
+  },
+  {
+    "objectID": "posts/2024/09/quarto-cal.html",
+    "href": "posts/2024/09/quarto-cal.html",
+    "title": "quarto記法でカレンダー",
+    "section": "",
+    "text": "quartoでカレンダーは書けるか？\n\n\nShow the code\nimport calendar\nimport datetime\n\ndef generate_quarto_calendar_code():\n    # 現在の年と月を取得\n    today = datetime.date.today()\n    year = today.year\n    month = today.month\n    \n    # カレンダーオブジェクトを作成\n    cal = calendar.monthcalendar(year, month)\n    \n    # 月の名前を取得（日本語）\n    month_names = [\"睦月\", \"如月\", \"弥生\", \"卯月\", \"皐月\", \"水無月\",\n                   \"文月\", \"葉月\", \"長月\", \"神無月\", \"霜月\", \"師走\"]\n    month_name = month_names[month - 1]\n    \n    # Quarto記法用のMarkdown形式のカレンダーを構築\n    quarto_code = '| 日 | 月 | 火 | 水 | 木 | 金 | 土 |\\n|:--:|:--:|:--:|:--:|:--:|:--:|:--:|\\n'\n    \n    # 各週の行を生成\n    for week in cal:\n        day_row = '|'\n        for day in week:\n            if day == 0:\n                day_row += ' |'\n            else:\n                style = ''\n                if week.index(day) == 0:  # 日曜日\n                    style = '{style=\"color: red;\"}'\n                elif week.index(day) == 6:  # 土曜日\n                    style = '{style=\"color: deepskyblue;\"}'\n                day_row += f' [{day}]{style} |' if style else f' {day} |'\n        quarto_code += day_row + '\\n'\n    \n    # ヘッダーの挿入\n    quarto_code = f'''---\ntitle: \"{year}年 {month}月 （{month_name}）のカレンダー\"\n---\n\n{quarto_code}\n\n: {year}年{month}月のカレンダー\n'''\n    return quarto_code\n\n# 実行して結果を表示\nprint(generate_quarto_calendar_code())\n\n\n---\ntitle: \"2024年 9月 （長月）のカレンダー\"\n---\n\n| 日 | 月 | 火 | 水 | 木 | 金 | 土 |\n|:--:|:--:|:--:|:--:|:--:|:--:|:--:|\n| | | | | | | [1]{style=\"color: deepskyblue;\"} |\n| [2]{style=\"color: red;\"} | 3 | 4 | 5 | 6 | 7 | [8]{style=\"color: deepskyblue;\"} |\n| [9]{style=\"color: red;\"} | 10 | 11 | 12 | 13 | 14 | [15]{style=\"color: deepskyblue;\"} |\n| [16]{style=\"color: red;\"} | 17 | 18 | 19 | 20 | 21 | [22]{style=\"color: deepskyblue;\"} |\n| [23]{style=\"color: red;\"} | 24 | 25 | 26 | 27 | 28 | [29]{style=\"color: deepskyblue;\"} |\n| [30]{style=\"color: red;\"} | | | | | | |\n\n\n: 2024年9月のカレンダー\n\n\n\nこんな感じ。\n\n2024年9月のカレンダー\n\n\n\n\n\n\n\n\n\n\n\n日\n月\n火\n水\n木\n金\n土\n\n\n\n\n\n\n\n\n\n\n1\n\n\n2\n3\n4\n5\n6\n7\n8\n\n\n9\n10\n11\n12\n13\n14\n15\n\n\n16\n17\n18\n19\n20\n21\n22\n\n\n23\n24\n25\n26\n27\n28\n29\n\n\n30"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "Windows上のhyper-Vに開発環境を整えたコンテナを作り、その上でbuildしています。\nこのWindows環境は90日の期限があるので 1 、別のコンテナを作って開発環境を移行します。\nゴミも色々蓄積して、diskも足りなくなるし、NTFSはよく壊れるし、 90日使い捨てWindows環境 は悪くありません。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "まずは 移行元で Visual Studio Installer を起動し、menuから “Export configuration” を選択。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-1",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-1",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "~/Documents/.vsconfig に インストールしているコンポーネント一覧と機能拡張の情報が書き込まれます。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-2",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-2",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "移行先で Visual Studio Installer を起動し、menuから “Import configuration” を選択。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#section-3",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#section-3",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "",
+    "text": "Google Driveに移動、vsconfig.vsconfigにrenameした ~/Documents/.vsconfig を 読み込みます。\n\n後はクリックするだけで、コンポーネント、機能拡張のinstall / uninstallが進んでいきます。"
+  },
+  {
+    "objectID": "posts/2024/09/migrate-windows-env-w-winget.html#footnotes",
+    "href": "posts/2024/09/migrate-windows-env-w-winget.html#footnotes",
+    "title": "wingetとscoopでWindows環境を移行、Visual Studio環境の移行",
+    "section": "脚注",
+    "text": "脚注\n\n\n仮想環境台数分のライセンス買えばいいけど、その余裕はありません。↩︎"
+  },
+  {
+    "objectID": "posts/2024/09/llm.html",
+    "href": "posts/2024/09/llm.html",
+    "title": "llm",
+    "section": "",
+    "text": "Windowsで llm 関係アプリを一括してインストール。当然wingetを使う。\nwinget install Ollama.Ollama MintplexLabs.AnythingLLM ReorProject.Reor TabbyML.Tabby Jan.Jan ElementLabs.LMStudio -a x64\n\nReor\nhttps://github.com/reorproject/reor\nとか\nhttps://reorproject.org/\n参照。"
   },
   {
     "objectID": "posts/2024/09/StirlingPDF.html",
@@ -210,10 +245,31 @@
     "text": "昔はOpenVPN網を構築するのが面倒だったなぁ…（遠い目）\n今は tailscaleが 便利すぎる。\ntailscaleについては、WikiPediaが詳しい。\nwireguardベースなので、OpenVPNに比較して高速。kernel baseなのでセキュリティ関係で配慮が必要。\n\nWindowsでtailscale\nwinget install -e tailscale\n\n\nMacOSでtailscale\nbrew install tailscale --cask\n\n\nDebian GNU/Linuxでtailscale\nhttps://tailscale.com/kb/1031/install-linux の当該項目参照。"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "魔狸",
+    "objectID": "2jwBWtYH.html",
+    "href": "2jwBWtYH.html",
+    "title": "魔狸アンテナ：日本内科学会の専門医制度",
     "section": "",
-    "text": "自己紹介\n（自称）（ 日本内科学会 認定）ブラッド・ピット兼ポケモンGoトレーナー・医畜（総合内科・周術期内科・ER・ICU・CCU・HCU・ICD・PCT）兼セレブ（自治体認定済）、FJSIM（Fellow of the Japanese Society of Internal Medicine ; 総合内科専門医）、ICD（Infection Control Doctor）。最近は 大学生の卒論指導も。主な訳書に「データ匿名化手法」 、「実践バイオインフォマティクス」、「バイオインフォマティクスのためのPerl入門」など。 監訳協力に「AIファースト・ヘルスケア ―医療現場におけるAIアプリケーションの利用」。\n\n\n日々の記録\n最近、一箇所に何かを纏めて書くということが無く、 日々の記録が途絶えがちになってきたので、 GitHub Pagesと quartoを活用していくことにした。\nPowerPointも作れるし、 当面quartoとお付き合いしようと思う。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLast-Modified.js\n\n\n\n\n\n\nJavaScript\n\n\nquarto\n\n\n\n\n\n\n\n\n\n2024/09/17\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nwingetとscoopでWindows環境を移行、Visual Studio環境の移行\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\nVisual Studio\n\n\n\n\n\n\n\n\n\n2024/09/15\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\n読書「愛の顛末」\n\n\n\n\n\n\n読書\n\n\n\n\n\n\n\n\n\n2024/09/14\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nquarto記法でカレンダー\n\n\n\n\n\n\nquarto\n\n\npython\n\n\n\n\n\n\n\n\n\n2024/09/14\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/09\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nZotero\n\n\n\n\n\n\n文献管理\n\n\nZotero\n\n\nWindows\n\n\nMacOS\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nWSL2小技\n\n\n\n\n\n\nWindows\n\n\nWSL2\n\n\nDebian GNU/Linux\n\n\nRust\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nPowerPoint with quarto\n\n\n\n\n\n\nquarto\n\n\nPowerPoint\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nStirling PDF\n\n\n\n\n\n\nPDF\n\n\nWindows\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\ntailscale\n\n\n\n\n\n\nnetworking\n\n\nWindows\n\n\nMacOS\n\n\nLinux\n\n\nDebian GNU/Linux\n\n\nwinget\n\n\nhomebrew\n\n\n\n\n\n\n\n\n\n2024/09/08\n\n\n魔狸\n\n\n\n\n\n\n\n\n\n\n\n\nBlogなのか？\n\n\n\n\n\n\n魔狸\n\n\nquarto\n\n\nGitHub\n\n\nmermaid\n\n\nGraphviz\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n\n\n\n\n\n\nWindows パッケージング・システム HOWTO\n\n\n\n\n\n\nWindows\n\n\nwinget\n\n\nscoop\n\n\n\n\n\n\n\n\n\n2024/09/07\n\n\nMa, Tanuki\n\n\n\n\n\n\n一致なし"
+    "text": "日本内科学会 の 専門医制度 の更新履歴\n\n2024年09月23日、18:39(JST)、日本内科学会 の 専門医制度 が更新されました。🪦"
+  },
+  {
+    "objectID": "MtkMl8o8.html",
+    "href": "MtkMl8o8.html",
+    "title": "魔狸アンテナ：株式会社グローバルヘルスコンサルティング・ジャパンのGemMed",
+    "section": "",
+    "text": "株式会社グローバルヘルスコンサルティング・ジャパン の GemMed の更新履歴\n\n2024年09月23日、22:12(JST)、株式会社グローバルヘルスコンサルティング・ジャパン の GemMed が更新されました。🪦"
+  },
+  {
+    "objectID": "jA1M1f8x.html",
+    "href": "jA1M1f8x.html",
+    "title": "魔狸アンテナ：株式会社ヒューマン・リサーチの日本医師会認定産業医研修会",
+    "section": "",
+    "text": "株式会社ヒューマン・リサーチ の 日本医師会認定産業医研修会 の更新履歴\n\n2024年09月19日、17:48(JST)、株式会社ヒューマン・リサーチ の 日本医師会認定産業医研修会 が更新されました。🪦"
+  },
+  {
+    "objectID": "CgEEH6eY.html",
+    "href": "CgEEH6eY.html",
+    "title": "魔狸アンテナ：社会保険診療報酬支払基金の傷病名マスター",
+    "section": "",
+    "text": "社会保険診療報酬支払基金 の 傷病名マスター の更新履歴\n\n2024年06月25日、09:55(JST)、社会保険診療報酬支払基金 の 傷病名マスター が更新されました。🪦"
   }
 ]

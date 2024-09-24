@@ -1,0 +1,26 @@
+---
+title: "llm"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-24"
+categories: [llm, Windows]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+---
+Windowsで **llm** 関係アプリを一括してインストール。当然wingetを使う。
+
+
+```{.bash .code-overflow-wrap}
+winget install Ollama.Ollama MintplexLabs.AnythingLLM ReorProject.Reor TabbyML.Tabby Jan.Jan ElementLabs.LMStudio -a x64
+```
+
+# Reor
+[https://github.com/reorproject/reor](https://github.com/reorproject/reor)
+
+とか
+
+[https://reorproject.org/](https://reorproject.org/)
+
+参照。
