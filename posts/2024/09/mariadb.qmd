@@ -14,18 +14,22 @@ share:
   twitter: true
   mastodon: true
 ---
-久々に mysqlとかmariadbをいじっている。
+久々に 
+[mysql](https://dev.mysql.com)
+とか
+[mariadb](https://mariadb.org)
+をいじっている。
 
 # rootのpasswd変更
 
 とりあえず
-```{bash}
+```bash
 sudo mysql -u root -p
 ```
 
 してから
 
-```{SQL}
+```SQL
 alter user 'root'@'localhost' IDENTIFIED BY "*********";
 create user 'matanuki'@'%' identified by '**********';
 grant all on *.* to 'matanuki'@'%';

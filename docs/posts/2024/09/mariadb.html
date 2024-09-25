@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -172,16 +206,16 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 
 
 
-<p>久々に mysqlとかmariadbをいじっている。</p>
+<p>久々に <a href="https://dev.mysql.com">mysql</a> とか <a href="https://mariadb.org">mariadb</a> をいじっている。</p>
 <section id="rootのpasswd変更" class="level1">
 <h1>rootのpasswd変更</h1>
 <p>とりあえず</p>
-<pre class="{bash}"><code>sudo mysql -u root -p</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mysql <span class="at">-u</span> root <span class="at">-p</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>してから</p>
-<pre class="{SQL}"><code>alter user 'root'@'localhost' IDENTIFIED BY "*********";
-create user 'matanuki'@'%' identified by '**********';
-grant all on *.* to 'matanuki'@'%';
-flush privileges;</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="fu">user</span> <span class="st">'root'</span>@<span class="st">'localhost'</span> <span class="kw">IDENTIFIED</span> <span class="kw">BY</span> <span class="ot">"*********"</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="fu">user</span> <span class="st">'matanuki'</span>@<span class="st">'%'</span> <span class="kw">identified</span> <span class="kw">by</span> <span class="st">'**********'</span>;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">all</span> <span class="kw">on</span> <span class="op">*</span>.<span class="op">*</span> <span class="kw">to</span> <span class="st">'matanuki'</span>@<span class="st">'%'</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">flush</span> <span class="kw">privileges</span>;</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

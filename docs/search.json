@@ -221,7 +221,7 @@
     "href": "posts/2024/09/mariadb.html",
     "title": "mariadb",
     "section": "",
-    "text": "久々に mysqlとかmariadbをいじっている。\n\nrootのpasswd変更\nとりあえず\nsudo mysql -u root -p\nしてから\nalter user 'root'@'localhost' IDENTIFIED BY \"*********\";\ncreate user 'matanuki'@'%' identified by '**********';\ngrant all on *.* to 'matanuki'@'%';\nflush privileges;"
+    "text": "久々に mysql とか mariadb をいじっている。\n\nrootのpasswd変更\nとりあえず\nsudo mysql -u root -p\nしてから\nalter user 'root'@'localhost' IDENTIFIED BY \"*********\";\ncreate user 'matanuki'@'%' identified by '**********';\ngrant all on *.* to 'matanuki'@'%';\nflush privileges;"
   },
   {
     "objectID": "posts/2024/09/08.html",
