@@ -1,0 +1,29 @@
+---
+title: "mariadb"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-09-25"
+categories: [mariadb]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+---
+久々に mysqlとかmariadbをいじっている。
+
+# rootのpasswd変更
+
+とりあえず
+```{bash}
+sudo mysql -u root -p
+```
+
+してから
+
+```{SQL}
+alter user 'root'@'localhost' IDENTIFIED BY "*********";
+create user 'matanuki'@'%' identified by '**********';
+grant all on *.* to 'matanuki'@'%';
+flush privileges;
+```
+

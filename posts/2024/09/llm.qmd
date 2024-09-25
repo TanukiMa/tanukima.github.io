@@ -3,7 +3,7 @@ title: "llmとかgptel"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-09-24"
-categories: [llm, Windows,Emacs]
+categories: [llm, Windows,Emacs,MacOS]
 format:
   html:
     code-fold: true
