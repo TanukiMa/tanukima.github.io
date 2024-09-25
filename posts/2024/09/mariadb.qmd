@@ -8,6 +8,11 @@ format:
   html:
     code-fold: true
     code-summary: "Show the code"
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/09/mariadb.html"
+  description: "久々に「mariadb」"
+  twitter: true
+  mastodon: true
 ---
 久々に mysqlとかmariadbをいじっている。
 
