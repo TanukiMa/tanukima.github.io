@@ -1,0 +1,61 @@
+---
+title: "魔狸アンテナ 再始動しました！"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-10-12"
+categories: [医療, python, mariadb, SQL, GitHub, Debian GNU/Linux]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/10/glc.html"
+  description: "魔狸アンテナ 再始動しました！"
+  twitter: true
+  mastodon: true
+---
+
+昔々 [^longnote1] 、医療関係のwebsiteのLast-Modifiedを検出して、URLを更新順に並べ、ユーザはCookieでどのURLの更新情報を閲覧するか選べるというサービスを作り
+[愛媛県医師会](https://www.ehime.med.or.jp/)
+の先生方の御協力を頂き、
+[日本医師会](https://www.med.or.jp/)
+から研究助成を頂いたことがあるですが、
+サーバ移転・移設に伴い2011年頃にサービスを止めてしまいました。
+
+[^longnote1]: 20世紀の終わり頃
+
+医療情報分野で
+[日本医師会](https://www.med.or.jp/)
+から研究助成を得たのは日本初だったということで、
+[愛媛県医師会](https://www.ehime.med.or.jp/)
+としては、末永くサービスを続けて欲しかったようですが、大変申し訳ありませんでした。
+
+しかし、混沌としたWWWの世界から情報の更新をキャッチするシステムの構築への興味は止めていませんでした。
+
+数年前にもスクレイピングをベースにして、約50URLsの更新を検知するシステムを作っていたのですが、根本的な箇所にエラーがあり、停止していました。
+
+この度、
+[Debian GNU/Linux](https://www.debian.org/)
+上で
+[MariaDB](https://mariadb.org/)
+、
+[Python](https://www.python.org/)、
+[quarto](https://quarto.org/)
+を使い持続的に医療関係のURLの更新を検知し、その結果はGitHub上で閲覧可能にしました。更新が検知されると、
+[Twitter](https://twitter.com)
+、
+[Mastodon](https://joinmastodon.org/)
+、
+[Bluesky](https://bsky.app/)
+に更新情報が投稿されます。
+
+## URL は
+[https://TanukiMa.github.io/glc/](https://TanukiMa.github.io/glc/) です。
+
+## バグ報告やリクエスト は
+「このURLを更新観測対象にしてくれ」などのリクエストやバグ報告は、
+[https://github.com/TanukiMa/glc/](GitHub)からお願いします。
+
+
