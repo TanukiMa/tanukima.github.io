@@ -3,14 +3,51 @@ body {
   max-width: 100%;
   padding: 0;
   margin: 0;
+  font-size: 16px; /* 基本フォントサイズを設定 */
 }
 
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
+  width: 100%;
+  max-width: 1920px; /* 最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
 }
 
 .quarto-content {
   max-width: 100%;
-  padding: 0;
+  padding: 0 20px; /* 左右に少しパディングを追加 */
+  box-sizing: border-box; /* パディングを幅に含める */
+}
+
+/* レスポンシブデザインのためのメディアクエリ */
+@media (min-width: 768px) {
+  .quarto-content {
+    padding: 0 40px; /* より大きな画面でパディングを増やす */
+  }
+}
+
+@media (min-width: 1200px) {
+  .quarto-content {
+    padding: 0 60px; /* さらに大きな画面でパディングを増やす */
+  }
+}
+
+/* コンテンツの横並びレイアウト（必要に応じて） */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px; /* ネガティブマージンでグリッドのギャップを作成 */
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
+  min-width: 300px; /* 最小幅を設定 */
+}
+
+/* 画像のレスポンシブ化 */
+img {
+  max-width: 100%;
+  height: auto;
 }

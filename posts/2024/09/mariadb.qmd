@@ -36,3 +36,13 @@ grant all on *.* to 'matanuki'@'%';
 flush privileges;
 ```
 
+# tableでcheck制約
+
+最近のmariadbはcheck制約が可能になっているのが嬉しい。
+
+boolean型のcolumns Aはnot nullで、かつ、falseならば columns Bはnot nullでなくてはならない場合は
+
+```SQL
+CHECK (A = TRUE OR (check_lastmodified = FALSE AND B IS NOT NULL))
+```
+と規定しておけばOK。

@@ -1,0 +1,34 @@
+---
+title: "T Shirts Designer Debut!"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-10-12"
+image: posts/2024/10/COSTAIVE-women.png
+categories: 医療
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/10/12.html"
+  description: "T Shirts Designer Debut!"
+  twitter: true
+  mastodon: true
+---
+
+Tシャツ・デザイナーとしてデビューしました！
+
+[https://www.zazzle.co.jp/store/Matanuki?rf=238037105448914807](https://www.zazzle.co.jp/store/Matanuki?rf=238037105448914807)
+から下記商品をお買い上げ頂けます！
+
+![](HPV-T-Shirts-men.png){width=50%}
+
+![](HPV-T-Shirts-women.png){width=50%}
+
+![](COSTAIVE-men.png){width=50%}
+
+![](COSTAIVE-women.png){width=50%}
+
+各ワクチン接種の記念に購入は如何でしょうか？
