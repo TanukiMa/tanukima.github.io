@@ -222,7 +222,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <h1>tableでcheck制約</h1>
 <p>最近のmariadbはcheck制約が可能になっているのが嬉しい。</p>
 <p>boolean型のcolumns Aはnot nullで、かつ、falseならば columns Bはnot nullでなくてはならない場合は</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CHECK</span> (A <span class="op">=</span> <span class="kw">TRUE</span> <span class="kw">OR</span> (check_lastmodified <span class="op">=</span> <span class="kw">FALSE</span> <span class="kw">AND</span> B <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CHECK</span> (A <span class="op">=</span> <span class="kw">TRUE</span> <span class="kw">OR</span> (A <span class="op">=</span> <span class="kw">FALSE</span> <span class="kw">AND</span> B <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>と規定しておけばOK。</p>
 
 

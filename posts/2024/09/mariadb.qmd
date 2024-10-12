@@ -43,6 +43,6 @@ flush privileges;
 boolean型のcolumns Aはnot nullで、かつ、falseならば columns Bはnot nullでなくてはならない場合は
 
 ```SQL
-CHECK (A = TRUE OR (check_lastmodified = FALSE AND B IS NOT NULL))
+CHECK (A = TRUE OR (A = FALSE AND B IS NOT NULL))
 ```
 と規定しておけばOK。
