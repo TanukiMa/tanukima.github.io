@@ -1,0 +1,36 @@
+---
+title: ""
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-10-24"
+categories: [Windows, PowerShell]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/10/tasksch.html"
+  description: "T Shirts Designer Debut!"
+  twitter: true
+  mastodon: true
+---
+cron便利ですよね。cronで連日の決まった仕事を処理させるために、私はLinuxにハマったと言っても過言ではないです。
+
+では、Windowsではcron使える？ 
+[Cygwin](https://www.cygwin.com/)
+でcygserverでcronをdaemonizeする？
+面倒ですよね。
+
+Windowsには
+**タスクスケジューラー**
+なるGUIなcronもどきがあるので、それを使えばいいのですが、GUIが面倒な私です。
+
+cuiでタスクスケジューラーを叩きます。
+
+mozc4med-build.ps1 を 毎朝7:00に動作させる例が下記。タスクスケジューラーでの名前はDaily_mozc4medにします。
+
+```{bash}
+schtasks /create /tn "Daily_mozc4med" /tr "powershell.exe -File C:\Users\User\scripts\mozc4med-build.ps1" /sc daily /st 07:00 /F
+```
