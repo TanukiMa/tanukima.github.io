@@ -34,3 +34,18 @@ mozc4med-build.ps1 を 毎朝7:00に動作させる例が下記。タスクス�
 ```{.bash .code-overflow-wrap}
 schtasks /create /tn "Daily_mozc4med" /tr "powershell.exe -File C:\Users\User\scripts\mozc4med-build.ps1" /sc daily /st 07:00 /F
 ```
+
+Daily_mozc4medをtaskschから削除するなら
+```{.bash .code-overflow-wrap}
+schtasks /delete /TN "Daily_mozc4med"
+```
+
+Daily_mozc4medをtaskschから実行するなら
+```{.bash .code-overflow-wrap}
+schtasks /run /tn "Daily_mozc4med"
+```
+
+taskschを確認
+```{.bash .code-overflow-wrap}
+schtasks /query /fo LIST /v
+```

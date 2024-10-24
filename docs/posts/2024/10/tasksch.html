@@ -209,6 +209,12 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <p>cuiでタスクスケジューラーを叩きます。</p>
 <p>mozc4med-build.ps1 を 毎朝7:00に動作させる例が下記。タスクスケジューラーでの名前はDaily_mozc4medにします。</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">schtasks</span> /create /tn <span class="st">"Daily_mozc4med"</span> /tr <span class="st">"powershell.exe -File C:\Users\User\scripts\mozc4med-build.ps1"</span> /sc daily /st 07:00 /F</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Daily_mozc4medをtaskschから削除するなら</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">schtasks</span> /delete /TN <span class="st">"Daily_mozc4med"</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Daily_mozc4medをtaskschから実行するなら</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">schtasks</span> /run /tn <span class="st">"Daily_mozc4med"</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>taskschを確認</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">schtasks</span> /query /fo LIST /v</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 
