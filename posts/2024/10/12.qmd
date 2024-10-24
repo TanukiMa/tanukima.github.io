@@ -3,7 +3,7 @@ title: "T Shirts Designer Debut!"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-10-12"
-categories: 医療
+categories: [医療]
 format:
   html:
     code-fold: true
