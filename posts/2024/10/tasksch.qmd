@@ -31,6 +31,6 @@ cuiでタスクスケジューラーを叩きます。
 
 mozc4med-build.ps1 を 毎朝7:00に動作させる例が下記。タスクスケジューラーでの名前はDaily_mozc4medにします。
 
-```{bash}
+```{.bash .code-overflow-wrap}
 schtasks /create /tn "Daily_mozc4med" /tr "powershell.exe -File C:\Users\User\scripts\mozc4med-build.ps1" /sc daily /st 07:00 /F
 ```
