@@ -3,7 +3,7 @@ title: "mozc4med"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-10-25"
-categories: [医療,Mozc,Windows,MacOS]
+categories: [医療,Mozc,Windows,MacOS,mozc4med]
 format:
   html:
     code-fold: true
