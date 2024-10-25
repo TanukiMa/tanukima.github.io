@@ -3,7 +3,7 @@ title: "mozc4med"
 lang: ja
 author: "Ma, Tanuki"
 date: "2024-10-25"
-categories: [医療,Mozc,Windows,MacOS,mozc4med]
+categories: [医療,Mozc,Windows,MacOS,Mozc4med]
 format:
   html:
     code-fold: true
@@ -76,7 +76,7 @@ MacOS 13、MacOS 14、MacOS 15（いずれもarm）で動作確認をしてい�
 環境に合わせてどちらかのpkgをダウンロード、インストールして下さい。
 
 # 注意点
-[Mozc](https://github.com/google/mozc)がインストールしている場合は、アンインストールの上、mozc4medをインストールして下さい。現在のところ、mozcとmozc4medは併存できません。
+[Mozc](https://github.com/google/mozc)がインストールしている場合は、アンインストールの上、Mozc4medをインストールして下さい。現在のところ、MozcとMozc4medは併存できません。
 
 # ChangeLog
 ````{.bash .code-overflow-wrap}
