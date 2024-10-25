@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -126,7 +160,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">mozc4med</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">医療</div>
@@ -138,7 +172,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       <div>
       <div class="quarto-title-meta-heading">作者</div>
@@ -161,22 +195,90 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#特徴" id="toc-特徴" class="nav-link active" data-scroll-target="#特徴">特徴</a></li>
+  <li><a href="#ライセンス" id="toc-ライセンス" class="nav-link" data-scroll-target="#ライセンス">ライセンス</a></li>
+  <li><a href="#価格" id="toc-価格" class="nav-link" data-scroll-target="#価格">価格</a></li>
+  <li><a href="#語彙追加依頼バグ報告" id="toc-語彙追加依頼バグ報告" class="nav-link" data-scroll-target="#語彙追加依頼バグ報告">語彙追加依頼、バグ報告</a></li>
+  <li><a href="#商用展開" id="toc-商用展開" class="nav-link" data-scroll-target="#商用展開">商用展開</a></li>
+  <li><a href="#mozc4med-for-windows" id="toc-mozc4med-for-windows" class="nav-link" data-scroll-target="#mozc4med-for-windows">Mozc4med for Windows</a></li>
+  <li><a href="#mozc4med-for-macos" id="toc-mozc4med-for-macos" class="nav-link" data-scroll-target="#mozc4med-for-macos">Mozc4med for MacOS</a></li>
+  <li><a href="#注意点" id="toc-注意点" class="nav-link" data-scroll-target="#注意点">注意点</a></li>
+  <li><a href="#changelog" id="toc-changelog" class="nav-link" data-scroll-target="#changelog">ChangeLog</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
 <p>電子カルテ端末の日本語変換の珍妙さで笑ってしまい、仕事が手につかない皆さんに朗報です。</p>
-<p><a href="https://github.com/google/mozc">Mozc</a></p>
+<p><a href="https://www.google.co.jp/ime/">Google日本語入力</a> のオープンソース版である <a href="https://github.com/google/mozc">Mozc</a> を医療の現場向けに改良しました。</p>
+<p>名付けて <strong>Mozc4med</strong>としてβ公開します。</p>
+<section id="特徴" class="level1">
+<h1>特徴</h1>
+<p>インストールだけ、追加操作無しで豊富な医療用語が使えます。</p>
+<p>厚生労働省が配付の基本マスター（医科診療行為マスター、医薬品マスター、傷病名マスター）を元に、約60000語の医療用語を 変換エンジンに組み込みました。これから収録語数は増やしていく予定です。</p>
+</section>
+<section id="ライセンス" class="level1">
+<h1>ライセンス</h1>
+<p>ライセンスは ソフトウェア部分に関しては 三条項BSDライセンス (3-clause BSD license)、辞書の一部については MATANUKI <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> が権利を保有します。</p>
+<p>完全無保証です。</p>
+</section>
+<section id="価格" class="level1">
+<h1>価格</h1>
+<p><strong>無償</strong> です。</p>
+</section>
+<section id="語彙追加依頼バグ報告" class="level1">
+<h1>語彙追加依頼、バグ報告</h1>
+<p><a href="https://github.com/TanukiMa">https://github.com/TanukiMa</a> に記載の連絡先から、御連絡下さい。</p>
+</section>
+<section id="商用展開" class="level1">
+<h1>商用展開</h1>
+<p><a href="https://github.com/TanukiMa">https://github.com/TanukiMa</a> に記載の連絡先から、御相談下さい。</p>
+</section>
+<section id="mozc4med-for-windows" class="level1">
+<h1>Mozc4med for Windows</h1>
+<p>x86_64(64bit)環境で動作します。Windows 10(22H2)で動作確認済み。</p>
+<ul>
+<li><p><a href="https://tanukima.github.io/posts/2024/10/Mozc4med_x86_64_20241025-1729812154.msi">msi installer形式</a></p></li>
+<li><p><a href="https://tanukima.github.io/posts/2024/10/Mozc4med_bzl_x86_64_20241025-1729843546.msi">bazelでbuildしたmsi installer</a></p></li>
+</ul>
+<p>上記いずれかをダウンロード、インストールして下さい。</p>
+</section>
+<section id="mozc4med-for-macos" class="level1">
+<h1>Mozc4med for MacOS</h1>
+<p>MacOS 13、MacOS 14、MacOS 15（いずれもarm）で動作確認をしています。</p>
+<ul>
+<li><p><a href="https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-arm64.pkg">arm64 binary</a></p></li>
+<li><p><a href="https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-universal.pkg">Universal binary</a> 環境に合わせてどちらかのpkgをダウンロード、インストールして下さい。</p></li>
+</ul>
+</section>
+<section id="注意点" class="level1">
+<h1>注意点</h1>
+<p><a href="https://github.com/google/mozc">Mozc</a>がインストールしている場合は、アンインストールの上、mozc4medをインストールして下さい。現在のところ、mozcとmozc4medは併存できません。</p>
+</section>
+<section id="changelog" class="level1">
+<h1>ChangeLog</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">2024/10/25</span> first beta release<span class="er">(</span><span class="ex">Windows</span> x86_64, MacOS arm64, MacOS universal<span class="kw">)</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
+
+<ol>
+<li id="fn1"><p>MATANUKIは個人事業主の屋号です。(2024/10/25現在)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

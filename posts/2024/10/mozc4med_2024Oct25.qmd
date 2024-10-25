@@ -27,7 +27,7 @@ share:
 **Mozc4med**としてβ公開します。
 
 # 特徴
-インストールだけ、追加操作無しで豊富な医療用語が使える！
+インストールだけ、追加操作無しで豊富な医療用語が使えます。
 
 厚生労働省が配付の基本マスター（医科診療行為マスター、医薬品マスター、傷病名マスター）を元に、約60000語の医療用語を
 変換エンジンに組み込みました。これから収録語数は増やしていく予定です。
@@ -36,34 +36,49 @@ share:
 
 ライセンスは
 ソフトウェア部分に関しては
-三条項BSDライセンス (3-clause BSD license)、辞書の一部については MATANUKIが権利を保有します。
+三条項BSDライセンス (3-clause BSD license)、辞書の一部については MATANUKI [^longnote]
+が権利を保有します。
 
 完全無保証です。
+
+[^longnote]: MATANUKIは個人事業主の屋号です。(2024/10/25現在)
 
 # 価格
 **無償**
 です。
 
 # 語彙追加依頼、バグ報告
-https://github.com/TanukiMa に記載の連絡先から、御連絡下さい。
+[https://github.com/TanukiMa](https://github.com/TanukiMa) に記載の連絡先から、御連絡下さい。
 
 # 商用展開
-https://github.com/TanukiMa に記載の連絡先から、御相談下さい。
+[https://github.com/TanukiMa](https://github.com/TanukiMa) に記載の連絡先から、御相談下さい。
 
 # Mozc4med for Windows
 x86_64(64bit)環境で動作します。Windows 10(22H2)で動作確認済み。
-* [msi installer形式](https://tanukima.github.io/posts/2024/10/Mozc4med_x86_64_20241025-1729812154.msi) 
-* [bazelでbuildしたmsi installer](https://tanukima.github.io/posts/2024/10/Mozc4med_bzl_x86_64_20241025-1729843546.msi)
+
+* 
+[msi installer形式](https://tanukima.github.io/posts/2024/10/Mozc4med_x86_64_20241025-1729812154.msi)
+
+*
+ [bazelでbuildしたmsi installer](https://tanukima.github.io/posts/2024/10/Mozc4med_bzl_x86_64_20241025-1729843546.msi)
+
 上記いずれかをダウンロード、インストールして下さい。
 
 # Mozc4med for MacOS
 MacOS 13、MacOS 14、MacOS 15（いずれもarm）で動作確認をしています。
-* [arm64 binary](https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-arm64.pkg]
-* [Universal binary](https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-universal.pkg]
+
+*
+[arm64 binary](https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-arm64.pkg)
+
+* 
+[Universal binary](https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-universal.pkg)
 環境に合わせてどちらかのpkgをダウンロード、インストールして下さい。
 
+# 注意点
+[Mozc](https://github.com/google/mozc)がインストールしている場合は、アンインストールの上、mozc4medをインストールして下さい。現在のところ、mozcとmozc4medは併存できません。
+
 # ChangeLog
-````
+````{.bash .code-overflow-wrap}
 2024/10/25 first beta release(Windows x86_64, MacOS arm64, MacOS universal)
 ````
 

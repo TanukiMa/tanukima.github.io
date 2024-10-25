@@ -284,6 +284,13 @@
     "href": "posts/2024/10/mozc4med_2024Oct25.html",
     "title": "mozc4med",
     "section": "",
-    "text": "電子カルテ端末の日本語変換の珍妙さで笑ってしまい、仕事が手につかない皆さんに朗報です。\nMozc"
+    "text": "電子カルテ端末の日本語変換の珍妙さで笑ってしまい、仕事が手につかない皆さんに朗報です。\nGoogle日本語入力 のオープンソース版である Mozc を医療の現場向けに改良しました。\n名付けて Mozc4medとしてβ公開します。"
+  },
+  {
+    "objectID": "posts/2024/10/mozc4med_2024Oct25.html#footnotes",
+    "href": "posts/2024/10/mozc4med_2024Oct25.html#footnotes",
+    "title": "mozc4med",
+    "section": "脚注",
+    "text": "脚注\n\n\nMATANUKIは個人事業主の屋号です。(2024/10/25現在)↩︎"
   }
 ]
