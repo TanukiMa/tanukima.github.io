@@ -1,0 +1,60 @@
+---
+title: "mozc4med"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-10-12"
+categories: [医療,Mozc,Windows,MacOS]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/10/mozc4med_2024Oct25.html"
+  description: "mozc4med"
+  twitter: true
+  mastodon: true
+---
+電子カルテ端末の日本語変換の珍妙さで笑ってしまい、仕事が手につかない皆さんに朗報です。
+
+[Google日本語入力](https://www.google.co.jp/ime/)
+のオープンソース版である
+[Mozc](https://github.com/google/mozc)
+を医療の現場向けに改良しました。
+
+名付けて
+**Mozc4med**としてβ公開します。
+
+# 特徴
+インストールだけ、追加操作無しで豊富な医療用語が使える！
+
+厚生労働省が配付の基本マスター（医科診療行為マスター、医薬品マスター、傷病名マスター）を元に、約60000語の医療用語を
+変換エンジンに組み込みました。これから収録語数は増やしていく予定です。
+
+# ライセンス
+
+ライセンスは
+ソフトウェア部分に関しては
+三条項BSDライセンス (3-clause BSD license)、辞書の一部については MATANUKIが権利を保有します。
+
+完全無保証です。
+
+# 価格
+**無償**
+です。
+
+# 語彙追加依頼、バグ報告
+https://github.com/TanukiMa に記載の連絡先から、御連絡下さい。
+
+# 商用展開
+https://github.com/TanukiMa に記載の連絡先から、御相談下さい。
+
+# Mozc4med for Windows
+x86_64(64bit)環境で動作します。Windows 10(22H2)で動作確認済み。
+
+
+
+# 
+
+# ChangeLog
