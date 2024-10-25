@@ -72,6 +72,7 @@ MacOS 13、MacOS 14、MacOS 15（いずれもarm）で動作確認をしてい�
 
 * 
 [Universal binary](https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-universal.pkg)
+
 環境に合わせてどちらかのpkgをダウンロード、インストールして下さい。
 
 # 注意点
