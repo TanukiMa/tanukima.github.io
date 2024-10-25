@@ -52,9 +52,18 @@ https://github.com/TanukiMa に記載の連絡先から、御相談下さい。
 
 # Mozc4med for Windows
 x86_64(64bit)環境で動作します。Windows 10(22H2)で動作確認済み。
+* [msi installer形式](https://tanukima.github.io/posts/2024/10/Mozc4med_x86_64_20241025-1729812154.msi) 
+* [bazelでbuildしたmsi installer](https://tanukima.github.io/posts/2024/10/Mozc4med_bzl_x86_64_20241025-1729843546.msi)
+上記いずれかをダウンロード、インストールして下さい。
 
-
-
-# 
+# Mozc4med for MacOS
+MacOS 13、MacOS 14、MacOS 15（いずれもarm）で動作確認をしています。
+* [arm64 binary](https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-arm64.pkg]
+* [Universal binary](https://tanukima.github.io/posts/2024/10/Mozc4med_macos_20241023-1729676166-universal.pkg]
+環境に合わせてどちらかのpkgをダウンロード、インストールして下さい。
 
 # ChangeLog
+````
+2024/10/25 first beta release(Windows x86_64, MacOS arm64, MacOS universal)
+````
+
