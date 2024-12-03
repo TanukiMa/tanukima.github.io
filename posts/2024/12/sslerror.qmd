@@ -1,0 +1,72 @@
+---
+title: "SSL error"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-12-03"
+categories: [医療]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/12/sslerror.html"
+  description: "SSL error"
+  twitter: true
+  mastodon: true
+---
+httpsが当たり前になってきましたが、
+果たして、SSLの運用は大丈夫でしょうか？
+
+```{.bash .code-overflow-wrap}
+% wget https://www2.medis.or.jp/stdcd/byomei/byomei300.zip 
+--2024-12-03 18:32:06--  https://www2.medis.or.jp/stdcd/byomei/byomei300.zip
+www2.medis.or.jp (www2.medis.or.jp) をDNSに問いあわせています... 118.238.8.116
+www2.medis.or.jp (www2.medis.or.jp)|118.238.8.116|:443 に接続しています... 接続しました。
+OpenSSL: error:0A00018A:SSL routines::dh key too small
+SSL による接続が確立できません。
+```
+
+```{.bash .code-overflow-wrap}
+% openssl s_client -connect www2.medis.or.jp:443 -showcerts 
+Connecting to 118.238.8.116
+CONNECTED(00000005)
+depth=2 C=JP, O=SECOM Trust Systems CO.,LTD., OU=Security Communication RootCA2
+verify return:1
+depth=1 C=JP, O=SECOM Trust Systems CO.,LTD., CN=SECOM Passport for Web SR 3.0 CA
+verify return:1
+depth=0 C=JP, ST=Tokyo, L=Shinjuku-ku, O=The Medical Information System Development Center, CN=www.medis.or.jp
+verify return:1
+40B846E601000000:error:0A00018A:SSL routines:tls_process_ske_dhe:dh key too small:ssl/statem/statem_clnt.c:2315:
+(以下略)
+```
+
+```{.bash .code-overflow-wrap}
+$ gnutls-cli --x509cafile=/etc/ssl/certs/ca-certificates.crt -p 443 www2.medis.or.jp
+Processed 146 CA certificate(s).
+Resolving 'www2.medis.or.jp:443'...
+Connecting to '118.238.8.116:443'...
+- Certificate type: X.509
+- Got a certificate list of 2 certificates.
+- Certificate[0] info:
+ - subject `CN=www.medis.or.jp,O=The Medical Information System Development Center,L=Shinjuku-ku,ST=Tokyo,C=JP', issuer `CN=SECOM Passport for Web SR 3.0 CA,O=SECOM Trust Systems CO.\,LTD.,C=JP', serial 0x4d76b6a848bb360da618478830fb0a45, RSA key 2048 bits, signed using RSA-SHA256, activated `2024-05-14 07:30:12 UTC', expires `2025-05-24 14:59:59 UTC', pin-sha256="Rid7bj3kVKZu0h5OSak2TkMFDTbvkfdxKgPzL2Uq1gY="
+        Public Key ID:
+                sha1:47728bc830b6e716f2e1135087574d3df7bd5d59
+                sha256:46277b6e3de454a66ed21e4e49a9364e43050d36ef91f7712a03f32f652ad606
+        Public Key PIN:
+                pin-sha256:Rid7bj3kVKZu0h5OSak2TkMFDTbvkfdxKgPzL2Uq1gY=
+
+- Certificate[1] info:
+ - subject `CN=SECOM Passport for Web SR 3.0 CA,O=SECOM Trust Systems CO.\,LTD.,C=JP', issuer `OU=Security Communication RootCA2,O=SECOM Trust Systems CO.\,LTD.,C=JP', serial 0x22b9b12f4d05f9ed13, RSA key 2048 bits, signed using RSA-SHA256, activated `2018-03-16 05:49:12 UTC', expires `2028-03-16 05:49:12 UTC', pin-sha256="Rhcj0dcdOovISeMPXTWpuUDiNf1EzyxSHeMUK0lfoR8="
+- Status: The certificate is trusted.
+- Description: (TLS1.2-X.509)-(RSA)-(AES-256-GCM)
+- Session ID: 5C:1B:11:4D:3E:28:E3:76:CD:85:09:EF:89:D6:9D:9E:B6:AE:BE:8D:84:CE:47:67:A8:34:B9:F5:E1:0B:47:C5
+- Options: safe renegotiation,
+- Handshake was completed
+
+- Simple Client Mode:
+
+*** Fatal error: The TLS connection was non-properly terminated.
+*** Server has terminated the connection abnormally.
+```
