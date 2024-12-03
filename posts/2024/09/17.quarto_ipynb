@@ -1,0 +1,67 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "draft: true\n",
+        "title: \"2024/09/17 Tweets\"\n",
+        "lang: ja\n",
+        "author: \"Ma, Tanuki\"\n",
+        "date: \"2024-09-17\"\n",
+        "categories: [Twitter]\n",
+        "format:\n",
+        "  html:\n",
+        "    code-fold: true\n",
+        "    code-summary: \"Show the code\"\n",
+        "    include-in-header: \n",
+        "      - text: |\n",
+        "          <script src=\"/Last-Modified.js\"></script>\n",
+        "filters:\n",
+        "  - social-share\n",
+        "share:\n",
+        "  permalink: \"https://TanukiMa.github.io/posts/2024/09/17.html\"\n",
+        "  description: \"2024年9月17日のTweets\"\n",
+        "  twitter: true\n",
+        "  mastodon: true\n",
+        "---"
+      ],
+      "id": "186fd049"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        " {{< tweet Matanuki 1835871462886187189 >}}"
+      ],
+      "id": "005898bf",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "を書くと、\n",
+        "[quarto](https://quarto.org/)のレンダリングが乱れます。\n",
+        "\n",
+        "\n",
+        "{{< tweet Matanuki 1835871462886187189 >}}\n",
+        "\n",
+        "\n",
+        "<div id=\"last-modified\"></div>"
+      ],
+      "id": "5495cc8f"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
