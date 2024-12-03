@@ -81,5 +81,6 @@ MacOS 13、MacOS 14、MacOS 15（いずれもarm）で動作確認をしてい�
 # ChangeLog
 ````{.bash .code-overflow-wrap}
 2024/10/25 first beta release(Windows x86_64, MacOS arm64, MacOS universal)
+2024/12/03 download URL fix
 ````
 
