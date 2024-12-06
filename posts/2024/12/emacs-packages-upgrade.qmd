@@ -1,0 +1,33 @@
+---
+title: "Emacsのパッケージを定期的にupgradeする"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-12-06"
+categories: [Emacs,MacOS]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/12/emacs-packages-upgrade.html"
+  description: "Emacsのパッケージを定期的にupgradeする"
+  twitter: true
+  mastodon: true
+---
+
+Homebrewもwingetもaptもcronやtaskschで定期的に自動でパッケージをアップグレードしていますが、
+これまでEmacsはpackages-upgradeを手動で行っていました。
+
+定期的な作業はスクリプトにして、寝ている時間に実行させます。
+
+シェルスクリプト
+```{.bash .code-overflow-wrap}
+#!/bin/bash
+/Applications/Emacs.app/Contents/MacOS/Emacs -nw --batch --eval '(progn 
+  (package-refresh-contents)
+  (package-upgrade-all)
+  (kill-emacs))
+```
+を書いて、crontabに登録しました。
