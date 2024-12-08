@@ -1,0 +1,28 @@
+---
+title: "魔狸アンテナ、観測対象追加"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-12-08"
+categories: [医療]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/12/08-glc.html"
+  description: "魔狸アンテナ、観測対象追加(2024/12/07)"
+  twitter: true
+  mastodon: true
+---
+
+[魔狸アンテナ](https://TanukiMa.github.io/glc/)の更新観測対象を追加しました。
+
+* [PMDA](https://www.pmda.go.jp/)の「自主点検通知（体外診断用医薬品）」 [https://www.pmda.go.jp/safety/info-services/ivd/0008.html](https://www.pmda.go.jp/safety/info-services/ivd/0008.html)
+
+* [PMDA](https://www.pmda.go.jp/)の「製薬企業からの適正使用等に関するお知らせ」 [https://www.pmda.go.jp/safety/info-services/drugs/calling-attention/properly-use-alert/0004.html](https://www.pmda.go.jp/safety/info-services/drugs/calling-attention/properly-use-alert/0004.html)
+
+* [PMDA](https://www.pmda.go.jp/)の「関係学会等からの医薬品の適正使用に関するお知らせ」[https://www.pmda.go.jp/safety/info-services/drugs/calling-attention/properly-use-alert/0001.html](https://www.pmda.go.jp/safety/info-services/drugs/calling-attention/properly-use-alert/0001.html)
+
+以上、3URLの更新を観測し、[https://TanukiMa.github.io/glc/](https://TanukiMa.github.io/glc/)以下で更新状況を提供していきます。
