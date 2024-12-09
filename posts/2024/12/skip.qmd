@@ -1,0 +1,101 @@
+---
+title: "skip"
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2024-12-09"
+categories: [MacOS,iOS,Android]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/12/skip.html"
+  description: "「skip」"
+  twitter: true
+  mastodon: true
+---
+one sourceからAndorid AppもiOS Appもbuildできちゃう（という触れ込みの）
+[skip](https://skip.tools/)
+、魅力的ですよね。
+
+スマホアプリを作りたい欲が高まっているので、試してみました。
+
+# UTM
+最近、あれこれインストールされていない環境を好んでいます。
+ディスク容量は必要ですが、
+[UTM](https://mac.getutm.app/)
+で MacOS15環境を作ります。
+
+# homebrew
+出来上がったMacOS15環境に
+[homebrew](https://brew.sh/)
+をインストールします。
+
+# Xcodes.app
+
+**Xcodes.app**
+を--caskでインストールします。
+```bash
+brew install xcodes --cask
+```
+なお、
+xcodes installでは AppleIDの認証が通りません。
+最近、
+[mas](https://github.com/mas-cli/)もsigninできませんが、似たような障壁でしょうか？
+
+**Xcodes.app**
+から2024/12/09現在最新のXcode 16.1をインストールします。iOS SDKもインストールします。
+
+# skipのインストール
+
+[https://skip.tools/docs/gettingstarted/#installation](https://skip.tools/docs/gettingstarted/#installation) の通り
+```bash
+brew install skiptools/skip/skip
+```
+
+# kotlin と rosetta2のインストール
+```bash
+brew install android-studio android-sdk kotlin
+```
+
+temurin@8のために、ARM環境では rosetta2も必要です。
+
+```bash
+sudo softwareupdate --install-rosetta --agree-to-license
+```
+
+# skip checkup
+```bash
+skip checkup
+```
+しますが、errorが出ます。
+
+詳しくは /tmp/skip-checkup-YYYY-MM-DD.txt に書かれています。
+
+**Android Studio.app** を起動、
+Settings -> Language & Frameworks -> Android SDK -> SDK Toolsで
+**Android SDK Command-line Tols(latest)**
+をインストールします。
+
+# ~/.zshrc を編集
+```bash
+export PATH="/opt/homebrew/bin:$PATH"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH="$PATH"$ANDROID_HOME/cmdline-tools/latest/bin"
+```
+とします。
+
+# 再度skip checkup
+環境変数を
+```bash
+source ~/.zshrc
+```
+で読み込ませ、再度skip checkupすればerrorは出なくなる筈です。
+
+# まとめ
+
+* skip checkup前に 環境変数ANDROID_HOME、PATHを適宜設定する必要がある
+
+# 参考
+[MacOS- sdkmanager = java.lang.NoClassDefFoundError](https://www.reddit.com/r/androiddev/comments/snn2be/macos_sdkmanager_javalangnoclassdeffounderror/?rdt=44091)
