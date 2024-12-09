@@ -82,7 +82,7 @@ Settings -> Language & Frameworks -> Android SDK -> SDK Toolsで
 ```bash
 export PATH="/opt/homebrew/bin:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH="$PATH"$ANDROID_HOME/cmdline-tools/latest/bin"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
 ```
 とします。
 
