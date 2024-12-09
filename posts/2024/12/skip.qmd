@@ -75,7 +75,7 @@ skip checkup
 
 **Android Studio.app** を起動、
 Settings -> Language & Frameworks -> Android SDK -> SDK Toolsで
-**Android SDK Command-line Tols(latest)**
+**Android SDK Command-line Tools(latest)**
 をインストールします。
 
 # ~/.zshrc を編集
