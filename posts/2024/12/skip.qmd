@@ -34,7 +34,7 @@ one sourceからAndorid AppもiOS Appもbuildできちゃう（という触れ�
 
 # Xcodes.app
 
-**Xcodes.app**
+**[Xcodes.app](https://www.xcodes.app/)**
 を--caskでインストールします。
 ```bash
 brew install xcodes --cask
