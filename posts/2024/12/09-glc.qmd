@@ -2,7 +2,7 @@
 title: "魔狸アンテナ、観測対象追加"
 lang: ja
 author: "Ma, Tanuki"
-date: "2024-12-08"
+date: "2024-12-09"
 categories: [医療]
 format:
   html:
