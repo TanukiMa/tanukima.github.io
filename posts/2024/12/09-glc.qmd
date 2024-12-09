@@ -1,0 +1,24 @@
+---
+title: "魔狸アンテナ、観測対象追加"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-12-08"
+categories: [医療]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/12/08-glc.html"
+  description: "魔狸アンテナ、観測対象追加(2024/12/07)"
+  twitter: true
+  mastodon: true
+---
+
+2024年12月8日に、[魔狸アンテナ](https://TanukiMa.github.io/glc/)の更新観測対象を追加しました。
+
+* [厚生労働省](https://www.mhlw.go.jp/)の「診断群分類（DPC）電子点数表について」 [https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198757_00008.html](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198757_00008.html)
+
+以上のURLの更新を観測し、[https://TanukiMa.github.io/glc/](https://TanukiMa.github.io/glc/)以下で更新状況を提供していきます。
