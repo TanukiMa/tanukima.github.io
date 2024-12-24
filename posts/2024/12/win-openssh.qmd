@@ -1,0 +1,53 @@
+---
+title: "WindowsでOpenSSH serverを導入する"
+lang: ja
+author: "Ma, Tanuki"
+date: "2024-12-24"
+categories: [Windows]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2024/12/win-openssh.html"
+  description: "WindowsでOpenSSH serverを導入する"
+  twitter: true
+  mastodon: true
+---
+前記した
+[「wingetとscoopでWindows環境を移行、Visual Studio環境の移行」](https://tanukima.github.io/posts/2024/09/migrate-windows-env-w-winget.html)
+の通りに新しいWindows開発環境を作りました。
+
+私が毎回ハマるのが、**OpenSSH server**の導入です。「設定」の何処をクリックすれば良いのか覚えられません [^longnote1]
+。
+
+[^longnote1]: 覚えるつもりもありません :-)
+
+こんなときこそ CUIです。
+
+まずは**Windows PowerShell**
+[^longnote2]
+を開いて、
+
+[^longnote2]:Windows PowerShellとMicrosoft PowerShellが別だって、御存知ですか？
+
+```{.bash .code-overflow-wrap}
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+```
+とOpenSSH serverをインストールします。
+
+続いて、
+```{.bash .code-overflow-wrap}
+Start-Service sshd
+```
+sshdを立ち上げます。
+
+起動時にsshdが立ち上がるよう、サービスに登録します。
+```{.bash .code-overflow-wrap}
+Set-Service -Name sshd -StartupType 'Automatic'
+```
+
+Microsoft純正のOpenSSHは
+[Windows 11 23H2のWindows Updateで接続障害が生じたり](https://reinforz.co.jp/bizmedia/63262/)と、何かと怖いのですが、便利なので使っています。
