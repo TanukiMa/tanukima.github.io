@@ -10,7 +10,7 @@ categories: [医療]
 filters:
   - social-share
 share:
-  permalink: "https://TanukiMa.github.io/posts/2024/09/cantsleep.html"
+  permalink: "https://TanukiMa.github.io/posts/2025/01/cantsleep.html"
   description: "「おれは ねむれないんだ」"
   twitter: true
   mastodon: true
