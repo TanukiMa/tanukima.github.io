@@ -1,10 +1,9 @@
 ---
-draft: true
-title: "2024/09/17"
+title: "反HPVV訴訟"
 lang: ja
 author: "Ma, Tanuki"
-date: "2024-09-17"
-categories: [Twitter,Visual Studio]
+date: "2025-02-04"
+categories: [Twitter,医療]
 format:
   html:
     code-fold: true
@@ -15,18 +14,22 @@ format:
 filters:
   - social-share
 share:
-  permalink: "https://TanukiMa.github.io/posts/2024/09/17.html"
-  description: "2024年9月17日(火)"
+  permalink: "https://TanukiMa.github.io/posts/2025/02/antiHPVV.html"
+  description: "反HPVV訴訟"
   twitter: true
   mastodon: true
 ---
 
-tweetを挿入すると、
-[quarto](https://quarto.org/)のレンダリングが乱れます。
-原因はよく分かりません。
+<div id="last-modified"></div>
+
+記録目的。
+
+@Tanuk_Ichi 先生、お疲れ様です。
 
 # 
 
-{{< tweet Matanuki 1835871462886187189 >}}
+{{< tweet Tanuk_Ichi 1886653014964081067 >}}
 
-<div id="last-modified"></div>
+{{< tweet Tanuk_Ichi 1886706599231959201 >}}
+
+
