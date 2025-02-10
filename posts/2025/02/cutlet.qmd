@@ -2,7 +2,7 @@
 title: "cutlet"
 lang: ja
 author: "Ma, Tanuki"
-date: "2025-02-04"
+date: "2025-02-10"
 categories: [医療,Python]
 format:
   html:

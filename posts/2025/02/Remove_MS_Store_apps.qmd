@@ -1,0 +1,30 @@
+---
+title: "MS Storeのアプリを削除する"
+lang: ja
+author: "Ma, Tanuki"
+date: "2025-02-10"
+categories: [Windows,PowerShell]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    include-in-header: 
+      - text: |
+          <script src="/Last-Modified.js"></script>
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/02/Remove_MS_Store_apps.html"
+  description: "PowerShellでMS Storeのアプリを削除していく"
+  twitter: true
+  mastodon: true
+---
+
+Windows 11 23H2の環境を構築してみました。
+
+MS storeでインストールするアプリ類が邪魔なので、PowerShellでuninstallする？しない？を尋ねた後に、一括アンインストールするscriptを書きました。
+
+```{.bash .code-overflow-wrap}
+$apps = Get-AppxPackage | Where-Object { $_.InstallLocation -like "*WindowsApps*" -and $_.IsFramework -eq $false }; $toUninstall = $apps | ForEach-Object { $app = $_; $response = Read-Host "「$($app.Name)」（発行元: $($app.Publisher)）をアンインストールしますか？ (y/n)"; if ($response.ToLower() -eq 'y') { $app } }; if ($toUninstall) { $toUninstall | ForEach-Object { try { Remove-AppxPackage -Package $_.PackageFullName -ErrorAction Stop; Write-Host "「$($_.Name)」をアンインストールしました。" -ForegroundColor Green } catch { Write-Host "「$($_.Name)」のアンインストール中にエラーが発生しました: $_" -ForegroundColor Red } } } else { Write-Host "アンインストールするアプリが選択されませんでした。" -ForegroundColor Yellow }
+```
+

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ma, Tanuki">
 
-<title>cutlet – 魔狸的日々</title>
+<title>MS Storeのアプリを削除する – 魔狸的日々</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta name="twitter:title" content="cutlet – 魔狸的日々">
+<meta name="twitter:title" content="MS Storeのアプリを削除する – 魔狸的日々">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@Matanuki">
 <meta name="twitter:site" content="@Matanuki">
@@ -161,17 +161,17 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">cutlet</h1>
+    <div class="quarto-title column-page">
+      <h1 class="title">MS Storeのアプリを削除する</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">医療</div>
-                <div class="quarto-category">Python</div>
+                <div class="quarto-category">Windows</div>
+                <div class="quarto-category">PowerShell</div>
               </div>
                   </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-page">
 
       <div>
       <div class="quarto-title-meta-heading">作者</div>
@@ -194,31 +194,21 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">目次</h2>
-   
-  <ul>
-  <li><a href="#かな漢字文字列をcutletでローマ字に変換し半角スペースを除去し先頭の大文字は小文字にする" id="toc-かな漢字文字列をcutletでローマ字に変換し半角スペースを除去し先頭の大文字は小文字にする" class="nav-link active" data-scroll-target="#かな漢字文字列をcutletでローマ字に変換し半角スペースを除去し先頭の大文字は小文字にする">かな漢字文字列をcutletでローマ字に変換し、半角スペースを除去し、先頭の大文字は小文字にする</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
 
-<p><a href="https://polm.github.io/cutlet/cutlet.html">cutlet</a></p>
-<section id="かな漢字文字列をcutletでローマ字に変換し半角スペースを除去し先頭の大文字は小文字にする" class="level2">
-<h2 class="anchored" data-anchor-id="かな漢字文字列をcutletでローマ字に変換し半角スペースを除去し先頭の大文字は小文字にする">かな漢字文字列をcutletでローマ字に変換し、半角スペースを除去し、先頭の大文字は小文字にする</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"全身性エリテマトーデスは難病です"</span> <span class="kw">|</span> <span class="ex">python</span> <span class="at">-c</span> <span class="st">"from cutlet import Cutlet; k=Cutlet(); k.use_foreign_spelling=False; k.ensure_ascii=False; k.capitalize=False; print(k.romaji(''.join(k.romaji(input()).split())).lower())"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">zenshinseieritematoodesuwananbyoudesu</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Windows 11 23H2の環境を構築してみました。</p>
+<p>MS storeでインストールするアプリ類が邪魔なので、PowerShellでuninstallする？しない？を尋ねた後に、一括アンインストールするscriptを書きました。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">$apps</span> = Get-AppxPackage <span class="kw">|</span> <span class="ex">Where-Object</span> { <span class="va">$_</span>.InstallLocation <span class="at">-like</span> <span class="st">"*WindowsApps*"</span> <span class="at">-and</span> <span class="va">$_</span>.IsFramework <span class="at">-eq</span> <span class="va">$false</span> }<span class="kw">;</span> <span class="va">$toUninstall</span> = <span class="va">$apps</span> <span class="kw">|</span> <span class="ex">ForEach-Object</span> { <span class="va">$app</span> = <span class="va">$_</span><span class="kw">;</span> <span class="va">$response</span> = Read-Host <span class="st">"「</span><span class="va">$($app</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」（発行元: </span><span class="va">$($app</span><span class="ex">.Publisher</span><span class="va">)</span><span class="st">）をアンインストールしますか？ (y/n)"</span><span class="kw">;</span> <span class="cf">if</span> <span class="kw">(</span><span class="va">$response</span><span class="ex">.ToLower</span><span class="er">(</span><span class="kw">)</span> <span class="ex">-eq</span> <span class="st">'y'</span><span class="kw">)</span> <span class="kw">{</span> <span class="va">$app</span> } }<span class="kw">;</span> <span class="cf">if</span> <span class="kw">(</span><span class="va">$toUninstall</span><span class="kw">)</span> <span class="kw">{</span> <span class="va">$toUninstall</span> <span class="kw">|</span> <span class="ex">ForEach-Object</span> { try { Remove-AppxPackage <span class="at">-Package</span> <span class="va">$_</span>.PackageFullName <span class="at">-ErrorAction</span> Stop<span class="kw">;</span> <span class="ex">Write-Host</span> <span class="st">"「</span><span class="va">$($_</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」をアンインストールしました。"</span> <span class="at">-ForegroundColor</span> Green } catch { Write-Host <span class="st">"「</span><span class="va">$($_</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」のアンインストール中にエラーが発生しました: </span><span class="va">$_</span><span class="st">"</span> <span class="at">-ForegroundColor</span> Red } } } else { Write-Host <span class="st">"アンインストールするアプリが選択されませんでした。"</span> <span class="at">-ForegroundColor</span> Yellow }</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -639,7 +629,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://TanukiMa.github.io/posts/2025/02/cutlet.html&amp;text=cutlet" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="javascript:void(0);" onclick="var mastodon_instance=prompt('Mastodon Instance / Server Name?'); if(typeof mastodon_instance==='string' &amp;&amp; mastodon_instance.length){this.href='https://'+mastodon_instance+'/share?text=cutlet https://TanukiMa.github.io/posts/2025/02/cutlet.html'}else{return false;}" target="_blank" class="mastodon"><i class="fa-brands fa-mastodon fa-fw fa-lg"></i></a></div></div>
+<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://TanukiMa.github.io/posts/2025/02/Remove_MS_Store_apps.html&amp;text=PowerShellでMS Storeのアプリを削除していく" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="javascript:void(0);" onclick="var mastodon_instance=prompt('Mastodon Instance / Server Name?'); if(typeof mastodon_instance==='string' &amp;&amp; mastodon_instance.length){this.href='https://'+mastodon_instance+'/share?text=PowerShellでMS Storeのアプリを削除していく https://TanukiMa.github.io/posts/2025/02/Remove_MS_Store_apps.html'}else{return false;}" target="_blank" class="mastodon"><i class="fa-brands fa-mastodon fa-fw fa-lg"></i></a></div></div>
 
 
 
