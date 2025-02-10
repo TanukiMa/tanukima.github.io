@@ -200,6 +200,8 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#かな漢字文字列をcutletでローマ字に変換し半角スペースを除去し先頭の大文字は小文字にする" id="toc-かな漢字文字列をcutletでローマ字に変換し半角スペースを除去し先頭の大文字は小文字にする" class="nav-link active" data-scroll-target="#かな漢字文字列をcutletでローマ字に変換し半角スペースを除去し先頭の大文字は小文字にする">かな漢字文字列をcutletでローマ字に変換し、半角スペースを除去し、先頭の大文字は小文字にする</a></li>
+  <li><a href="#ローマ字にも色々ある" id="toc-ローマ字にも色々ある" class="nav-link" data-scroll-target="#ローマ字にも色々ある">ローマ字にも色々ある</a></li>
+  <li><a href="#長音記号の処理" id="toc-長音記号の処理" class="nav-link" data-scroll-target="#長音記号の処理">長音記号の処理</a></li>
   </ul>
 </nav>
     </div>
@@ -216,6 +218,16 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"全身性エリテマトーデスは難病です"</span> <span class="kw">|</span> <span class="ex">python</span> <span class="at">-c</span> <span class="st">"from cutlet import Cutlet; k=Cutlet(); k.use_foreign_spelling=False; k.ensure_ascii=False; k.capitalize=False; print(k.romaji(''.join(k.romaji(input()).split())).lower())"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">zenshinseieritematoodesuwananbyoudesu</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ローマ字にも色々ある" class="level2">
+<h2 class="anchored" data-anchor-id="ローマ字にも色々ある">ローマ字にも色々ある</h2>
+<p>ので</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">k</span> = Cutlet<span class="er">(</span><span class="st">'nihon'</span><span class="kw">)</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="長音記号の処理" class="level2">
+<h2 class="anchored" data-anchor-id="長音記号の処理">長音記号の処理</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">katsu.custom_mapping</span> = { <span class="st">'ー'</span>: <span class="st">'-'</span> }</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>では、思ったような結果が出ないので、長音記号を含む日本語文にs/ー/-/gの前処理をかけてから、cutletした。</p>
 
 
 </section>

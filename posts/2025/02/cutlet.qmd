@@ -30,3 +30,14 @@ $ echo "全身性エリテマトーデスは難病です" | python -c "from cutl
 zenshinseieritematoodesuwananbyoudesu
 ```
 
+## ローマ字にも色々ある
+ので
+```{.bash .code-overflow-wrap}
+k = Cutlet('nihon')
+```
+
+## 長音記号の処理
+```{.bash .code-overflow-wrap}
+katsu.custom_mapping = { 'ー': '-' }
+```
+では、思ったような結果が出ないので、長音記号を含む日本語文にs/ー/-/gの前処理をかけてから、cutletした。
