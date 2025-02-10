@@ -1,0 +1,32 @@
+---
+title: "cutlet"
+lang: ja
+author: "Ma, Tanuki"
+date: "2025-02-04"
+categories: [医療,Python]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    include-in-header: 
+      - text: |
+          <script src="/Last-Modified.js"></script>
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/02/cutlet.html"
+  description: "cutlet"
+  twitter: true
+  mastodon: true
+---
+[cutlet](https://polm.github.io/cutlet/cutlet.html)
+
+
+## かな漢字文字列をcutletでローマ字に変換し、半角スペースを除去し、先頭の大文字は小文字にする
+
+```{.bash .code-overflow-wrap}
+$ echo "全身性エリテマトーデスは難病です" | python -c "from cutlet import Cutlet; k=Cutlet(); k.use_foreign_spelling=False; k.ensure_ascii=False; k.capitalize=False; print(k.romaji(''.join(k.romaji(input()).split())).lower())"
+
+zenshinseieritematoodesuwananbyoudesu
+```
+
