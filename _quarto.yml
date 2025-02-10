@@ -4,7 +4,7 @@ project:
 
 website:
   title: "魔狸的日々"
-  site-url: 'https://tanukima.github.io.'
+  site-url: 'https://tanukima.github.io'
   site-path: '/'
   favicon: favicon.svg
   navbar:
