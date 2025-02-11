@@ -1,0 +1,32 @@
+---
+title: "ollama Debian package"
+lang: ja
+author: "Ma, Tanuki"
+date: "2025-02-10"
+categories: [llm,Debian GNU/Linux]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    include-in-header: 
+      - text: |
+          <script src="/Last-Modified.js"></script>
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/02/ollama-deb.html"
+  description: "ollama Debian package"
+  twitter: true
+  mastodon: true
+---
+2025年2月11日現在、
+[Debian](https://www.debian.org/) 
+Official apt lineでは
+[ollama](https://ollama.com)
+ packageは提供されておらず、
+[snap](https://snapcraft.io)からインストールできるものの、version 0.3系で古いな、と感じます。
+
+githubを探すと
+[https://github.com/lingfish/ollama-deb](https://github.com/lingfish/ollama-deb)が見つかりました。
+
+[releases pages](https://github.com/lingfish/ollama-deb/releases)からwgetで ollama.debをダウンロードし、dpkg -i でインストール可能です。
