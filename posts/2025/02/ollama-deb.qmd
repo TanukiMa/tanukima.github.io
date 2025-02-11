@@ -2,7 +2,7 @@
 title: "ollama Debian package"
 lang: ja
 author: "Ma, Tanuki"
-date: "2025-02-10"
+date: "2025-02-11"
 categories: [llm,Debian GNU/Linux]
 format:
   html:
