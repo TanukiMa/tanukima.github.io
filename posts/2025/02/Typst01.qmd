@@ -1,9 +1,10 @@
 ---
-title: "Typstで日本語論文を書く"
+title: "Quarto+Typstで日本語論文を書く"
 lang: ja
+draft: true
 author: "Ma, Tanuki"
 date: "2025-02-17"
-categories: [Typst]
+categories: [Quarto,Typst]
 format:
   html:
     code-fold: true
@@ -15,8 +16,13 @@ filters:
   - social-share
 share:
   permalink: "https://TanukiMa.github.io/posts/2025/02/Typst01.html"
-  description: "cutlet"
+  description: "Quarto+Typstで日本語論文を書く"
   twitter: true
   mastodon: true
 ---
+[Quarto](https://quarto.org/)で論文を書いています。
+英語は苦手なので、取り敢えず日本語で書き始めました。
 
+YAMLで著者情報を書いていきますが、TeXでは著者・所属情報がPDFに思うように表示されません。
+
+[Typst](https://typst.app/)
