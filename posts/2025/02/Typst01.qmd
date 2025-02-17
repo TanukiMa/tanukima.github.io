@@ -1,0 +1,22 @@
+---
+title: "Typstで日本語論文を書く"
+lang: ja
+author: "Ma, Tanuki"
+date: "2025-02-17"
+categories: [Typst]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    include-in-header: 
+      - text: |
+          <script src="/Last-Modified.js"></script>
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/02/Typst01.html"
+  description: "cutlet"
+  twitter: true
+  mastodon: true
+---
+

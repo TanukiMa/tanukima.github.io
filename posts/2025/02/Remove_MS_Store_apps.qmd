@@ -2,7 +2,7 @@
 title: "MS Storeのアプリを削除する"
 lang: ja
 author: "Ma, Tanuki"
-date: "2025-02-10"
+date: "2025-02-17"
 categories: [Windows,PowerShell]
 format:
   html:
@@ -28,3 +28,97 @@ MS storeでインストールするアプリ類が邪魔なので、PowerShell�
 $apps = Get-AppxPackage | Where-Object { $_.InstallLocation -like "*WindowsApps*" -and $_.IsFramework -eq $false }; $toUninstall = $apps | ForEach-Object { $app = $_; $response = Read-Host "「$($app.Name)」（発行元: $($app.Publisher)）をアンインストールしますか？ (y/n)"; if ($response.ToLower() -eq 'y') { $app } }; if ($toUninstall) { $toUninstall | ForEach-Object { try { Remove-AppxPackage -Package $_.PackageFullName -ErrorAction Stop; Write-Host "「$($_.Name)」をアンインストールしました。" -ForegroundColor Green } catch { Write-Host "「$($_.Name)」のアンインストール中にエラーが発生しました: $_" -ForegroundColor Red } } } else { Write-Host "アンインストールするアプリが選択されませんでした。" -ForegroundColor Yellow }
 ```
 
+## uninstallしたくないアプリは除外するコード
+これはPowerShell script。結果はsyslog likeに app_uninstall.logに記録。
+```{.bash .code-overflow-wrap}
+# 設定パラメータ
+$Facility = 22        # LOCAL6
+$Severity = 6         # Informational
+$syslogServer = 'localhost'
+$logPath = "$env:USERPROFILE\app_uninstall.log"
+$excludedApps = @(
+    'Microsoft.Edge',
+    'Microsoft.MicrosoftEdge.Stable',
+    'Microsoft.AppInstaller',
+    'Microsoft.DesktopAppInstaller',
+    'Microsoft.SecHealthUI',
+    'Microsoft.WindowsNotePad',
+    'Microsoft.WindowsStore',
+    'Microsoft.WindowsTerminal',
+    'Microsoft.Winget.Create',
+    'Microsoft.Winget.Source'
+)
+
+# ログ記録関数
+function Write-Syslog {
+    param(
+        [string]$Message,
+        [string]$Status,
+        [string]$PackageName
+    )
+
+    $Priority = ($Facility * 8) + $Severity
+    $Timestamp = Get-Date -Format "yyyy-MM-ddTHH:mm:ss.ffffffzzz"
+    $Hostname = $env:COMPUTERNAME
+    $ProcessID = $PID
+    $StructuredData = "[meta status=\"$Status\" package=\"$PackageName\"]"
+
+    $syslogMessage = "<{0}>1 {1} {2} {3} {4} - {5}" -f 
+        $Priority,
+        $Timestamp,
+        $Hostname,
+        "AppUninstaller",
+        $ProcessID,
+        $StructuredData
+
+    try {
+        # ファイル出力
+        Add-Content -Path $logPath -Value $syslogMessage -Encoding Ascii
+
+        # Syslogサーバ送信
+        $udpClient = New-Object System.Net.Sockets.UdpClient
+        $udpClient.Connect($syslogServer, 514)
+        $byteMessage = [Text.Encoding]::ASCII.GetBytes($syslogMessage)
+        $udpClient.Send($byteMessage, $byteMessage.Length) | Out-Null
+    }
+    catch {
+        Write-Host "Syslog送信エラー: $_" -ForegroundColor Red
+    }
+}
+
+# メイン処理
+$apps = Get-AppxPackage | Where-Object { 
+    $_.InstallLocation -like "*WindowsApps*" -and 
+    $_.IsFramework -eq $false -and
+    $_.Name -notin $excludedApps
+}
+
+$toUninstall = foreach ($app in $apps) {
+    $response = Read-Host "「$($app.Name)」（発行元: $($app.Publisher)）をアンインストールしますか？ (y/n)"
+    if ($response -match '^y(es)?$') { $app }
+}
+
+if ($toUninstall) {
+    foreach ($app in $toUninstall) {
+        try {
+            Write-Syslog -Message "アンインストール開始" -Status "start" -PackageName $app.PackageFullName
+            Remove-AppxPackage -Package $app.PackageFullName -ErrorAction Stop
+            Write-Syslog -Message "アンインストール成功" -Status "success" -PackageName $app.PackageFullName
+            Write-Host "「$($app.Name)」をアンインストールしました。" -ForegroundColor Green
+        }
+        catch {
+            Write-Syslog -Message "アンインストール失敗" -Status "error" -PackageName $app.PackageFullName
+            Write-Host "「$($app.Name)」のアンインストール中にエラーが発生しました: $_" -ForegroundColor Red
+        }
+    }
+}
+else {
+    Write-Syslog -Message "アンインストールキャンセル" -Status "cancel" -PackageName "none"
+    Write-Host "アンインストールするアプリが選択されませんでした。" -ForegroundColor Yellow
+}
+```
+
+### oneliner化
+```{.bash .code-overflow-wrap}
+$excludedApps = @('Microsoft.Edge','Microsoft.MicrosoftEdge.Stable','Microsoft.AppInstaller','Microsoft.DesktopAppInstaller','Microsoft.SecHealthUI','Microsoft.WindowsNotePad','Microsoft.WindowsStore','Microsoft.WindowsTerminal','Microsoft.Winget.Create','Microsoft.Winget.Source'); $apps = Get-AppxPackage | Where-Object { $_.InstallLocation -like "*WindowsApps*" -and $_.IsFramework -eq $false -and $_.Name -notin $excludedApps }; $toUninstall = $apps | ForEach-Object { $app = $_; $response = Read-Host "「$($app.Name)」（発行元: $($app.Publisher)）をアンインストールしますか？ (y/n)"; if ($response -match '^y(es)?$') { $app } }; if ($toUninstall) { $toUninstall | ForEach-Object { try { $syslogMessage = "<{0}>1 {1} {2} AppUninstaller {3} - [meta status=`"start`" package=`"{4}`"]" -f (22*8+6), (Get-Date -Format "yyyy-MM-ddTHH:mm:ss.ffffffzzz"), $env:COMPUTERNAME, $PID, $_.PackageFullName; Add-Content -Path "$env:USERPROFILE\app_uninstall.log" -Value $syslogMessage -Encoding Ascii; (New-Object System.Net.Sockets.UdpClient).Send([Text.Encoding]::ASCII.GetBytes($syslogMessage), $syslogMessage.Length, 'localhost', 514); Remove-AppxPackage -Package $_.PackageFullName -ErrorAction Stop; $syslogMessage = $syslogMessage -replace 'status=`"start`"', 'status=`"success`"'; Add-Content -Path "$env:USERPROFILE\app_uninstall.log" -Value $syslogMessage -Encoding Ascii; (New-Object System.Net.Sockets.UdpClient).Send([Text.Encoding]::ASCII.GetBytes($syslogMessage), $syslogMessage.Length, 'localhost', 514); Write-Host "「$($_.Name)」をアンインストールしました。" -ForegroundColor Green } catch { $syslogMessage = $syslogMessage -replace 'status=`"start`"', 'status=`"error`"'; Add-Content -Path "$env:USERPROFILE\app_uninstall.log" -Value $syslogMessage -Encoding Ascii; (New-Object System.Net.Sockets.UdpClient).Send([Text.Encoding]::ASCII.GetBytes($syslogMessage), $syslogMessage.Length, 'localhost', 514); Write-Host "「$($_.Name)」のアンインストール中にエラーが発生しました: $_" -ForegroundColor Red } } } else { $syslogMessage = "<{0}>1 {1} {2} AppUninstaller {3} - [meta status=`"cancel`" package=`"none`"]" -f (22*8+6), (Get-Date -Format "yyyy-MM-ddTHH:mm:ss.ffffffzzz"), $env:COMPUTERNAME, $PID; Add-Content -Path "$env:USERPROFILE\app_uninstall.log" -Value $syslogMessage -Encoding Ascii; (New-Object System.Net.Sockets.UdpClient).Send([Text.Encoding]::ASCII.GetBytes($syslogMessage), $syslogMessage.Length, 'localhost', 514); Write-Host "アンインストールするアプリが選択されませんでした。" -ForegroundColor Yellow }
+```

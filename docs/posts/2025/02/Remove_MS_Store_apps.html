@@ -161,7 +161,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">MS Storeのアプリを削除する</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Windows</div>
@@ -171,7 +171,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       <div>
       <div class="quarto-title-meta-heading">作者</div>
@@ -183,7 +183,7 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">公開</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">2025年2月10日</p>
+        <p class="date">2025年2月17日</p>
       </div>
     </div>
     
@@ -194,11 +194,20 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#uninstallしたくないアプリは除外するコード" id="toc-uninstallしたくないアプリは除外するコード" class="nav-link active" data-scroll-target="#uninstallしたくないアプリは除外するコード">uninstallしたくないアプリは除外するコード</a>
+  <ul class="collapse">
+  <li><a href="#oneliner化" id="toc-oneliner化" class="nav-link" data-scroll-target="#oneliner化">oneliner化</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
@@ -207,8 +216,101 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <p>Windows 11 23H2の環境を構築してみました。</p>
 <p>MS storeでインストールするアプリ類が邪魔なので、PowerShellでuninstallする？しない？を尋ねた後に、一括アンインストールするscriptを書きました。</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">$apps</span> = Get-AppxPackage <span class="kw">|</span> <span class="ex">Where-Object</span> { <span class="va">$_</span>.InstallLocation <span class="at">-like</span> <span class="st">"*WindowsApps*"</span> <span class="at">-and</span> <span class="va">$_</span>.IsFramework <span class="at">-eq</span> <span class="va">$false</span> }<span class="kw">;</span> <span class="va">$toUninstall</span> = <span class="va">$apps</span> <span class="kw">|</span> <span class="ex">ForEach-Object</span> { <span class="va">$app</span> = <span class="va">$_</span><span class="kw">;</span> <span class="va">$response</span> = Read-Host <span class="st">"「</span><span class="va">$($app</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」（発行元: </span><span class="va">$($app</span><span class="ex">.Publisher</span><span class="va">)</span><span class="st">）をアンインストールしますか？ (y/n)"</span><span class="kw">;</span> <span class="cf">if</span> <span class="kw">(</span><span class="va">$response</span><span class="ex">.ToLower</span><span class="er">(</span><span class="kw">)</span> <span class="ex">-eq</span> <span class="st">'y'</span><span class="kw">)</span> <span class="kw">{</span> <span class="va">$app</span> } }<span class="kw">;</span> <span class="cf">if</span> <span class="kw">(</span><span class="va">$toUninstall</span><span class="kw">)</span> <span class="kw">{</span> <span class="va">$toUninstall</span> <span class="kw">|</span> <span class="ex">ForEach-Object</span> { try { Remove-AppxPackage <span class="at">-Package</span> <span class="va">$_</span>.PackageFullName <span class="at">-ErrorAction</span> Stop<span class="kw">;</span> <span class="ex">Write-Host</span> <span class="st">"「</span><span class="va">$($_</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」をアンインストールしました。"</span> <span class="at">-ForegroundColor</span> Green } catch { Write-Host <span class="st">"「</span><span class="va">$($_</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」のアンインストール中にエラーが発生しました: </span><span class="va">$_</span><span class="st">"</span> <span class="at">-ForegroundColor</span> Red } } } else { Write-Host <span class="st">"アンインストールするアプリが選択されませんでした。"</span> <span class="at">-ForegroundColor</span> Yellow }</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="uninstallしたくないアプリは除外するコード" class="level2">
+<h2 class="anchored" data-anchor-id="uninstallしたくないアプリは除外するコード">uninstallしたくないアプリは除外するコード</h2>
+<p>これはPowerShell script。結果はsyslog likeに app_uninstall.logに記録。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 設定パラメータ</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">$Facility</span> = 22        <span class="co"># LOCAL6</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">$Severity</span> = 6         <span class="co"># Informational</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">$syslogServer</span> = <span class="st">'localhost'</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="va">$logPath</span> = <span class="st">"</span><span class="va">$env</span><span class="st">:USERPROFILE\app_uninstall.log"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="va">$excludedApps</span> = <span class="pp">@(</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.Edge'</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.MicrosoftEdge.Stable'</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.AppInstaller'</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.DesktopAppInstaller'</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.SecHealthUI'</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.WindowsNotePad'</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.WindowsStore'</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.WindowsTerminal'</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.Winget.Create'</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Microsoft.Winget.Source'</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="pp">)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ログ記録関数</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> Write-Syslog</span> <span class="kw">{</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">param</span><span class="er">(</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="ex">[string]</span><span class="va">$Message</span><span class="ex">,</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="ex">[string]</span><span class="va">$Status</span><span class="ex">,</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="ex">[string]</span><span class="va">$PackageName</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">)</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="va">$Priority</span> = <span class="er">(</span><span class="va">$Facility</span> <span class="pp">*</span> 8<span class="kw">)</span> <span class="ex">+</span> <span class="va">$Severity</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="va">$Timestamp</span> = Get-Date <span class="at">-Format</span> <span class="st">"yyyy-MM-ddTHH:mm:ss.ffffffzzz"</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="va">$Hostname</span> = <span class="va">$env</span>:COMPUTERNAME</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="va">$ProcessID</span> = <span class="va">$PID</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="va">$StructuredData</span> = <span class="st">"[meta status=</span><span class="dt">\"</span><span class="va">$Status</span><span class="dt">\"</span><span class="st"> package=</span><span class="dt">\"</span><span class="va">$PackageName</span><span class="dt">\"</span><span class="st">]"</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="va">$syslogMessage</span> = <span class="st">"&lt;{0}&gt;1 {1} {2} {3} {4} - {5}"</span> <span class="at">-f</span> </span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="va">$Priority</span><span class="ex">,</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        <span class="va">$Timestamp</span><span class="ex">,</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="va">$Hostname</span><span class="ex">,</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">"AppUninstaller"</span><span class="ex">,</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        <span class="va">$ProcessID</span><span class="ex">,</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="va">$StructuredData</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="ex">try</span> {</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ファイル出力</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Add-Content</span> <span class="at">-Path</span> <span class="va">$logPath</span> <span class="at">-Value</span> <span class="va">$syslogMessage</span> <span class="at">-Encoding</span> Ascii</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Syslogサーバ送信</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        <span class="va">$udpClient</span> = New-Object System.Net.Sockets.UdpClient</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        <span class="va">$udpClient</span><span class="ex">.Connect</span><span class="er">(</span><span class="va">$syslogServer</span><span class="ex">,</span> 514<span class="kw">)</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        <span class="va">$byteMessage</span> = <span class="pp">[</span><span class="ss">Text.Encoding</span><span class="pp">]</span>::ASCII.GetBytes<span class="er">(</span><span class="va">$syslogMessage</span><span class="kw">)</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="va">$udpClient</span><span class="ex">.Send</span><span class="er">(</span><span class="va">$byteMessage</span><span class="ex">,</span> <span class="va">$byteMessage</span>.Length<span class="kw">)</span> <span class="kw">|</span> <span class="ex">Out-Null</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="kw">}</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="ex">catch</span> {</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Write-Host</span> <span class="st">"Syslog送信エラー: </span><span class="va">$_</span><span class="st">"</span> <span class="at">-ForegroundColor</span> Red</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co"># メイン処理</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="va">$apps</span> = Get-AppxPackage <span class="kw">|</span> <span class="ex">Where-Object</span> { </span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    <span class="va">$_</span><span class="ex">.InstallLocation</span> <span class="at">-like</span> <span class="st">"*WindowsApps*"</span> <span class="at">-and</span> </span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    <span class="va">$_</span><span class="ex">.IsFramework</span> <span class="at">-eq</span> <span class="va">$false</span> <span class="at">-and</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="va">$_</span><span class="ex">.Name</span> <span class="at">-notin</span> <span class="va">$excludedApps</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="va">$toUninstall</span> = foreach <span class="er">(</span><span class="va">$app</span> in <span class="va">$apps</span><span class="kw">)</span> <span class="kw">{</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="va">$response</span> = Read-Host <span class="st">"「</span><span class="va">$($app</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」（発行元: </span><span class="va">$($app</span><span class="ex">.Publisher</span><span class="va">)</span><span class="st">）をアンインストールしますか？ (y/n)"</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">(</span><span class="va">$response</span> <span class="at">-match</span> <span class="st">'^y(es)?$'</span><span class="kw">)</span> <span class="kw">{</span> <span class="va">$app</span> }</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">(</span><span class="va">$toUninstall</span><span class="kw">)</span> <span class="kw">{</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    <span class="ex">foreach</span> <span class="er">(</span><span class="va">$app</span> in <span class="va">$toUninstall</span><span class="kw">)</span> <span class="kw">{</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>        <span class="ex">try</span> {</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Write-Syslog</span> <span class="at">-Message</span> <span class="st">"アンインストール開始"</span> <span class="at">-Status</span> <span class="st">"start"</span> <span class="at">-PackageName</span> <span class="va">$app</span>.PackageFullName</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Remove-AppxPackage</span> <span class="at">-Package</span> <span class="va">$app</span>.PackageFullName <span class="at">-ErrorAction</span> Stop</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Write-Syslog</span> <span class="at">-Message</span> <span class="st">"アンインストール成功"</span> <span class="at">-Status</span> <span class="st">"success"</span> <span class="at">-PackageName</span> <span class="va">$app</span>.PackageFullName</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Write-Host</span> <span class="st">"「</span><span class="va">$($app</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」をアンインストールしました。"</span> <span class="at">-ForegroundColor</span> Green</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="kw">}</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="ex">catch</span> {</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Write-Syslog</span> <span class="at">-Message</span> <span class="st">"アンインストール失敗"</span> <span class="at">-Status</span> <span class="st">"error"</span> <span class="at">-PackageName</span> <span class="va">$app</span>.PackageFullName</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Write-Host</span> <span class="st">"「</span><span class="va">$($app</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」のアンインストール中にエラーが発生しました: </span><span class="va">$_</span><span class="st">"</span> <span class="at">-ForegroundColor</span> Red</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>        <span class="kw">}</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    <span class="kw">}</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> <span class="kw">{</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Write-Syslog</span> <span class="at">-Message</span> <span class="st">"アンインストールキャンセル"</span> <span class="at">-Status</span> <span class="st">"cancel"</span> <span class="at">-PackageName</span> <span class="st">"none"</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Write-Host</span> <span class="st">"アンインストールするアプリが選択されませんでした。"</span> <span class="at">-ForegroundColor</span> Yellow</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="oneliner化" class="level3">
+<h3 class="anchored" data-anchor-id="oneliner化">oneliner化</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">$excludedApps</span> = <span class="pp">@(</span><span class="st">'Microsoft.Edge'</span>,<span class="st">'Microsoft.MicrosoftEdge.Stable'</span>,<span class="st">'Microsoft.AppInstaller'</span>,<span class="st">'Microsoft.DesktopAppInstaller'</span>,<span class="st">'Microsoft.SecHealthUI'</span>,<span class="st">'Microsoft.WindowsNotePad'</span>,<span class="st">'Microsoft.WindowsStore'</span>,<span class="st">'Microsoft.WindowsTerminal'</span>,<span class="st">'Microsoft.Winget.Create'</span>,<span class="st">'Microsoft.Winget.Source'</span><span class="pp">)</span><span class="kw">;</span> <span class="va">$apps</span> = Get-AppxPackage <span class="kw">|</span> <span class="ex">Where-Object</span> { <span class="va">$_</span>.InstallLocation <span class="at">-like</span> <span class="st">"*WindowsApps*"</span> <span class="at">-and</span> <span class="va">$_</span>.IsFramework <span class="at">-eq</span> <span class="va">$false</span> <span class="at">-and</span> <span class="va">$_</span>.Name <span class="at">-notin</span> <span class="va">$excludedApps</span> }<span class="kw">;</span> <span class="va">$toUninstall</span> = <span class="va">$apps</span> <span class="kw">|</span> <span class="ex">ForEach-Object</span> { <span class="va">$app</span> = <span class="va">$_</span><span class="kw">;</span> <span class="va">$response</span> = Read-Host <span class="st">"「</span><span class="va">$($app</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」（発行元: </span><span class="va">$($app</span><span class="ex">.Publisher</span><span class="va">)</span><span class="st">）をアンインストールしますか？ (y/n)"</span><span class="kw">;</span> <span class="cf">if</span> <span class="kw">(</span><span class="va">$response</span> <span class="at">-match</span> <span class="st">'^y(es)?$'</span><span class="kw">)</span> <span class="kw">{</span> <span class="va">$app</span> } }<span class="kw">;</span> <span class="cf">if</span> <span class="kw">(</span><span class="va">$toUninstall</span><span class="kw">)</span> <span class="kw">{</span> <span class="va">$toUninstall</span> <span class="kw">|</span> <span class="ex">ForEach-Object</span> { try { <span class="va">$syslogMessage</span> = <span class="st">"&lt;{0}&gt;1 {1} {2} AppUninstaller {3} - [meta status=</span><span class="kw">`</span><span class="st">"start</span><span class="kw">`</span><span class="st">" package=</span><span class="kw">`</span><span class="st">"{4}</span><span class="kw">`</span><span class="st">"]"</span> <span class="at">-f</span> <span class="er">(</span><span class="ex">22*8+6</span><span class="kw">)</span><span class="ex">,</span> <span class="er">(</span><span class="ex">Get-Date</span> <span class="at">-Format</span> <span class="st">"yyyy-MM-ddTHH:mm:ss.ffffffzzz"</span><span class="kw">)</span><span class="ex">,</span> <span class="va">$env</span>:COMPUTERNAME, <span class="va">$PID</span>, <span class="va">$_</span>.PackageFullName<span class="kw">;</span> <span class="ex">Add-Content</span> <span class="at">-Path</span> <span class="st">"</span><span class="va">$env</span><span class="st">:USERPROFILE\app_uninstall.log"</span> <span class="at">-Value</span> <span class="va">$syslogMessage</span> <span class="at">-Encoding</span> Ascii<span class="kw">;</span> <span class="kw">(</span><span class="ex">New-Object</span> System.Net.Sockets.UdpClient<span class="kw">)</span><span class="ex">.Send</span><span class="er">(</span><span class="ex">[Text.Encoding]::ASCII.GetBytes</span><span class="er">(</span><span class="va">$syslogMessage</span><span class="kw">)</span><span class="ex">,</span> <span class="va">$syslogMessage</span>.Length, <span class="st">'localhost'</span>, 514<span class="kw">);</span> <span class="ex">Remove-AppxPackage</span> <span class="at">-Package</span> <span class="va">$_</span>.PackageFullName <span class="at">-ErrorAction</span> Stop<span class="kw">;</span> <span class="va">$syslogMessage</span> = <span class="va">$syslogMessage</span> <span class="at">-replace</span> <span class="st">'status=`"start`"'</span>, <span class="st">'status=`"success`"'</span><span class="kw">;</span> <span class="ex">Add-Content</span> <span class="at">-Path</span> <span class="st">"</span><span class="va">$env</span><span class="st">:USERPROFILE\app_uninstall.log"</span> <span class="at">-Value</span> <span class="va">$syslogMessage</span> <span class="at">-Encoding</span> Ascii<span class="kw">;</span> <span class="kw">(</span><span class="ex">New-Object</span> System.Net.Sockets.UdpClient<span class="kw">)</span><span class="ex">.Send</span><span class="er">(</span><span class="ex">[Text.Encoding]::ASCII.GetBytes</span><span class="er">(</span><span class="va">$syslogMessage</span><span class="kw">)</span><span class="ex">,</span> <span class="va">$syslogMessage</span>.Length, <span class="st">'localhost'</span>, 514<span class="kw">);</span> <span class="ex">Write-Host</span> <span class="st">"「</span><span class="va">$($_</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」をアンインストールしました。"</span> <span class="at">-ForegroundColor</span> Green } catch { <span class="va">$syslogMessage</span> = <span class="va">$syslogMessage</span> <span class="at">-replace</span> <span class="st">'status=`"start`"'</span>, <span class="st">'status=`"error`"'</span><span class="kw">;</span> <span class="ex">Add-Content</span> <span class="at">-Path</span> <span class="st">"</span><span class="va">$env</span><span class="st">:USERPROFILE\app_uninstall.log"</span> <span class="at">-Value</span> <span class="va">$syslogMessage</span> <span class="at">-Encoding</span> Ascii<span class="kw">;</span> <span class="kw">(</span><span class="ex">New-Object</span> System.Net.Sockets.UdpClient<span class="kw">)</span><span class="ex">.Send</span><span class="er">(</span><span class="ex">[Text.Encoding]::ASCII.GetBytes</span><span class="er">(</span><span class="va">$syslogMessage</span><span class="kw">)</span><span class="ex">,</span> <span class="va">$syslogMessage</span>.Length, <span class="st">'localhost'</span>, 514<span class="kw">);</span> <span class="ex">Write-Host</span> <span class="st">"「</span><span class="va">$($_</span><span class="ex">.Name</span><span class="va">)</span><span class="st">」のアンインストール中にエラーが発生しました: </span><span class="va">$_</span><span class="st">"</span> <span class="at">-ForegroundColor</span> Red } } } else { <span class="va">$syslogMessage</span> = <span class="st">"&lt;{0}&gt;1 {1} {2} AppUninstaller {3} - [meta status=</span><span class="kw">`</span><span class="st">"cancel</span><span class="kw">`</span><span class="st">" package=</span><span class="kw">`</span><span class="st">"none</span><span class="kw">`</span><span class="st">"]"</span> <span class="at">-f</span> <span class="er">(</span><span class="ex">22*8+6</span><span class="kw">)</span><span class="ex">,</span> <span class="er">(</span><span class="ex">Get-Date</span> <span class="at">-Format</span> <span class="st">"yyyy-MM-ddTHH:mm:ss.ffffffzzz"</span><span class="kw">)</span><span class="ex">,</span> <span class="va">$env</span>:COMPUTERNAME, <span class="va">$PID</span><span class="kw">;</span> <span class="ex">Add-Content</span> <span class="at">-Path</span> <span class="st">"</span><span class="va">$env</span><span class="st">:USERPROFILE\app_uninstall.log"</span> <span class="at">-Value</span> <span class="va">$syslogMessage</span> <span class="at">-Encoding</span> Ascii<span class="kw">;</span> <span class="kw">(</span><span class="ex">New-Object</span> System.Net.Sockets.UdpClient<span class="kw">)</span><span class="ex">.Send</span><span class="er">(</span><span class="ex">[Text.Encoding]::ASCII.GetBytes</span><span class="er">(</span><span class="va">$syslogMessage</span><span class="kw">)</span><span class="ex">,</span> <span class="va">$syslogMessage</span>.Length, <span class="st">'localhost'</span>, 514<span class="kw">);</span> <span class="ex">Write-Host</span> <span class="st">"アンインストールするアプリが選択されませんでした。"</span> <span class="at">-ForegroundColor</span> Yellow }</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
