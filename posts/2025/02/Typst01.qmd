@@ -3,7 +3,7 @@ title: "Quarto+Typstで日本語論文を書く"
 lang: ja
 draft: false
 author: "Ma, Tanuki"
-date: "2025-02-17"
+date: "2025-02-18"
 categories: [Quarto,Typst]
 format:
   html:
