@@ -1,7 +1,7 @@
 ---
 title: "Quarto+Typstで日本語論文を書く"
 lang: ja
-draft: true
+draft: false
 author: "Ma, Tanuki"
 date: "2025-02-17"
 categories: [Quarto,Typst]
@@ -25,4 +25,76 @@ share:
 
 YAMLで著者情報を書いていきますが、TeXでは著者・所属情報がPDFに思うように表示されません。
 
-[Typst](https://typst.app/)
+[Typst](https://typst.app/)を使う
+[quarto-preprint](https://github.com/mvuorre/quarto-preprint)を使ってみます。
+
+```{.bash .code-overflow-wrap}
+quarto create project manuscript test2 // directory test2にprojectを作る
+cd test2
+quarto add mvuorre/quarto-preprint
+quarto use template mvuorre/quarto-preprint
+```
+
+## 日本語フォントにMeiryoを使う
+
+qmdを編集して、quarto render。できあがったPDFで満足しても良いのでしょうが、
+折角ですから綺麗なフォントを使いたいですよね？[Y/y]
+
+```{.bash .code-overflow-wrap}
+typst fonts
+````
+で使用できるフォントを確認してから
+_extensions/mvuorre/preprint/typst-template.typ
+を編集し
+```{.bash .code-overflow-wrap}
+#let preprint(
+font: ("Meiryo", "Times", "Times New Roman", "Arial"),
+```
+と"Meiryo"を追加します。
+
+## subtitle
+qmdのYAMLにsubtitle: を書いていても、そのままではsubtitleは表示されません。
+
+_extensions/mvuorre/preprint/typst-template.typ 
+を編集し
+```{.bash .code-overflow-wrap}
+#let preprint(
+  title: none,
+  subtitle: [$subtitle$],
+```
+更に
+```{.bash .code-overflow-wrap}
+  if title != none {
+    titleblock(title)
+  }
+  if subtitle != none {
+  titleblock(
+    subtitle,
+    weight: "regular",
+    size: 1.2em,
+    above: 0.5em,
+    below: 1em
+  )
+```
+と変更して、quarto renderします。
+
+## Referencesの生成
+YAMLの設定に注意です。
+
+YAMLを下記で設定しました。
+```{.bash .code-overflow-wrap}
+bibliography: bibliography.bib
+citeproc: false
+suppress-bibliography: true
+```
+[pandoc](https://pandoc.org/) citeprocでのReferences生成を抑制するためciteproc: falseとします[^longnote1]。
+
+[^longnote1]: この設定に辿り着くまで１時間ほどハマりました...
+
+
+[CSL](https://citationstyles.org)を設定したい場合は、
+_extensions/mvuorre/preprint/typst-template.typの
+```{.bash .code-overflow-wrap}
+bibliography-style: "apa",
+```
+を変更する必要があるようです。参考：[bibliography](https://typst.app/docs/reference/model/bibliography/)
