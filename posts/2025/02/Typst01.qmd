@@ -79,9 +79,9 @@ _extensions/mvuorre/preprint/typst-template.typ
 と変更して、quarto renderします。
 
 ## Referencesの生成
-YAMLの設定に注意です。
+qmdのYAMLの設定に注意です。
 
-YAMLを下記で設定しました。
+qmdのYAMLを下記で設定しました。
 ```{.bash .code-overflow-wrap}
 bibliography: bibliography.bib
 citeproc: false

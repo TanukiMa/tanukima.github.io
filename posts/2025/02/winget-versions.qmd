@@ -1,0 +1,62 @@
+---
+title: "winget色々"
+lang: ja
+draft: false
+author: "Ma, Tanuki"
+date: "2025-02-18"
+categories: [winget,Windows]
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    include-in-header: 
+      - text: |
+          <script src="/Last-Modified.js"></script>
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/02/winget-versions.html"
+  description: "winget色々"
+  twitter: true
+  mastodon: true
+---
+winget便利です。
+更に便利にwinget！
+
+## wingetで提供されているパッケージのバージョンを調べる
+敢えて古いバージョンをwingetでインストールしたいこともあります。しかし、どのバージョンがwinget repositoryで提供されているか分かりません。しかし、調べられます。
+
+* 例：Google日本語入力はwinget repositoryでGoogle日本語入力はどのバージョンが提供されているか？
+
+```{.bash .code-overflow-wrap}
+$ winget show -e Google.JapaneseIME --versions
+Found Google 日本語入力 [Google.JapaneseIME]
+Version
+-----------
+2.30.5620.0
+2.30.5610.0
+2.29.5370.0
+2.28.4650.0
+```
+
+## バージョンを特定してインストールする
+
+* 例：Gitのバージョン2.34.1をインストールする
+```{.bash .code-overflow-wrap}
+$ winget install -e Git.Git -v 2.34.1
+```
+
+## 指定のバージョンをpinningしてアップグレードしない
+```{.bash .code-overflow-wrap}
+winget pin add --id Git.Git --blocking
+```
+
+## 一括アップグレード(winget upgrade --all)から除外
+```{.bash .code-overflow-wrap}
+winget pin add Git.Git
+```
+
+## pinning状態の表示
+```{.bash .code-overflow-wrap}
+winget pin list
+```
