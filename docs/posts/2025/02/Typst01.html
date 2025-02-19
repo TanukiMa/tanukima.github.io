@@ -215,14 +215,14 @@ gtag('config', 'G-FXEGPMHPVZ', { 'anonymize_ip': true});
 <p><a href="https://quarto.org/">Quarto</a>で論文を書いています。 英語は苦手なので、取り敢えず日本語で書き始めました。</p>
 <p>YAMLで著者情報を書いていきますが、TeXでは著者・所属情報がPDFに思うように表示されません。</p>
 <p><a href="https://typst.app/">Typst</a>を使う <a href="https://github.com/mvuorre/quarto-preprint">quarto-preprint</a>を使ってみます。</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project manuscript test2 // directory test2にprojectを作る</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> test2</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add mvuorre/quarto-preprint</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template mvuorre/quarto-preprint</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto create project manuscript test2 // directory test2にprojectを作る</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd test2</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto add mvuorre/quarto-preprint</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto use template mvuorre/quarto-preprint</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="日本語フォントにmeiryoを使う" class="level2">
 <h2 class="anchored" data-anchor-id="日本語フォントにmeiryoを使う">日本語フォントにMeiryoを使う</h2>
 <p>qmdを編集して、quarto render。できあがったPDFで満足しても良いのでしょうが、 折角ですから綺麗なフォントを使いたいですよね？[Y/y]</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">typst</span> fonts</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> typst fonts</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>で使用できるフォントを確認してから _extensions/mvuorre/preprint/typst-template.typ を編集し</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-overflow-wrap code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let preprint(</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">font:</span> <span class="er">(</span><span class="st">"Meiryo"</span><span class="ex">,</span> <span class="st">"Times"</span>, <span class="st">"Times New Roman"</span>, <span class="st">"Arial"</span><span class="kw">)</span><span class="ex">,</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>

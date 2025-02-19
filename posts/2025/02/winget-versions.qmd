@@ -48,15 +48,15 @@ $ winget install -e Git.Git -v 2.34.1
 
 ## 指定のバージョンをpinningしてアップグレードしない
 ```{.bash .code-overflow-wrap}
-winget pin add --id Git.Git --blocking
+$ winget pin add --id Git.Git --blocking
 ```
 
 ## 一括アップグレード(winget upgrade --all)から除外
 ```{.bash .code-overflow-wrap}
-winget pin add Git.Git
+$ winget pin add Git.Git
 ```
 
 ## pinning状態の表示
 ```{.bash .code-overflow-wrap}
-winget pin list
+$ winget pin list
 ```

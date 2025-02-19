@@ -417,7 +417,7 @@
     "href": "posts/2025/02/Typst01.html#日本語フォントにmeiryoを使う",
     "title": "Quarto+Typstで日本語論文を書く",
     "section": "日本語フォントにMeiryoを使う",
-    "text": "日本語フォントにMeiryoを使う\nqmdを編集して、quarto render。できあがったPDFで満足しても良いのでしょうが、 折角ですから綺麗なフォントを使いたいですよね？[Y/y]\ntypst fonts\nで使用できるフォントを確認してから _extensions/mvuorre/preprint/typst-template.typ を編集し\n#let preprint(\nfont: (\"Meiryo\", \"Times\", \"Times New Roman\", \"Arial\"),\nと”Meiryo”を追加します。"
+    "text": "日本語フォントにMeiryoを使う\nqmdを編集して、quarto render。できあがったPDFで満足しても良いのでしょうが、 折角ですから綺麗なフォントを使いたいですよね？[Y/y]\n$ typst fonts\nで使用できるフォントを確認してから _extensions/mvuorre/preprint/typst-template.typ を編集し\n#let preprint(\nfont: (\"Meiryo\", \"Times\", \"Times New Roman\", \"Arial\"),\nと”Meiryo”を追加します。"
   },
   {
     "objectID": "posts/2025/02/Typst01.html#subtitle",
@@ -466,20 +466,20 @@
     "href": "posts/2025/02/winget-versions.html#指定のバージョンをpinningしてアップグレードしない",
     "title": "winget色々",
     "section": "指定のバージョンをpinningしてアップグレードしない",
-    "text": "指定のバージョンをpinningしてアップグレードしない\nwinget pin add --id Git.Git --blocking"
+    "text": "指定のバージョンをpinningしてアップグレードしない\n$ winget pin add --id Git.Git --blocking"
   },
   {
     "objectID": "posts/2025/02/winget-versions.html#一括アップグレードwinget-upgrade-allから除外",
     "href": "posts/2025/02/winget-versions.html#一括アップグレードwinget-upgrade-allから除外",
     "title": "winget色々",
     "section": "一括アップグレード(winget upgrade –all)から除外",
-    "text": "一括アップグレード(winget upgrade –all)から除外\nwinget pin add Git.Git"
+    "text": "一括アップグレード(winget upgrade –all)から除外\n$ winget pin add Git.Git"
   },
   {
     "objectID": "posts/2025/02/winget-versions.html#pinning状態の表示",
     "href": "posts/2025/02/winget-versions.html#pinning状態の表示",
     "title": "winget色々",
     "section": "pinning状態の表示",
-    "text": "pinning状態の表示\nwinget pin list"
+    "text": "pinning状態の表示\n$ winget pin list"
   }
 ]

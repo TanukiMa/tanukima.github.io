@@ -29,10 +29,10 @@ YAMLで著者情報を書いていきますが、TeXでは著者・所属情報�
 [quarto-preprint](https://github.com/mvuorre/quarto-preprint)を使ってみます。
 
 ```{.bash .code-overflow-wrap}
-quarto create project manuscript test2 // directory test2にprojectを作る
-cd test2
-quarto add mvuorre/quarto-preprint
-quarto use template mvuorre/quarto-preprint
+$ quarto create project manuscript test2 // directory test2にprojectを作る
+$ cd test2
+$ quarto add mvuorre/quarto-preprint
+$ quarto use template mvuorre/quarto-preprint
 ```
 
 ## 日本語フォントにMeiryoを使う
@@ -41,7 +41,7 @@ qmdを編集して、quarto render。できあがったPDFで満足しても良�
 折角ですから綺麗なフォントを使いたいですよね？[Y/y]
 
 ```{.bash .code-overflow-wrap}
-typst fonts
+$ typst fonts
 ````
 で使用できるフォントを確認してから
 _extensions/mvuorre/preprint/typst-template.typ
