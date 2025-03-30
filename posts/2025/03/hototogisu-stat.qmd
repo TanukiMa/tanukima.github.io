@@ -32,5 +32,7 @@ pip install unidic-lite pyautogui cutlet strsimpy
 [unidic-lite](https://pypi.org/project/unidic-lite/),
 [PyAutoGUI](https://pypi.org/project/PyAutoGUI/),
 [cutlet](https://pypi.org/project/cutlet/),
-[strsimpy](https://pypi.org/project/strsimpy/)
+[strsimpy](https://pypi.org/project/strsimpy/),
+[scipy](https://pypi.org/project/scipy/)
+
 のインストールが必要
