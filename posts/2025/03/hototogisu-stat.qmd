@@ -1,0 +1,36 @@
+---
+title: "mozc4med/all01.py"
+draft: true
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-03-23"
+categories: [Windows,winget,Visual Studio]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/03/min-vs.html"
+  description: "「最小限のVisual Studio環境を作る」"
+  twitter: true
+  mastodon: true
+---
+
+例文集japanese.txtのかな漢字文字列をローマ字に翻字した上でIMEでかな漢字変換、
+その結果msime.txtとjapanese.txtのJaccard係数、Levenstein類似度、Damerau-Levenstein類似度（restrictedとunrestricted）、Jaro-Winker類似度、それらの標準偏差とp値を計算する all01.py。実行例は下記。
+
+```bash
+python .\all01.py .\japanese.txt msime.txt -s msime-stat.txt
+```
+実施には
+
+```bash
+pip install unidic-lite pyautogui cutlet strsimpy
+```
+と 
+[unidic-lite](https://pypi.org/project/unidic-lite/),
+[PyAutoGUI](https://pypi.org/project/PyAutoGUI/),
+[cutlet](https://pypi.org/project/cutlet/),
+[strsimpy](https://pypi.org/project/strsimpy/)
+のインストールが必要

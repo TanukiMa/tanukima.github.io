@@ -1,0 +1,49 @@
+---
+title: "最小限のVisual Studio環境を作る"
+draft: true
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-03-23"
+categories: [Windows,winget,Visual Studio]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/03/min-vs.html"
+  description: "「最小限のVisual Studio環境を作る」"
+  twitter: true
+  mastodon: true
+---
+cutletはCでのbuild環境が必要。
+
+cutletをbuildできた環境を別に作る。
+
+vsconfigは以下の通り。
+
+```bash
+  "version": "1.0",
+  "components": [
+    "Microsoft.VisualStudio.Component.Roslyn.Compiler",
+    "Microsoft.Component.MSBuild",
+    "Microsoft.VisualStudio.Component.CoreBuildTools",
+    "Microsoft.VisualStudio.Workload.MSBuildTools",
+    "Microsoft.VisualStudio.Component.Windows10SDK",
+    "Microsoft.VisualStudio.Component.VC.CoreBuildTools",
+    "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+    "Microsoft.VisualStudio.Component.VC.Redist.14.Latest",
+    "Microsoft.VisualStudio.Component.Windows11SDK.22621",
+    "Microsoft.VisualStudio.Component.VC.CMake.Project",
+    "Microsoft.VisualStudio.Component.TestTools.BuildTools",
+    "Microsoft.VisualStudio.Component.VC.ASAN",
+    "Microsoft.VisualStudio.Component.TextTemplating",
+    "Microsoft.VisualStudio.Component.VC.CoreIde",
+    "Microsoft.VisualStudio.ComponentGroup.NativeDesktop.Core",
+    "Microsoft.VisualStudio.Workload.VCTools"
+  ],
+  "extensions": []
+}
+```
+
+これをimportする。
