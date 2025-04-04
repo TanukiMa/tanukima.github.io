@@ -1,6 +1,6 @@
 ---
 title: "Windows PowerShell で Hyper-Vを調整する"
-draft: true
+draft: false
 format:
   html:
     toc: true
