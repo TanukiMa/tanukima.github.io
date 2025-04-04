@@ -1,0 +1,71 @@
+---
+title: "Windows PowerShell で Hyper-Vを調整する"
+draft: true
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-04-04"
+categories: [Windows,Hyper-V,Windows PowerShell]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/04/HyperV_WindowsPowerShell.html"
+  description: "「Windows PowerShell で Hyper-Vを調整する」"
+  twitter: true
+  mastodon: true
+---
+WSL2のネットワーク周りの挙動がコロコロ変更されることに我慢ならず、
+[Debian](https://www.debian.org/) GNU/LinuxをHyper-V上で動作させることにしました。
+
+[vagrant](https://www.vagrantup.com/)を使います。
+
+["Discover Vagrant Boxes"](https://portal.cloud.hashicorp.com/vagrant/discover)から Hyper-VをproviderにするDebian boxを選びます。
+
+(中略)
+
+## Denoのbuildで躓く
+[Deno](https://deno.com)はJavaScript及びTypeScriptのランタイム環境です。
+
+まだ、Debianではパッケージが提供されていません。
+
+仕方がないので、
+[cargo](https://docs.deno.com/runtime/getting_started/installation/)でインストールを目論みます。
+```bash
+cargo install deno --locked
+```
+しかし、buildの途中で/tmp が fullになります。
+
+/tmp の容量を増やせば良いのですが、このHyper-V containerにはメモリを2GBしか割り振っていません。shutdownして、Hyper-Vマネージャーでメモリ量を再設定しても、メモリが増えていません。
+
+## Set-VMMemory, Set-VMProcessor
+
+こんなときこそCUIです。
+
+Hyper-Vコンテナ"Debian_20250401"のメモリ量をWindows PowerShellで8GBにします。
+
+Windows PowerShellで
+```bash
+Set-VMMemory -VMName "Debian_20250401" -StartupBytes 8GB
+```
+します。管理者権限が要るので、PowerShellを管理者権限有りで開くか、
+[gsudo](https://github.com/gerardog/gsudo)の併用がmustです。
+
+[Set-VMMemory](https://learn.microsoft.com/en-us/powershell/module/hyper-v/set-vmmemory) @ Microsoft Learn
+
+なお、コンテナ名一覧は
+```
+Get-VM
+```
+で得られます。
+
+CPU core数を"4"に増やすには
+```bash
+Set-VMProcessor -VMName "Debian_20250401" -Count 4
+```
+
+[Set-VMProcessor](https://learn.microsoft.com/ja-jp/powershell/module/hyper-v/set-vmprocessor) @ Microsoft Learn
+
+結局は
+メモリを16GB割り当てて、無事Denoのbuildに成功しました！
