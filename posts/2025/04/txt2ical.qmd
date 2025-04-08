@@ -1,0 +1,95 @@
+---
+title: "テキストデータからiCalへ"
+draft: false
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-04-08"
+categories: [Python]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/04/txt2ical.html"
+  description: "テキストデータからiCalへ"
+  twitter: true
+  mastodon: true
+---
+子供の学校行事などのスケジュール把握、どうしていますか？
+
+学校が
+[iCal形式](https://datatracker.ietf.org/doc/html/rfc5545)
+で配布してくれればなぁ、と思いますが、自作します。
+
+年間スケジュール表が紙で配布されたので、PDF化しました。
+このPDFをGoogle Geminiに
+```
+YYYY/MM/DD イベント名
+```
+形式のUTF-8のテキスト化させました。
+
+これを下記のPythonで処理します。
+
+```{python}
+import sys
+import re
+import datetime
+
+def parse_schedule(file_path):
+    schedule = []
+    with open(file_path, 'r', encoding='utf-8') as file:
+        for line in file:
+            match = re.match(r'(\d{4}/\d{2}/\d{2})\s+(.*)', line.strip())
+            if match:
+                date_str, event = match.groups()
+                date = datetime.datetime.strptime(date_str, '%Y/%m/%d').date()
+                schedule.append({'date': date, 'event': event})
+    return schedule
+
+def generate_ical(schedule, output_path):
+    with open(output_path, 'w', encoding='utf-8') as file:
+        file.write("BEGIN:VCALENDAR\n")
+        file.write("VERSION:2.0\n")
+        file.write("PRODID:-//Your Organization//Your Product//EN\n")
+        for item in schedule:
+            event_date = item['date'].strftime('%Y%m%d')
+            file.write("BEGIN:VEVENT\n")
+            file.write(f"DTSTART;VALUE=DATE:{event_date}\n")
+            file.write(f"SUMMARY:{item['event']}\n")
+            file.write("END:VEVENT\n")
+        file.write("END:VCALENDAR\n")
+
+def main():
+    if len(sys.argv) != 5:
+        print("Usage: python code.py -i input.txt -o output.ics")
+        return
+    
+    input_file = None
+    output_file = None
+    
+    for i in range(1, len(sys.argv), 2):
+        if sys.argv[i] == '-i':
+            input_file = sys.argv[i + 1]
+        elif sys.argv[i] == '-o':
+            output_file = sys.argv[i + 1]
+    
+    if not input_file or not output_file:
+        print("Error: Please specify both input and output files.")
+        return
+    
+    schedule = parse_schedule(input_file)
+    generate_ical(schedule, output_file)
+    print(f"iCalendar file '{output_file}' has been created successfully.")
+
+if __name__ == "__main__":
+    main()
+```
+
+
+```{bash}
+python ics.py -i schedule.txt -o schedule.ics
+```
+で実行し、出来上がったicsファイルをGoogle Calendarに食べさせ、ﾖｰﾒ、子供と共有設定をして終了です。
+
+
