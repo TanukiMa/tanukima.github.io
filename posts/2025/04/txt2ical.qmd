@@ -23,7 +23,9 @@ share:
 で配布してくれればなぁ、と思いますが、自作します。
 
 年間スケジュール表が紙で配布されたので、PDF化しました。
-このPDFをGoogle Geminiに
+このPDFを
+[Google Gemini](http://gemini.google.com/)
+に
 ```
 YYYY/MM/DD イベント名
 ```
@@ -90,6 +92,7 @@ if __name__ == "__main__":
 ```{bash}
 python ics.py -i schedule.txt -o schedule.ics
 ```
+
 で実行し、出来上がったicsファイルをGoogle Calendarに食べさせ、ﾖｰﾒ、子供と共有設定をして終了です。
 
 
