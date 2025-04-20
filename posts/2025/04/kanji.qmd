@@ -1,0 +1,63 @@
+---
+title: "漢字"
+draft: false
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-04-20"
+categories: [Windows,Mozc4med]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/04/kanji.html"
+  description: "漢字"
+  twitter: true
+  mastodon: true
+---
+Mozc4medなどで使う辞書の基礎データを整備しています。
+
+元のデータがShift_JISで書かれているためか、一部の漢字が平仮名表記されており、修正に手こずっております。
+
+以下のような正規表現で修正できるかな、と。
+
+```{.bash}
+s/竹じょ/竹筎/g
+s/白し/白芷/g
+s/茵ちん蒿/茵蔯蒿/g
+s/茵ちん五/茵蔯五/g
+s/莪じゅつ/莪蒁/g
+s/黄ごん/黄芩/g
+s/麻杏よく甘湯/麻杏薏甘湯/g
+s/よく苡仁/薏苡仁/g
+s/きゅう帰/芎帰/g
+s/川きゅう/川芎/g
+s/か楼根/栝楼根/g
+```
+
+## 茹
+
+## 芷
+
+## 蔯
+
+## 蒁
+
+## 芩
+
+## 薏
+
+## 芎
+
+## 栝
+
+## 朮
+
+
+
+漢方薬名でしかお目にかからないような漢字が多く、とても困惑します。
+
+Windows10で表示できるか？どのフォントで表示できるか？アプリで表示できるか？印刷は可能か？
+考えていくと、表記の多様性は ある程度許容されるべきなのかもしれません...
+
