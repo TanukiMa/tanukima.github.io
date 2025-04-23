@@ -1,0 +1,172 @@
+---
+title: "vLLM"
+draft: true
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-04-23"
+categories: [Debian,python]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/04/vLLM.html"
+  description: "漢字"
+  twitter: true
+  mastodon: true
+---
+
+```bash
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status.
+set -e
+
+# --- Configuration ---
+VENV_DIR=".venv_vllm_cpu_py312_source" # Directory name for the source build virtual environment
+PYTHON_EXECUTABLE="python3.12"       # Python 3.12 command to use (adjust to your environment)
+VLLM_SOURCE_DIR="vllm_source_build" # Directory to clone the source code into
+VLLM_PORT="5543"
+MODEL_NAME="gpt2"
+CUSTOM_TMP_DIR="/home/vagrant/tmp" # Directory for temporary files
+
+# --- Set and check temporary directory ---
+export TMPDIR="$CUSTOM_TMP_DIR"
+echo "--- Set temporary directory to $TMPDIR ---"
+mkdir -p "$TMPDIR" # Create directory if it doesn't exist
+echo "--- Checking free space in $TMPDIR ---"
+df -h "$TMPDIR"
+echo "Build may fail if there is not enough free space."
+
+# --- Check for Python 3.12 ---
+if ! command -v $PYTHON_EXECUTABLE &> /dev/null
+then
+    echo "Error: Python 3.12 ($PYTHON_EXECUTABLE) not found."
+    echo "Please install Python 3.12 and ensure it's in your PATH."
+    exit 1
+fi
+
+# --- Check for libnuma-dev (Informational) ---
+echo "--- INFO: This script assumes libnuma-dev is installed ---"
+echo "--- (Installation example: sudo apt-get update && sudo apt-get install -y libnuma-dev) ---"
+
+# --- Main Script ---
+
+echo "--- 1. Removing old virtual environment and source directory if they exist ---"
+if [ -d "$VENV_DIR" ]; then
+    echo "Removing existing virtual environment '$VENV_DIR'."
+    rm -rf "$VENV_DIR"
+fi
+if [ -d "$VLLM_SOURCE_DIR" ]; then
+    echo "Removing existing source directory '$VLLM_SOURCE_DIR'."
+    rm -rf "$VLLM_SOURCE_DIR"
+fi
+
+echo "--- 2. Creating a new virtual environment using $PYTHON_EXECUTABLE ---"
+$PYTHON_EXECUTABLE -m venv "$VENV_DIR"
+
+echo "--- 3. Activating the virtual environment ---"
+source "$VENV_DIR/bin/activate"
+echo "Virtual environment $VENV_DIR activated."
+echo "Python version: $(python --version)"
+
+echo "--- 4. Upgrading pip and uv ---"
+pip install --upgrade pip uv # Upgrade pip and uv within the venv
+
+echo "--- 5. Installing build tools (cmake, ninja) via pip ---"
+echo "Build tools (cmake, ninja) are required. Please install them via your system package manager if this fails."
+uv pip install --no-cache-dir cmake ninja
+
+echo "--- 6. Cloning vLLM source code ---"
+git clone https://github.com/vllm-project/vllm.git "$VLLM_SOURCE_DIR"
+cd "$VLLM_SOURCE_DIR"
+echo "Current directory: $(pwd)"
+
+echo "--- 7. Installing dependencies using requirements/cpu.txt ---"
+# This file should include torch
+# UV_TORCH_BACKEND env var is supported from uv 0.2.18 onwards
+export UV_TORCH_BACKEND="cpu"
+echo "UV_TORCH_BACKEND=$UV_TORCH_BACKEND" # Verify the setting
+# Installation might fail if the torch version in requirements/cpu.txt
+# does not exist in the CPU index. Edit the file manually if needed.
+# Example: nano requirements/cpu.txt
+uv pip install --no-cache-dir -r requirements/cpu.txt
+
+echo "--- 8. Checking for and uninstalling Triton if accidentally installed ---"
+# Check just in case Triton was pulled in by other dependencies
+if uv pip show triton > /dev/null 2>&1; then
+    echo "Warning: Triton was installed during dependency installation. Uninstalling as it's not needed for CPU."
+    uv pip uninstall triton -y
+else
+    echo "Triton is not installed."
+fi
+
+echo "--- 9. Building and installing vLLM from source (editable) for CPU target ---"
+# Do not install CUDA kernels
+export VLLM_INSTALL_CUDA_KERNELS=0
+# Specify CPU as the target device
+export VLLM_TARGET_DEVICE=cpu
+echo "Build environment variables: VLLM_INSTALL_CUDA_KERNELS=$VLLM_INSTALL_CUDA_KERNELS, VLLM_TARGET_DEVICE=$VLLM_TARGET_DEVICE"
+# Install in editable mode
+uv pip install --no-cache-dir -e .
+
+echo "--- 9b. Checking for and uninstalling Triton again after build ---"
+if uv pip show triton > /dev/null 2>&1; then
+    echo "Warning: Triton was re-installed during the build process. Uninstalling."
+    uv pip uninstall triton -y
+else
+    echo "Triton is not installed (post-build)."
+fi
+
+# Exit the source directory after installation
+cd ..
+echo "Current directory: $(pwd)"
+
+echo "--- 10. Attempting to start vLLM server on CPU (trying options incrementally) ---"
+echo "Attempt 1: Starting with basic options"
+echo "Executing: VLLM_LOGGING_LEVEL=DEBUG vllm serve '$MODEL_NAME' --port '$VLLM_PORT' --device cpu --dtype float32"
+# Execute command directly
+if VLLM_LOGGING_LEVEL=DEBUG vllm serve "$MODEL_NAME" --port "$VLLM_PORT" --device cpu --dtype float32 ; then
+    echo "--- vLLM server started successfully! ---"
+    echo "--- Run 'deactivate' to exit the virtual environment when done. ---"
+    exit 0
+fi
+
+echo "--- Attempt 1 failed. ---"
+echo "Attempt 2: Adding --disable-async-output-proc"
+echo "Executing: VLLM_LOGGING_LEVEL=DEBUG vllm serve '$MODEL_NAME' --port '$VLLM_PORT' --device cpu --dtype float32 --disable-async-output-proc"
+# Execute command directly
+if VLLM_LOGGING_LEVEL=DEBUG vllm serve "$MODEL_NAME" --port "$VLLM_PORT" --device cpu --dtype float32 --disable-async-output-proc ; then
+    echo "--- vLLM server started successfully with --disable-async-output-proc! ---"
+    echo "--- Run 'deactivate' to exit the virtual environment when done. ---"
+    exit 0
+fi
+
+echo "--- Attempt 2 failed. ---"
+echo "Attempt 3: Adding --swap-space 1"
+echo "Executing: VLLM_LOGGING_LEVEL=DEBUG vllm serve '$MODEL_NAME' --port '$VLLM_PORT' --device cpu --dtype float32 --disable-async-output-proc --swap-space 1"
+# Execute command directly
+if VLLM_LOGGING_LEVEL=DEBUG vllm serve "$MODEL_NAME" --port "$VLLM_PORT" --device cpu --dtype float32 --disable-async-output-proc --swap-space 1 ; then
+    echo "--- vLLM server started successfully with --disable-async-output-proc --swap-space 1! ---"
+    echo "--- Run 'deactivate' to exit the virtual environment when done. ---"
+    exit 0
+fi
+
+echo "--- Attempt 3 failed. ---"
+echo "Attempt 4: Adding --worker-cls vllm.worker.cpu_worker.CPUWorker"
+echo "Executing: VLLM_LOGGING_LEVEL=DEBUG vllm serve '$MODEL_NAME' --port '$VLLM_PORT' --device cpu --dtype float32 --disable-async-output-proc --swap-space 1 --worker-cls vllm.worker.cpu_worker.CPUWorker"
+# Execute command directly
+if VLLM_LOGGING_LEVEL=DEBUG vllm serve "$MODEL_NAME" --port "$VLLM_PORT" --device cpu --dtype float32 --disable-async-output-proc --swap-space 1 --worker-cls vllm.worker.cpu_worker.CPUWorker ; then
+    echo "--- vLLM server started successfully with all fallback options! ---"
+    echo "--- Run 'deactivate' to exit the virtual environment when done. ---"
+    exit 0
+fi
+
+echo "--- All attempts failed. ---"
+echo "Please check the logs for further investigation."
+echo "Run 'deactivate' to exit the virtual environment."
+exit 1
+```
+
+
