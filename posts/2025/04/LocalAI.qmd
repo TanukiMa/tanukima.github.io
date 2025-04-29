@@ -1,0 +1,23 @@
+---
+title: "LocalAI"
+draft: true
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-04-20"
+categories: [Debian,python]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/04/LocalAI.html"
+  description: "LocalAI"
+  twitter: true
+  mastodon: true
+---
+
+```bash
+make BUILD_GRPC_FOR_BACKEND_LLAMA=ON build
+```
+でbuild。
