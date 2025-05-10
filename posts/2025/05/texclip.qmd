@@ -1,0 +1,28 @@
+---
+title: "texclip"
+draft: false
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-05-10"
+categories: [TeX]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/05/texclip.html"
+  description: "texclip"
+  twitter: true
+  mastodon: true
+---
+入り組んだ数式。
+フォントが小さく見えない！
+学会誌規定のフォントサイズではない！
+と御指摘頂く。
+
+[TeXClip](https://texclip.marutank.net) 
+を使って式を画像にし、Figureとする。
+
+[tex2img](https://tex2img.tech)も良いかもしれませんが、試していません。
+
