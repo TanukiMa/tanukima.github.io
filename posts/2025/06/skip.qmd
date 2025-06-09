@@ -1,0 +1,43 @@
+---
+title: "skip 2025/06"
+draft: false
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-06-09"
+categories: [MacOS,iOS,Android]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/06/skip.html"
+  description: "texclip"
+  twitter: true
+  mastodon: true
+---
+[skip](https://skip.tools)
+環境を久々に整備して戸惑ったのでメモ。
+
+## 環境
+
+- MacOS 14.7.6
+- Xcode 16.2
+
+##
+```{bash}
+brew install skiptools/skip/skip
+```
+すると、openjdk(24)もインストールされるが、これが原因で skip checkupがfailする。
+
+ので、
+```{bash}
+brew install openjdk@21 ; brew uninstall openjdk
+```
+し、環境変数JAVA_HOMEも変更。
+
+temurinも
+```{bash}
+brew install temurin@21
+```
+しました。

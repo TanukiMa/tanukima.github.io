@@ -1,0 +1,24 @@
+---
+title: "2025/May"
+draft: false
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-05-31"
+categories: 
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/05/31.html"
+  description: "texclip"
+  twitter: true
+  mastodon: true
+---
+
+{{< tweet masanork 1926140416434307239 >}}
+
+[https://masanork.github.io/mjq/](https://masanork.github.io/mjq/)
+
+[⽇本語⽂字コード⼊⾨ α 版 - 歴史と Unicode における実装](https://masanork.github.io/mjq/moji20250526.pdf)
