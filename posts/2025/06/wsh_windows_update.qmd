@@ -1,0 +1,48 @@
+---
+title: "PowerShellでWindows Update"
+draft: false
+format:
+  html:
+    toc: true
+lang: ja
+author: "魔狸"
+date: "2025-06-23"
+categories: [Windows,PowerShell]
+filters:
+  - social-share
+share:
+  permalink: "https://TanukiMa.github.io/posts/2025/06/skip.html"
+  description: "PowerShellでWindows Update"
+  twitter: true
+  mastodon: true
+---
+PowerShellでWindows Updateしたい
+
+
+### 必要に応じて
+```{bash}
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+```
+
+
+### PSWindowsUpdateモジュールのインストール
+```{bash}
+Install-Module -Name PSWindowsUpdate -Force
+```
+
+### 利用可能な更新プログラムの一覧を確認
+```{bash}
+Get-WindowsUpdate
+```
+
+### Windows Updateの実行
+```{bash}
+Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot
+
+```
+
+### 特定の更新のみを適用したい場合
+```{bash}
+Get-WindowsUpdate -Install -KBArticleID KB番号
+```
